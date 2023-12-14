@@ -1,0 +1,253 @@
+site_name: MyDocs
+repo_url : ''
+site_url : http://192.168.1.90:8000/index.md
+repo_name: test
+
+theme: 
+  language: fr
+  name: material
+  favicon: img/computer-2.svg
+  icon:
+    annotation: material/plus-circle-outline
+  logo : img/network.png
+  #  admonition:
+  #    <type>: <icon>
+  features:
+    - header.autohide
+    - navigation.tabs
+    - navigation.top
+    - navigation.indexes
+    - navigation.tracking
+    #- navigation.sections
+    - navigation.instant
+    - navigation.path
+    #- navigation.prune
+    #- navigation.expand
+    - navigation.indexes
+    - search.suggest
+    - content.code.annotation
+    - content.code.copy
+    - content.tooltips
+    #- toc.integrate
+
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      primary : blue
+      accent : blue
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - scheme: default
+      primary : blue
+      accent : blue
+      toggle:
+        icon: material/lightbulb
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary : blue
+      accent : blue
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to light mode
+
+markdown_extensions:
+  - pymdownx.highlight:
+      use_pygments: true
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      preserve_tabs: true
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
+  - pymdownx.keys
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+    #  options:
+    #    custom_icons:
+    #      - overrides/.icons
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.tilde
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.arithmatex:
+      generic: true
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - footnotes
+#  - toc:
+      #permalink: ⚓︎
+#      title: On this page
+#      permalink_title: Anchor link to this section for reference
+      
+
+plugins:
+  - search
+  - mermaid2
+  - glightbox:
+       touchNavigation: true
+       loop: false
+       effect: zoom
+       slide_effect: slide
+       width: 100%
+       height: auto
+       zoomable: true
+       draggable: true
+       skip_classes:
+         - custom-skip-class-name
+       auto_caption: false
+       caption_position: bottom
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/mathieu-lecat
+
+extra_javascript:
+  #- javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  #- optionalConfig.js
+  #- https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js
+  #- extra-loader.js
+
+copyright: Copyright &copy; 2023 - Mathieu Lecat
+
+nav:
+  - Accueil : 'index.md'
+  - Cours :
+    - Reseaux :
+        - Modèle OSI :
+          - Reseaux/Module-Couche_OSI/index.md
+          - Couche Applicative : 'Reseaux/Module-Couche_OSI/7_Couche_Applicative.md'
+          - Couche Présentation : 'Reseaux/Module-Couche_OSI/6_Couche_Presentation.md'
+          - Couche Session : 'Reseaux/Module-Couche_OSI/5_Couche_Session.md'
+          - Couche Transport : 'Reseaux/Module-Couche_OSI/4_Couche_Transport.md'
+          - Couche Réseau : 'Reseaux/Module-Couche_OSI/3_Couche_Reseau.md'
+          - Couche Liaison : 'Reseaux/Module-Couche_OSI/2_Couche_Liaison.md'
+          - Couche Physique : 'Reseaux/Module-Couche_OSI/1_Couche_Physique.md'
+          - Encapsulation & Désencapsulation : 'Reseaux/Module-Couche_OSI/Encapsulation.md'
+          - Unités de données : 'Reseaux/Module-Couche_OSI/Unites_donnees.md'
+        - Adressage :
+          - Trame Ethernet : 'Reseaux/Module_IP/trame_ethernet.md'
+          - Ipv4 : 'Reseaux/Module_IP/Adressage_IPv4.md'
+          - Sous-Réseau : Reseaux/Module_IP/sous_reseau.md
+        - Diffusion/Collision :
+          - 'Reseaux/Domaine_diffusion_collision.md'
+        - Routage : Reseaux/Routage/le_routeur.md
+        - Switch & VLAN : 
+          - Reseaux/Switch_VLAN/Switch.md
+          - Reseaux/Switch_VLAN/VLAN.md
+        - DHCP : Reseaux/dhcp/dhcp.md
+        - DNS : Reseaux/dns/dns.md
+        - TOIP : ''
+    - Système d'Exploitation :
+      - OS : 'Os/OS.md'
+      - Unix/Linux :
+        - Introduction : 'Linux/Introduction_UNIX_Linux.md'
+        - Administration Debian : 'Linux/Administration_Debian.md'
+        - Fichiers et Dossier : 'Linux/Fichiers_Dossiers.md'
+        - Lire et Editer du texte : 'Linux/Lire_editer_texte.md'
+        - Gestion Réseau : 'Linux/Gestion_reseau_debian.md'
+        - Gestion des paquets : 'Linux/Gestion_paquets_logiciel.md'
+        - Gestion d'une machine Debian: 'Linux/Gestion_debian.md'
+        - Gestion Stockage : 'Linux/Espace_stockage.md'
+        - Gestion des Groupes & Utilisateurs : 'Linux/utilisateurs_groupe.md'
+        - Bash :
+          - 101 : 'Linux/Bash_introduction.md'
+          - 201 : 'Linux/Bash_avance.md'
+      - MicroSoft :
+        - Windows :
+          - OS Client : Windows/OS_Windows.md
+          - Pilotes : Windows/Definir_un_Pilote.md
+        - Windows Serveur :
+          - Administration Windows : Windows/Serveur/administration_windows.md
+          - Active Directory :
+            - Windows/Serveur/active_directory/notion.md
+            - Gestion d'un domaine : Windows/Serveur/active_directory/gestion_domaine.md
+            - L'accès aux Ressources : Windows/Serveur/active_directory/acces_ressources.md
+            - Stratégies de Groupe : Windows/Serveur/active_directory/GPO.md
+            - Service d'impression : Windows/Serveur/active_directory/service_impression.md
+          - RDS : Windows/Serveur/rds/rds.md
+        - CLI : 'Windows/CLI.md'
+        - PowerShell : 
+          - Présentation : 'Windows/Powershell/Presentation_de_Powershell.md'
+          - cmdlet : 'Windows/Powershell/Cmdlets_de_base_et_objets.md'
+          - L'aide: 'Windows/Powershell/aide_de_powershell.md'
+          - Le Filtrage : 'Windows/Powershell/Le_Filtrage.md'
+          - Le Formatage : 'Windows/Powershell/Le_Formatage.md'
+          - Redirection de Flux : 'Windows/Powershell/Redirection_de_flux.md'
+          - Utilisation du Pipeline "|" : 'Windows/Powershell/Utilisation_du_PipeLine.md'
+    - Serveur Web : 
+      - service_web_securite/index.md
+      - Apache2 : service_web_securite/serveur_apache.md
+      - Serveur IIS : service_web_securite/serveur_IIS.md
+      - Gestion des PKI : service_web_securite/Gestion_PKI.md
+      - VPN : service_web_securite/VPN.md
+    - ITIL : 
+      - Présentation et historique : 'ITIL/ITIL1.md'
+      - La gestion des services : 'ITIL/ITIL2.md'
+      - Livre 1 - stratégie des services : 'ITIL/ITIL3.md'
+      - Livre 2 - Conception des services : 'ITIL/ITIL4.md'
+      - Livre 3 - La transition des services : 'ITIL/ITIL5.md'
+      - Livre 4 - Exploitation des services - publication centrales : 'ITIL/ITIL7.md'
+      - Livre 5 - Amélioration continue des services - publication centrales : 'ITIL/ITIL8.md'
+      - Savoirs, savoir-faire et savoir-être : 'ITIL/ITIL9.md'
+      - GLPI : 'ITIL/ITIL6.md'
+      - Assistance avec GLPI : 'ITIL/ITIL10.md'
+    - Scripting : 
+        - Bash : 
+          - Script_bash/index.md
+          - Construction : Script_bash/scripting_bash.md
+          - Script : Script_bash/exemple_script.md
+        - PowerShell : ''
+        - Python : Python3/python.md
+  - Cisco IOS : Cisco/ios.md
+  - Cloud & Microsoft 365 : Cloud_M365/cloud.md
+  - Virtualisation :
+      - Virtualisation/Virtualisation.md
+      - Applications de virtualisation :
+        - VMware WorkStation : 'Virtualisation/vmware_workstation.md'
+        - VMware vSphere : ''
+        - Microsoft Hyper-V : ''
+      - Gestion du réseau : ''
+      - Gestion du Stockage : ''
+      - Gestion de Data-Center : ''
+      - Virtualisation de serveurs : 'Virtualisation/virtualisation_srv.md'
+  - Supervision Infrastructure avec Centreon : 
+    - Supervision : supervision/supervision.md
+    - Protocoles SNMP & NRPE : supervision/snmp_nrpe.md
+    - Centreon : 
+      - Installation : supervision/Centreon/installation_centreon.md
+      - Commandes : supervision/Centreon/commandes_supervision.md
+      - Configuration : supervision/Centreon/Configuration.md
+  - GLPI : GLPI/glpi.md
+  - Outils :
+    - Putty : 'Outils/Putty/putty.md'
+    - Nmaps : 'Outils/Nmap/nmap.md'
+    - FogProject : Linux/FogProject/fogproject.md
+  - Aide : 
+    - Page Test: page_test.md
+    - Kaisen : Kaisen/modification_terminal.md
+    - MariaDB : GLPI/mariadb.md
+    - Révision : revision/revision.md

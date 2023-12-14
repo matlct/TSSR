@@ -1,0 +1,4403 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://192.168.1.90:8000/index.md/Virtualisation/vmware_workstation/">
+      
+      
+        <link rel="prev" href="../Virtualisation/">
+      
+      
+        <link rel="next" href="../virtualisation_srv/">
+      
+      
+      <link rel="icon" href="../../img/computer-2.svg">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>VMware WorkStation - MyDocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m1 5h-2v4H7v2h4v4h2v-4h4v-2h-4V7Z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#prerequis-et-installation" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="MyDocs" class="md-header__button md-logo" aria-label="MyDocs" data-md-component="logo">
+      
+  <img src="../../img/network.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MyDocs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              VMware WorkStation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Reseaux/Module-Couche_OSI/" class="md-tabs__link">
+          
+  
+    
+  
+  Cours
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Cisco/ios/" class="md-tabs__link">
+        
+  
+    
+  
+  Cisco IOS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Cloud_M365/cloud/" class="md-tabs__link">
+        
+  
+    
+  
+  Cloud & Microsoft 365
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Virtualisation/" class="md-tabs__link">
+          
+  
+    
+  
+  Virtualisation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../supervision/supervision/" class="md-tabs__link">
+          
+  
+    
+  
+  Supervision Infrastructure avec Centreon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../GLPI/glpi/" class="md-tabs__link">
+        
+  
+    
+  
+  GLPI
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Outils/Putty/putty/" class="md-tabs__link">
+          
+  
+    
+  
+  Outils
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../page_test/" class="md-tabs__link">
+          
+  
+    
+  
+  Aide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MyDocs" class="md-nav__button md-logo" aria-label="MyDocs" data-md-component="logo">
+      
+  <img src="../../img/network.png" alt="logo">
+
+    </a>
+    MyDocs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cours
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reseaux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Reseaux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Reseaux/Module-Couche_OSI/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Modèle OSI
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Modèle OSI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module-Couche_OSI/7_Couche_Applicative/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Applicative
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module-Couche_OSI/6_Couche_Presentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Présentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module-Couche_OSI/5_Couche_Session/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Session
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module-Couche_OSI/4_Couche_Transport/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Transport
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module-Couche_OSI/3_Couche_Reseau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Réseau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module-Couche_OSI/2_Couche_Liaison/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Liaison
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module-Couche_OSI/1_Couche_Physique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Physique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module-Couche_OSI/Encapsulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Encapsulation & Désencapsulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module-Couche_OSI/Unites_donnees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unités de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Adressage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Adressage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module_IP/trame_ethernet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trame Ethernet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module_IP/Adressage_IPv4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ipv4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module_IP/sous_reseau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sous-Réseau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Diffusion/Collision
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Diffusion/Collision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Domaine_diffusion_collision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Domaine de Diffusion et de Collision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Routage/le_routeur/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Routage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Switch & VLAN
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            Switch & VLAN
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Switch_VLAN/Switch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <span style="color: #3498DB;">Le Switch</span>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Switch_VLAN/VLAN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <span style="color: #3498DB;">VLAN: Virtual Local Area Network</span>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/dhcp/dhcp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DHCP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/dns/dns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DNS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TOIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Système d'Exploitation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Système d'Exploitation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Os/OS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unix/Linux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Unix/Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Introduction_UNIX_Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Administration_Debian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Administration Debian
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Fichiers_Dossiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fichiers et Dossier
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Lire_editer_texte/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lire et Editer du texte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Gestion_reseau_debian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion Réseau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Gestion_paquets_logiciel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion des paquets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Gestion_debian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion d'une machine Debian
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Espace_stockage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion Stockage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/utilisateurs_groupe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion des Groupes & Utilisateurs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2_10" id="__nav_2_2_2_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bash
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            Bash
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Bash_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    101
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Bash_avance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    201
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MicroSoft
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            MicroSoft
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_1" id="__nav_2_2_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Windows
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/OS_Windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OS Client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Definir_un_Pilote.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pilotes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_2" id="__nav_2_2_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Windows Serveur
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Windows Serveur
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Serveur/administration_windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Administration Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_2_2" id="__nav_2_2_3_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Active Directory
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_2_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Active Directory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Serveur/active_directory/notion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Serveur/active_directory/gestion_domaine/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion d'un domaine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Serveur/active_directory/acces_ressources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L'accès aux Ressources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Serveur/active_directory/GPO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stratégies de Groupe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Serveur/active_directory/service_impression.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Service d'impression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Serveur/rds/rds/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RDS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/CLI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_4" id="__nav_2_2_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PowerShell
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            PowerShell
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Powershell/Presentation_de_Powershell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Présentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Powershell/Cmdlets_de_base_et_objets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cmdlet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Powershell/aide_de_powershell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L'aide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Powershell/Le_Filtrage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le Filtrage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Powershell/Le_Formatage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le Formatage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Powershell/Redirection_de_flux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redirection de Flux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Powershell/Utilisation_du_PipeLine/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Utilisation du Pipeline "|"
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../service_web_securite/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Serveur Web
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Serveur Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../service_web_securite/serveur_apache/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apache2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../service_web_securite/serveur_IIS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Serveur IIS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../service_web_securite/Gestion_PKI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion des PKI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../service_web_securite/VPN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VPN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ITIL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            ITIL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ITIL/ITIL1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Présentation et historique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ITIL/ITIL2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    La gestion des services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ITIL/ITIL3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Livre 1 - stratégie des services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ITIL/ITIL4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Livre 2 - Conception des services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ITIL/ITIL5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Livre 3 - La transition des services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ITIL/ITIL7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Livre 4 - Exploitation des services - publication centrales
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ITIL/ITIL8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Livre 5 - Amélioration continue des services - publication centrales
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ITIL/ITIL9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Savoirs, savoir-faire et savoir-être
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ITIL/ITIL6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GLPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ITIL/ITIL10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assistance avec GLPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Scripting
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Scripting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Script_bash/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Bash
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5_1" id="__nav_2_5_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Bash
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Script_bash/scripting_bash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Construction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Script_bash/exemple_script/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Script
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PowerShell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python3/python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cisco/ios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cisco IOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_M365/cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud & Microsoft 365
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Virtualisation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Virtualisation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Virtualisation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Applications de virtualisation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Applications de virtualisation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    VMware WorkStation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    VMware WorkStation
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequis-et-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prérequis et installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prérequis et installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-outils-et-composants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les outils et composants
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les outils et composants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestion de base
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#librairie-de-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Librairie de VM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vm-selectionnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      VM Selectionnées
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction-avec-lhote" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction avec l'hôte
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interaction avec l'hôte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#peripheriques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Périphériques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Réseau
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creation-dune-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Création d'une VM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-la-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestion de la VM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametrages-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paramétrages Réseau
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-vmware-workstation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting VMware WorkStation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VMware vSphere
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Hyper-V
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion du réseau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion du Stockage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion de Data-Center
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../virtualisation_srv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualisation de serveurs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Supervision Infrastructure avec Centreon
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Supervision Infrastructure avec Centreon
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../supervision/supervision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Supervision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../supervision/snmp_nrpe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Protocoles SNMP & NRPE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Centreon
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Centreon
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../supervision/Centreon/installation_centreon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../supervision/Centreon/commandes_supervision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Commandes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../supervision/Centreon/Configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GLPI/glpi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GLPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Outils
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Outils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Outils/Putty/putty/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Putty
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Outils/Nmap/nmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nmaps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/FogProject/fogproject/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FogProject
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Aide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Aide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../page_test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Page Test
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kaisen/modification_terminal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kaisen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GLPI/mariadb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MariaDB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../revision/revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Révision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequis-et-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prérequis et installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prérequis et installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-outils-et-composants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les outils et composants
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les outils et composants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestion de base
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#librairie-de-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Librairie de VM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vm-selectionnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      VM Selectionnées
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction-avec-lhote" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction avec l'hôte
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interaction avec l'hôte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#peripheriques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Périphériques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Réseau
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creation-dune-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Création d'une VM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-la-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestion de la VM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametrages-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paramétrages Réseau
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-vmware-workstation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting VMware WorkStation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>VMware WorkStation</h1>
+
+<figure>
+<p><a class="glightbox" href="../img/VMware_Workstation_11.0_icon.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/VMware_Workstation_11.0_icon.png" /></a></p>
+</figure>
+<h2 id="prerequis-et-installation">Prérequis et installation</h2>
+<p>La solution de virtualisation VMware Workstation nécessite un certain nombre de prérequis.<br />
+En effet, la solution VMware workstation est un hyperviseur de type 2, elle nécessite donc l'utilisation d'un système d'exploitation tier (Windows ou Linux).<br />
+Elle nécessite que la machine dispose d'un CPU disposant, pour la famille de processeurs Intel, des solutions VT-x ou, pour les processeurs AMD, de la fonctionnalité AMD-V (ces fonctionnalités doivent être activées dans le bios de la machine physique).<br />
+Cette fonctionnalité active les instructions de virtualisation matérielle au niveau du CPU de la machine hôte.<br />
+La machine hôte doit également disposer d'une quantité importante de RAM, Pour rappel la RAM sera partagé entre l'OS de l'hôte et les VM herbergée sur celle-ci.<br />
+Il faut également disposer d'un espace disque suffisamment important pour pouvoir stocker les disques durs virtuels nécessaires ou machines virtuelles.  A noter qu'il est préférable d'utiliser des disques de type SSD, afin d'apporter un gain de rapidité au VM.  </p>
+<h3 id="les-outils-et-composants">Les outils et composants</h3>
+<p>VMware WorkStation met à disposition un environnement graphique de virtualisation.  </p>
+<figure>
+<p><a class="glightbox" href="../img/1_workstation17.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/1_workstation17.png" /></a></p>
+</figure>
+<p>Dans cette console graphique nous allons trouver tous les éléments nécessaires à la gestion non seulement d'une machine virtuelle, mais également à son intégration dans une infrastructure virtuelle.  </p>
+<p>La console de gestion permet d'afficher, dans la librairie du logiciel, la liste des machines virtuelles à disposition sur l'hôte et intégrer à la solution de virtualisation.  </p>
+<p>Elle permet de gérer la liaison entre les VM mais également l'État des VM, il sera possible de les demarrer, les mettre en pause, les arrêter ou les redémarrer.  </p>
+<p>WorkStation offre également la possibilité d'effectuer des clones et des templates dans le but de pouvoir les exploiter et/ou les exporter par la suite au format .ovf ou .ova, permettant d'intégrer des VM récuperer sur d'autre plateforme de type VMware mais également sur internet.  </p>
+<p>La console WorkStation permet également de modifier les réglages matériel des machines virtuelles une fois que celle-ci sont en production.  </p>
+<p>Les différentes parties du logiciel seront détaillées par la suite.  </p>
+<h4 id="gestion-de-base">Gestion de base</h4>
+<figure>
+<p><a class="glightbox" href="../img/gestion_base.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/gestion_base.png" /></a></p>
+</figure>
+<ol>
+<li>Permet l'édition des parametre logiciel  </li>
+<li>La gestion d'alimentation des VM  </li>
+<li>Permet de selectionner une séquence de touche à envoyer  </li>
+<li>Gestionnaire de Snapshot<br />
+   (Permet la capture d'une "image" à un instant T et de retourner à celle-ci en cas de défaillance de la VM)<br />
+   également la mise en pause de la machine virtuelle , la création d'un instantané , ce que l'on appelle un Snapshot , puis le retour en arrière à partir des Snapshot créer précédemment ces Snapshot vont permettre de prendre un instantané de l'état d'une matière virtuelle , de l enregistrer puis de revenir à cet état d instantané plus tard.  </li>
+<li>Parametre d'affichage des vues librairie, etc.  </li>
+</ol>
+<h4 id="librairie-de-vm">Librairie de VM</h4>
+<figure>
+<p><a class="glightbox" href="../img/librairie_workstation.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/librairie_workstation.png" /></a></p>
+</figure>
+<p>Cette console permet de visualiser les VM intégrer à WorkStation, de les organiser par dossier, ainsi que de vérifier leurs état d'alimentation.  </p>
+<h4 id="vm-selectionnees">VM Selectionnées</h4>
+<figure>
+<p><a class="glightbox" href="../img/VM_selection.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/VM_selection.png" /></a></p>
+</figure>
+<p>Cette vue met en avant les VM selectionnées dans l'interface de travail.<br />
+Elles sont disponible sous forme d'onglet détaillant leurs état d'alimentation.  </p>
+<ul>
+<li>La 1ere est non alimentée (aucun logo à coté de son nom)  </li>
+<li>La 2eme est en fonctionnement (présence du logo <span class="keys"><kbd class="key-media-play">Play</kbd></span>)  </li>
+<li>La 3eme est en pause (présence du logo <span class="keys"><kbd class="key-media-pause">Pause</kbd></span>)  </li>
+</ul>
+<p><img alt="👍" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f44d.svg" title=":thumbup:" /> A noter que les logos d'état de VM est également visible dans la partie <strong>Librairie</strong>  </p>
+<p>Une VM peut être alimentée mais non selectionnée, elle n'apparaitra donc pas dans les onglets de selection <img alt="😉" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f609.svg" title=":wink:" /></p>
+<h3 id="interaction-avec-lhote">Interaction avec l'hôte</h3>
+<h4 id="peripheriques">Périphériques</h4>
+<p>VMware WorkStation capture, par défaut, les mouvements de la souris ainsi que les frappes clavier celles-ci seront donc automatiquement appliqués à la machine virtuelle.<br />
+La combinaison de touche par défaut <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd></span> permet de récupérer la main sur la machine hôte et ainsi "séparer" souris/clavier de la machine virtuelle, la combinaison de touche peut-être modifié dans les paramêtres de WorkStation</p>
+<p>VMware Workstation offre la possibilité de lier un lecteur CD ou un lecteur DVD mais également de lier les périphériques USB de la machine physique à la machine virtuelle.<br />
+A noter qu'il est également possible d'émuler un lecteur de disquette <img alt="🤷🏼‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f937-1f3fc-200d-2642-fe0f.svg" title=":man_shrugging_medium_light_skin_tone:" /></p>
+<p>Il est également possible de rendre disponible un dossier présent sur la machine hôte directement dans la machine virtuelle cette fonction s'appelle <u>share folder (dossier partagé)</u>.<br />
+Cette fonctionnalitée permet de rendre disponible une ressource locale, de la machine physique, directement dans la machine virtuelle.<br />
+Cette fonction est très utile notamment pour pouvoir faire passer des fichiers de configuration entre l'infrastructure virtuelle et la machine physique.  </p>
+<p>Beaucoup de machine virtuelle comme les machines serveurs, ou Windows, nécessitent une ouverture de session via la combinaison de touches :  </p>
+<ul>
+<li><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-delete">Del</kbd></span>.  </li>
+</ul>
+<p>Malheureusement avec WorkStation cette combinaison de touche s'applique directement à la machine hôte, ainsi pour une VM il faudra utiliser la combinaison :  </p>
+<ul>
+<li><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-insert">Ins</kbd></span>.<br />
+L'utilisation de cette combinaison de touches contrôle+alt+insert, c'est la combinaison contrôle alt suppr qui va être vu par la machine virtuelle et qui va permettre de déverrouiller une session sur une serveur de type Windows ou de faire apparaître le gestionnaire des tâches sur une machine de type Windows.  </li>
+</ul>
+<h4 id="reseau">Réseau</h4>
+<p>l'interaction entre l'hôte et la machine virtuelle va également se faire au niveau du réseau.<br />
+Le réseau disponible sur la machine physique sera également mis à disposition des machines virtuelles.<br />
+Il existe plusieurs méthodes pour relier une machine directe au réseau :  </p>
+<ul>
+<li>Le mode <u><strong>Host-Only</strong></u>: <ul>
+<li>La machine virtuelle n'aura accès uniquement que à l'hôte ainsi qu'à toutes les machines virtuelles configurées sur ce mode.  </li>
+<li>Permet aux machines virtuelles de communiquer uniquement entre elles.  </li>
+<li>Permet d'accéder à certaines ressources hébergées sur la machine physique.  </li>
+<li>En aucun cas les machines virtuelles ne pourront dépasser la machine physique.</li>
+</ul>
+</li>
+<li>Le mode <u><strong>NAT</strong></u>:<ul>
+<li>Réservé  à l'accès à internet.  </li>
+<li>Le mode NAT va créer un réseau secondaire dédié aux machines virtuelles,  </li>
+<li>L'avantage sera l'accès à l'internet sur un réseau de type <strong>NAT</strong>,  </li>
+<li>Ce qui va permettre de protéger le réseau physique de la machine en utilisant un réseau secondaire pour les machines virtuelles.  </li>
+<li>Il est nécessaire d'avoir un adressage différent du réseau physique pour les VM.  </li>
+</ul>
+</li>
+</ul>
+<div class="admonition inline end danger">
+<p>Dans le cas d'une virtualisation de service DHCP,<br />
+Le service DHCP VMware peut venir contrer le service deployer.<br />
+Il faudra désactiver ce service de DHCP VMware.  </p>
+</div>
+<p>WorkStation propose également un service de <strong>DHCP</strong>.<br />
+Cet adressage va être géré et distribué par la solution VMware WorkStation et va employer un service de DHCP pour adresser les machines virtuelles.  </p>
+<h2 id="creation-dune-vm">Création d'une VM</h2>
+<p>Pour la création d'une machine virtuelle sur VMware WorkStation plusieurs bonne pratique sont à privilégier :  </p>
+<div class="admonition danger">
+<p>Toutes ces informations sont détaillé dans la procédure d'installation d'une machine virtuelle sur WorkStation</p>
+</div>
+<ol>
+<li>Choisir "I will install ... later" cela permet de selectionner l'OS apres le set-up de la VM, et ainsi d'éviter que Workstation sélectionne des parametres non adapté à notre machine,  </li>
+<li>Selection du type de système (Microsoft, Linux, VMware ESX, Other) ce choix sera fait en fonction dy type d'OS à installer sur la VM,  </li>
+<li>Ensuite le choix du nom de la machine,  </li>
+<li>L'emplacement du stockage de la machine,  <ul>
+<li>Ces cette emplacement qui contiendra les fichiers de configuration mais également le/les disque dur de la VM (au format VMDK).  </li>
+<li>Il est préférable de choisir un dossier ou un disque dédié au stockage des VM.</li>
+<li>Il est également préférable de <strong>créer un dossier</strong> par <strong>machine virtuelle</strong>, afin d'éviter que plusieurs VM ne se retrouve dans le même dossier (grand risque de baisse de performance et de stabilité).  </li>
+<li><img alt="🛑" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f6d1.svg" title=":stop_sign:" /> Par défaut VMware selectionnera l'emplacement "Mes Docuements" de l'utilisateur actuel de l'hôte.  </li>
+</ul>
+</li>
+<li>Choisir la taille de l'espace de stockage  <ul>
+<li>2 choix sont disponible il est préférable de choisir "Store virtual disk in a single file"  </li>
+<li>Cela evite la fragmentation (et donc la baisse de performance)  </li>
+<li>VMware choisira par défaut "Split virtual...file" cela va fragmenter le disque en fichier de 2giga (Peu recommandé)</li>
+<li>Par defaut la taille du Disque Dur est dynamique, plus on peuple le Disque Dur Virtuel plus le fichier grandit, cela permet de moins ce soucier du dimensionnement de l'espace disque de l'hote.<br />
+On peut également faire du surdimensionnement, allouer plus d'espace que l'on en a sur l'hote tant que tous cette espace n'est pas reellement utilisé.<br />
+Attention une VM possedant une taille max. de 20Go ne pourra pas depasser 20Go.</li>
+</ul>
+</li>
+<li>Pour finir le paramétrage matériel, en cliquant sur "Customize Hardware..." permet de :  <ul>
+<li>Choisir le nombre de CPU ou de cœur de CPU  </li>
+<li>Choisir la quantité de RAM allouer à la VM  </li>
+</ul>
+</li>
+<li>Suite à cela il sera nécessaire de gérer le média d'installation  <ul>
+<li>Soit par un lecteur CD/DVD dans le cas d'une image .iso  </li>
+<li>Soit par un partage réseau si le .iso est stocké sur un emplacement distant  </li>
+</ul>
+</li>
+</ol>
+<div class="admonition tip">
+<p>VMware recommande de ne pas creer de VM trop gourmande.
+En effet plus on attribue de ressources CPU de l'hote, plus il y a de chance que les instructions de la VM soit mise en file d'attente,
+car d'autre VM ou l'OS de l'hote peut être prioritaire, ce qui peut etre nefaste sur les performances.</p>
+<blockquote>
+<p>les recommandation vmware sont dispo sur le bouton help.!</p>
+</blockquote>
+</div>
+<h2 id="gestion-de-la-vm">Gestion de la VM</h2>
+<p>Une fois la machine virtuelle installée, VMware WorkStation permet la modification des composants matérielles définit durant la phase d'installation.  </p>
+<p>Les modifications seront effectuées via l'interface "Settings" de la VM.  </p>
+<figure>
+<p><a class="glightbox" href="../img/vue_vm.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/vue_vm.png" /></a></p>
+</figure>
+<p>Certaines modifications matérielles pourront être effectuées "a chaud" (avec la machine en fonctionnement) et d'autre "a froid" (machine éteinte).  </p>
+<figure>
+<p><a class="glightbox" href="../img/vue_settings.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/vue_settings.png" width="400" /></a></p>
+</figure>
+<p>Comme le montre l'image du dessus, il est possible de gérer directement le matérielle de la VM soit en ajoutant des composants via la touche <code>Add...</code> ou, au contraire, de retirer des composants via la touche <code>Remove</code>.  </p>
+<p>Il sera donc possible d'ajouter :  </p>
+<ul>
+<li>Des disques durs supplémentaire,  </li>
+<li>De la RAM,  </li>
+<li>Des écrans, afin de simuler une machine ayant 2,3,4 écrans,</li>
+<li>Des cartes réseaux possédant des caractéristiques différentes pour chacune d'entre elles.  </li>
+</ul>
+<figure>
+<p><a class="glightbox" href="../img/option_VM.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/option_VM.png" width="400" /></a></p>
+</figure>
+<p>L'onglet "Options" permet quant a lui de renommer la VM, de changer le type de plateforme (passer de Microsoft à Linux) etc.</p>
+<p>En bas à Droite se situe le statut des composants de la VM.  </p>
+<figure>
+<p><a class="glightbox" href="../img/status_VM.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/status_VM.png" /></a></p>
+</figure>
+<p>Cette barre de status reprend les éléments suivant (de gauche à droite) :  </p>
+<ul>
+<li>Disques Durs,  </li>
+<li>Lecteur CD/DVD,  </li>
+<li>Carte Réseau,  </li>
+<li>et les divers composant usb ou bluetooth installé sur la machine hôte.  </li>
+</ul>
+<p>Le status des composants est défini par 3 couleurs : </p>
+<ul>
+<li>Gris : Le composant est inactif  </li>
+<li><span style="color: #27AE60;">Vert</span> : Le composant est actif  </li>
+<li><span style="color: #2E86C1;">Bleu</span> : Le composant est solicité  </li>
+</ul>
+<p>WorkStation offre la possibilité de quitter le logiciel de virtualisation tout en laissant les machines virtuelles allumée.<br />
+En effet au moment de quitter le logiciel une option vous demandera si vous souhaitez couper les VM ou les laisser tourner en arrière-plan.  </p>
+<figure>
+<p><a class="glightbox" href="../img/exit_vm.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/exit_vm.png" /></a></p>
+</figure>
+<p>Les machines virtuelles lancées crée leurs propre processus,<br />
+Elles ne sont plus "liée" au processus VMware Workstation, ce qui leurs permets de fonctionner même avec l'hyperviseur coupé.  </p>
+<h2 id="parametrages-reseau">Paramétrages Réseau</h2>
+<p>Comme pour une machine physique une VM peut communiquer sur different reseau, si celle-ci respecte les regles de communication de base.  </p>
+<p>Pour respecter les regles elle doit etre connecté a un switch, pour etre relié a un switch elle doit avoir une carte reseau virtuel.  </p>
+<p>Workstation propose plusieurs possibilité grace a ses switch virtuel:  </p>
+<ul>
+<li><strong>Host-only</strong> :  <ul>
+<li>Permet une interconnexion et donc de communiquer avec d'autre VM hebergé sur l'hôte, si elle sont connecté au meme reseau virtuel host-only.  </li>
+<li>Permet aussi de communiquer avec l'hôte, cela nécessite que toutes les machines soient dans le meme reseau IP, il faut donc les configurer en ce sens.  </li>
+<li>Les VM ne pourront en aucun cas dépasser l'hôte et son réseau,  </li>
+<li>Pour l'addressage de l'hote il faudra configurer l'IP sur la carte VMWare network VMnet1.  </li>
+</ul>
+</li>
+<li><strong>VMnet</strong> :  <ul>
+<li>Meme principe que host-only a la différence qu'ils sont personnalisable et multipliable (numeroté de 0 à 19)  </li>
+<li>VMNet 1 est reservé pour le reseau host-only  </li>
+<li>VMnet8 reservé au NAT.  </li>
+<li>Permet egalement de communiquer avec l'hote si vous activez et configurer une carte reseau depuis le menu Virtual network editor de Workstation.  </li>
+</ul>
+</li>
+<li><strong>Lan Segment</strong> :  <ul>
+<li>Permet de creer des commutateurs totalement virtuel pour les VM.  <ul>
+<li>Permet de cloissoner les réseaux virtuels,</li>
+<li>Possibilité de nommer les reseaux pour rendre la maquette plus facile a gérer,  </li>
+<li>On peut les faire communiquer ensemble via un routeur virtuel.  </li>
+<li>On ne peut pas communiquer directement avec l'hote.  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Bridge</strong> (Mode Pont) :  <ul>
+<li>Permet de communiquer &amp; de faire communiquer,  </li>
+<li>De connecter les VM au reseau physique, c'est a dire au switch physique auquel est connecté l'hote, les communications passe par le cable qui relie l'hote au reseau,  </li>
+<li>On peut donc beneficier des services du reseau (DNS, DHCP, acceder au reste du monde) comme n'importe quelle machine physique.  </li>
+<li>Le mode Bridge présente un risque de sécurité puisque la machine virtuelle est pleinement exposée.  </li>
+</ul>
+</li>
+<li><strong>Reseau NAT</strong> (Network Address Translation) :  <ul>
+<li>Isole les VM dans un réseau spécifique,  </li>
+<li>Le mode NAT est totalement géré par VMware,  </li>
+<li>Permet d'accéder à des réseaux distants et à internet tout en bénéficiant d'une protection due au NAT, via l'adresse IP de la carte ethernet de l'hôte,  </li>
+<li>La VM peut communiquer avec les autres VM connecté au reseau nat, ainsi qu'avec l'hote, par l'intermediaire de sa carte virtuel VMware Network adapter VMnet8.  </li>
+</ul>
+</li>
+</ul>
+<p>Chacun de ces mode est indépendant, ils agissent comme des commutateurs permettant de renseigner ou de délimiter les périmètre réseau de chaque machine virtuelle.  </p>
+<h2 id="troubleshooting-vmware-workstation">Troubleshooting VMware WorkStation</h2>
+<ol>
+<li>Démarrer sur un média CD/DVD une fois le système installé  <ul>
+<li>S'assurer que la VM a bien "capturé" le clavier et redémarrer  </li>
+<li>Appuyer <u>1 fois</u> sur la touche <span class="keys"><kbd class="key-escape">Esc</kbd></span> lorsque le logo VMware s'affiche pour accéder au BIOS de la VM  </li>
+<li>Possibilité de passer par les options de la VM via "Power On To Firmware"  </li>
+<li>Il est possible de paramétrer la séquence de démarrage dans le BIOS de la VM,  </li>
+<li>Les lecteurs CD/DVD se deconnecte automatiquement après chaque installation, il s'agit d'une sécurité afin de ne pas reboot sur un média d'installation  </li>
+</ul>
+</li>
+<li>Fonctionnement du réseau aléatoire  <ul>
+<li>Le fonctionnement du réseau est un point sensible, notamment lors de paramétrages fréquents  </li>
+<li><strong>Désactivez et réactivez</strong> les cartes réseau de votre machine physique  </li>
+</ul>
+</li>
+<li>Espace disque hôte insuffisant  <ul>
+<li>Vérifier l'emplacement du dossier de la VM et le déplacer si nécessaire  </li>
+<li>Surveillez l'espace disponible dans le volume de données, un disque arrivant à saturation peut cesser de fonctionner  </li>
+</ul>
+</li>
+<li>Espace disque invité insuffisant  <ul>
+<li>Un OS, bien que virtualisé, nécessite la même quantité d'espace disque qu'un OS physique  </li>
+<li>Une VM arrivant a saturation se fige et s'arrête  </li>
+<li>Ajouter un disque depuis les paramétrages de la VM ou redimensionner (plus fastidieux)  </li>
+<li><strong>Le dimensionnement initial est important !</strong>  </li>
+</ul>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 - Mathieu Lecat
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/mathieu-lecat" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.tabs", "navigation.top", "navigation.indexes", "navigation.tracking", "navigation.instant", "navigation.path", "navigation.indexes", "search.suggest", "content.code.annotation", "content.code.copy", "content.tooltips"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
