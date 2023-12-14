@@ -1,0 +1,2021 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="http://192.168.1.90:8000/index.md/ITIL/ITIL7/" rel="canonical"/>
+<link href="../ITIL5/" rel="prev"/>
+<link href="../ITIL8/" rel="next"/>
+<link href="../../img/computer-2.svg" rel="icon"/>
+<meta content="mkdocs-1.5.3, mkdocs-material-9.5.2" name="generator"/>
+<title>Livre 4 - Exploitation des services - publication centrales - MyDocs</title>
+<link href="../../assets/stylesheets/main.50c56a3b.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m1 5h-2v4H7v2h4v4h2v-4h4v-2h-4V7Z"/></svg>');}</style>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+ <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="blue" data-md-color-primary="blue" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#livre-4-exploitation-des-services">
+          Aller au contenu
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="En-tête" class="md-header__inner md-grid">
+<a aria-label="MyDocs" class="md-header__button md-logo" data-md-component="logo" href="../.." title="MyDocs">
+<img alt="logo" src="../../img/network.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            MyDocs
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Livre 4 - Exploitation des services - publication centrales
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="blue" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="blue" data-md-color-media="" data-md-color-primary="blue" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="" data-md-color-primary="blue" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"></path></svg>
+</label>
+</form>
+<script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Rechercher" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Rechercher" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Recherche" class="md-search__options">
+<button aria-label="Effacer" class="md-search__icon md-icon" tabindex="-1" title="Effacer" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Onglets" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../../Reseaux/Module-Couche_OSI/">
+          
+  
+    
+  
+  Cours
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../Cisco/ios/">
+        
+  
+    
+  
+  Cisco IOS
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../Cloud_M365/cloud/">
+        
+  
+    
+  
+  Cloud &amp; Microsoft 365
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../Virtualisation/Virtualisation/">
+          
+  
+    
+  
+  Virtualisation
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../supervision/supervision/">
+          
+  
+    
+  
+  Supervision Infrastructure avec Centreon
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../GLPI/glpi/">
+        
+  
+    
+  
+  GLPI
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../Outils/Putty/putty/">
+          
+  
+    
+  
+  Outils
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../page_test/">
+          
+  
+    
+  
+  Aide
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="MyDocs" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="MyDocs">
+<img alt="logo" src="../../img/network.png"/>
+</a>
+    MyDocs
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Accueil
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    Cours
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Cours
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Reseaux
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+            Reseaux
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../Reseaux/Module-Couche_OSI/">
+<span class="md-ellipsis">
+    Modèle OSI
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_1_1">
+<span class="md-nav__icon md-icon"></span>
+            Modèle OSI
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module-Couche_OSI/7_Couche_Applicative/">
+<span class="md-ellipsis">
+    Couche Applicative
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module-Couche_OSI/6_Couche_Presentation/">
+<span class="md-ellipsis">
+    Couche Présentation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module-Couche_OSI/5_Couche_Session/">
+<span class="md-ellipsis">
+    Couche Session
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module-Couche_OSI/4_Couche_Transport/">
+<span class="md-ellipsis">
+    Couche Transport
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module-Couche_OSI/3_Couche_Reseau/">
+<span class="md-ellipsis">
+    Couche Réseau
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module-Couche_OSI/2_Couche_Liaison/">
+<span class="md-ellipsis">
+    Couche Liaison
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module-Couche_OSI/1_Couche_Physique/">
+<span class="md-ellipsis">
+    Couche Physique
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module-Couche_OSI/Encapsulation/">
+<span class="md-ellipsis">
+    Encapsulation &amp; Désencapsulation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module-Couche_OSI/Unites_donnees/">
+<span class="md-ellipsis">
+    Unités de données
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Adressage
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_1_2">
+<span class="md-nav__icon md-icon"></span>
+            Adressage
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module_IP/trame_ethernet/">
+<span class="md-ellipsis">
+    Trame Ethernet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module_IP/Adressage_IPv4/">
+<span class="md-ellipsis">
+    Ipv4
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module_IP/sous_reseau/">
+<span class="md-ellipsis">
+    Sous-Réseau
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Diffusion/Collision
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_1_3">
+<span class="md-nav__icon md-icon"></span>
+            Diffusion/Collision
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Domaine_diffusion_collision/">
+<span class="md-ellipsis">
+    Domaine de Diffusion et de Collision
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Routage/le_routeur/">
+<span class="md-ellipsis">
+    Routage
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Switch &amp; VLAN
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_1_5">
+<span class="md-nav__icon md-icon"></span>
+            Switch &amp; VLAN
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Switch_VLAN/Switch/">
+<span class="md-ellipsis">
+<span style="color: #3498DB;">Le Switch</span>
+</span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Switch_VLAN/VLAN/">
+<span class="md-ellipsis">
+<span style="color: #3498DB;">VLAN: Virtual Local Area Network</span>
+</span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/dhcp/dhcp/">
+<span class="md-ellipsis">
+    DHCP
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/dns/dns/">
+<span class="md-ellipsis">
+    DNS
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    TOIP
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Système d'Exploitation
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Système d'Exploitation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Os/OS/">
+<span class="md-ellipsis">
+    OS
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Unix/Linux
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Unix/Linux
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/Introduction_UNIX_Linux/">
+<span class="md-ellipsis">
+    Introduction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/Administration_Debian/">
+<span class="md-ellipsis">
+    Administration Debian
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/Fichiers_Dossiers/">
+<span class="md-ellipsis">
+    Fichiers et Dossier
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/Lire_editer_texte/">
+<span class="md-ellipsis">
+    Lire et Editer du texte
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/Gestion_reseau_debian/">
+<span class="md-ellipsis">
+    Gestion Réseau
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/Gestion_paquets_logiciel/">
+<span class="md-ellipsis">
+    Gestion des paquets
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/Gestion_debian/">
+<span class="md-ellipsis">
+    Gestion d'une machine Debian
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/Espace_stockage/">
+<span class="md-ellipsis">
+    Gestion Stockage
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/utilisateurs_groupe/">
+<span class="md-ellipsis">
+    Gestion des Groupes &amp; Utilisateurs
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_2_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_2_10" id="__nav_2_2_2_10_label" tabindex="0">
+<span class="md-ellipsis">
+    Bash
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_2_10_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_2_10">
+<span class="md-nav__icon md-icon"></span>
+            Bash
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/Bash_introduction/">
+<span class="md-ellipsis">
+    101
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/Bash_avance/">
+<span class="md-ellipsis">
+    201
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+<span class="md-ellipsis">
+    MicroSoft
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_3">
+<span class="md-nav__icon md-icon"></span>
+            MicroSoft
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3_1" id="__nav_2_2_3_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Windows
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_1_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_3_1">
+<span class="md-nav__icon md-icon"></span>
+            Windows
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/OS_Windows/">
+<span class="md-ellipsis">
+    OS Client
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Definir_un_Pilote.md">
+<span class="md-ellipsis">
+    Pilotes
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3_2" id="__nav_2_2_3_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Windows Serveur
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_2_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_3_2">
+<span class="md-nav__icon md-icon"></span>
+            Windows Serveur
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Serveur/administration_windows/">
+<span class="md-ellipsis">
+    Administration Windows
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3_2_2" id="__nav_2_2_3_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Active Directory
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_2_2_label" class="md-nav" data-md-level="5">
+<label class="md-nav__title" for="__nav_2_2_3_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Active Directory
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Serveur/active_directory/notion/">
+<span class="md-ellipsis">
+    Notion
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Serveur/active_directory/gestion_domaine/">
+<span class="md-ellipsis">
+    Gestion d'un domaine
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Serveur/active_directory/acces_ressources/">
+<span class="md-ellipsis">
+    L'accès aux Ressources
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Serveur/active_directory/GPO/">
+<span class="md-ellipsis">
+    Stratégies de Groupe
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Serveur/active_directory/service_impression.md">
+<span class="md-ellipsis">
+    Service d'impression
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Serveur/rds/rds/">
+<span class="md-ellipsis">
+    RDS
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/CLI/">
+<span class="md-ellipsis">
+    CLI
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3_4" id="__nav_2_2_3_4_label" tabindex="0">
+<span class="md-ellipsis">
+    PowerShell
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_4_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_3_4">
+<span class="md-nav__icon md-icon"></span>
+            PowerShell
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Powershell/Presentation_de_Powershell/">
+<span class="md-ellipsis">
+    Présentation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Powershell/Cmdlets_de_base_et_objets/">
+<span class="md-ellipsis">
+    cmdlet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Powershell/aide_de_powershell/">
+<span class="md-ellipsis">
+    L'aide
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Powershell/Le_Filtrage/">
+<span class="md-ellipsis">
+    Le Filtrage
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Powershell/Le_Formatage/">
+<span class="md-ellipsis">
+    Le Formatage
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Powershell/Redirection_de_flux/">
+<span class="md-ellipsis">
+    Redirection de Flux
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Powershell/Utilisation_du_PipeLine/">
+<span class="md-ellipsis">
+    Utilisation du Pipeline "|"
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../service_web_securite/">
+<span class="md-ellipsis">
+    Serveur Web
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            Serveur Web
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../service_web_securite/serveur_apache/">
+<span class="md-ellipsis">
+    Apache2
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../service_web_securite/serveur_IIS/">
+<span class="md-ellipsis">
+    Serveur IIS
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../service_web_securite/Gestion_PKI/">
+<span class="md-ellipsis">
+    Gestion des PKI
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../service_web_securite/VPN/">
+<span class="md-ellipsis">
+    VPN
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-ellipsis">
+    ITIL
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            ITIL
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ITIL1/">
+<span class="md-ellipsis">
+    Présentation et historique
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ITIL2/">
+<span class="md-ellipsis">
+    La gestion des services
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ITIL3/">
+<span class="md-ellipsis">
+    Livre 1 - stratégie des services
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ITIL4/">
+<span class="md-ellipsis">
+    Livre 2 - Conception des services
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ITIL5/">
+<span class="md-ellipsis">
+    Livre 3 - La transition des services
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Livre 4 - Exploitation des services - publication centrales
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Livre 4 - Exploitation des services - publication centrales
+  </span>
+</a>
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lexploitation-des-services">
+<span class="md-ellipsis">
+      L'exploitation des services
+    </span>
+</a>
+<nav aria-label="L'exploitation des services" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#terminologie">
+<span class="md-ellipsis">
+      Terminologie
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#les-4-fonctions-itil-v3">
+<span class="md-ellipsis">
+      Les 4 fonctions ITIL v3
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#le-centre-de-service-au-coeur-de-lexploitation">
+<span class="md-ellipsis">
+      Le centre de service : au coeur de l'exploitation
+    </span>
+</a>
+<nav aria-label="Le centre de service : au coeur de l'exploitation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fonction-centre-de-service">
+<span class="md-ellipsis">
+      Fonction centre de service
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#centre-dappels">
+<span class="md-ellipsis">
+      Centre d'appels
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#centre-dassistance">
+<span class="md-ellipsis">
+      Centre d'assistance
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#centre-de-service">
+<span class="md-ellipsis">
+      Centre de service
+    </span>
+</a>
+<nav aria-label="Centre de service" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#centre-de-service-local">
+<span class="md-ellipsis">
+      Centre de service local
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#centre-de-service-centralise">
+<span class="md-ellipsis">
+      Centre de service centralisé
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#centre-service-virtuel">
+<span class="md-ellipsis">
+      Centre service virtuel
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#centre-service-qui-suit-le-soleil">
+<span class="md-ellipsis">
+      Centre service qui suit le soleil
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#les-outils-du-centre-de-service">
+<span class="md-ellipsis">
+      Les Outils du centre de service
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#les-processus-de-lexploitation-des-services">
+<span class="md-ellipsis">
+      Les processus de l'exploitation des services
+    </span>
+</a>
+<nav aria-label="Les processus de l'exploitation des services" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lexecution-des-requetes">
+<span class="md-ellipsis">
+      L'exécution des requêtes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#la-gestion-des-acces">
+<span class="md-ellipsis">
+      La gestion des accès
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#la-gestion-des-incidents">
+<span class="md-ellipsis">
+      La gestion des incidents
+    </span>
+</a>
+<nav aria-label="La gestion des incidents" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lincident-majeur">
+<span class="md-ellipsis">
+      L'incident majeur
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestion-des-problemes">
+<span class="md-ellipsis">
+      Gestion des problèmes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestion-evenements">
+<span class="md-ellipsis">
+      Gestion évènements
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ITIL8/">
+<span class="md-ellipsis">
+    Livre 5 - Amélioration continue des services - publication centrales
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ITIL9/">
+<span class="md-ellipsis">
+    Savoirs, savoir-faire et savoir-être
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ITIL6/">
+<span class="md-ellipsis">
+    GLPI
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ITIL10/">
+<span class="md-ellipsis">
+    Assistance avec GLPI
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Scripting
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+            Scripting
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_5_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../Script_bash/">
+<span class="md-ellipsis">
+    Bash
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_5_1" id="__nav_2_5_1_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_1">
+<span class="md-nav__icon md-icon"></span>
+            Bash
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Script_bash/scripting_bash/">
+<span class="md-ellipsis">
+    Construction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Script_bash/exemple_script/">
+<span class="md-ellipsis">
+    Script
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    PowerShell
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Python3/python/">
+<span class="md-ellipsis">
+    Python
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Cisco/ios/">
+<span class="md-ellipsis">
+    Cisco IOS
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Cloud_M365/cloud/">
+<span class="md-ellipsis">
+    Cloud &amp; Microsoft 365
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+<span class="md-ellipsis">
+    Virtualisation
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Virtualisation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Virtualisation/Virtualisation/">
+<span class="md-ellipsis">
+    Virtualisation
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Applications de virtualisation
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+            Applications de virtualisation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Virtualisation/vmware_workstation/">
+<span class="md-ellipsis">
+    VMware WorkStation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    VMware vSphere
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Microsoft Hyper-V
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Gestion du réseau
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Gestion du Stockage
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Gestion de Data-Center
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Virtualisation/virtualisation_srv/">
+<span class="md-ellipsis">
+    Virtualisation de serveurs
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+<span class="md-ellipsis">
+    Supervision Infrastructure avec Centreon
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            Supervision Infrastructure avec Centreon
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../supervision/supervision/">
+<span class="md-ellipsis">
+    Supervision
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../supervision/snmp_nrpe/">
+<span class="md-ellipsis">
+    Protocoles SNMP &amp; NRPE
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Centreon
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+            Centreon
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../supervision/Centreon/installation_centreon/">
+<span class="md-ellipsis">
+    Installation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../supervision/Centreon/commandes_supervision/">
+<span class="md-ellipsis">
+    Commandes
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../supervision/Centreon/Configuration/">
+<span class="md-ellipsis">
+    Configuration
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../GLPI/glpi/">
+<span class="md-ellipsis">
+    GLPI
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+<span class="md-ellipsis">
+    Outils
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            Outils
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Outils/Putty/putty/">
+<span class="md-ellipsis">
+    Putty
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Outils/Nmap/nmap/">
+<span class="md-ellipsis">
+    Nmaps
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/FogProject/fogproject/">
+<span class="md-ellipsis">
+    FogProject
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+<span class="md-ellipsis">
+    Aide
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+            Aide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../page_test/">
+<span class="md-ellipsis">
+    Page Test
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Kaisen/modification_terminal/">
+<span class="md-ellipsis">
+    Kaisen
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../GLPI/mariadb/">
+<span class="md-ellipsis">
+    MariaDB
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../revision/revision/">
+<span class="md-ellipsis">
+    Révision
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lexploitation-des-services">
+<span class="md-ellipsis">
+      L'exploitation des services
+    </span>
+</a>
+<nav aria-label="L'exploitation des services" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#terminologie">
+<span class="md-ellipsis">
+      Terminologie
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#les-4-fonctions-itil-v3">
+<span class="md-ellipsis">
+      Les 4 fonctions ITIL v3
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#le-centre-de-service-au-coeur-de-lexploitation">
+<span class="md-ellipsis">
+      Le centre de service : au coeur de l'exploitation
+    </span>
+</a>
+<nav aria-label="Le centre de service : au coeur de l'exploitation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fonction-centre-de-service">
+<span class="md-ellipsis">
+      Fonction centre de service
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#centre-dappels">
+<span class="md-ellipsis">
+      Centre d'appels
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#centre-dassistance">
+<span class="md-ellipsis">
+      Centre d'assistance
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#centre-de-service">
+<span class="md-ellipsis">
+      Centre de service
+    </span>
+</a>
+<nav aria-label="Centre de service" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#centre-de-service-local">
+<span class="md-ellipsis">
+      Centre de service local
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#centre-de-service-centralise">
+<span class="md-ellipsis">
+      Centre de service centralisé
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#centre-service-virtuel">
+<span class="md-ellipsis">
+      Centre service virtuel
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#centre-service-qui-suit-le-soleil">
+<span class="md-ellipsis">
+      Centre service qui suit le soleil
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#les-outils-du-centre-de-service">
+<span class="md-ellipsis">
+      Les Outils du centre de service
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#les-processus-de-lexploitation-des-services">
+<span class="md-ellipsis">
+      Les processus de l'exploitation des services
+    </span>
+</a>
+<nav aria-label="Les processus de l'exploitation des services" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lexecution-des-requetes">
+<span class="md-ellipsis">
+      L'exécution des requêtes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#la-gestion-des-acces">
+<span class="md-ellipsis">
+      La gestion des accès
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#la-gestion-des-incidents">
+<span class="md-ellipsis">
+      La gestion des incidents
+    </span>
+</a>
+<nav aria-label="La gestion des incidents" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lincident-majeur">
+<span class="md-ellipsis">
+      L'incident majeur
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestion-des-problemes">
+<span class="md-ellipsis">
+      Gestion des problèmes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestion-evenements">
+<span class="md-ellipsis">
+      Gestion évènements
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="livre-4-exploitation-des-services">Livre 4 - Exploitation des services</h1>
+<p><u>Objectifs</u> </p>
+<p>Définir le rôle de l'exploitation des services<br/>
+Définir le centre de services<br/>
+Différencier les types de support<br/>
+Identifier les types d'architecture d'un centre de services<br/>
+Identifier les processus  </p>
+<h2 id="lexploitation-des-services">L'exploitation des services</h2>
+<p><u>Objectif</u> </p>
+<ul>
+<li>Coordonner les activités des processus garantissant l'atteinte des niveaux de service convenus</li>
+<li>Gérer l'exploitation au quotidien</li>
+</ul>
+<p><u>Ses missions</u> </p>
+<ul>
+<li>Coordonner et réaliser les activités nécessaires à la fourniture des services</li>
+<li>Exploitation - Supervision - Pilotage - Support - Maintenance</li>
+<li>Etre efficace puis efficient tout au long de la vie des services (coût)</li>
+<li>Produire des indicateurs pour permettre à la phase d'amélioration continue de faire des propositions d'optimisation de la DSI</li>
+</ul>
+<h3 id="terminologie">Terminologie</h3>
+<p><u>Stabilité</u> </p>
+<ul>
+<li>Le SI fonctionne normalement et est disponible : on ne change plus rien</li>
+<li>Réduction du nombre de changements et donc de <strong>M</strong>ises <strong>E</strong>n <strong>P</strong>roduction au minimum (<strong>MEP</strong>)</li>
+</ul>
+<p><u>Réactivité</u> </p>
+<ul>
+<li>Réaction aux sollicitations des métiers pour les rendre les plus performantes possibles</li>
+</ul>
+<p><u>Coûts par rapport à qualité</u> </p>
+<ul>
+<li>Eviter la surqualité, réduire les coûts en gardant le niveau demandé : industrialisation de l'exploitation, supervision et pilotage</li>
+</ul>
+<p><u>Réactivité par rapport à proactivité</u></p>
+<ul>
+<li>Agir en fonction des évènements ou incidents</li>
+<li>Essayer d'anticiper en recherchant des moyens d'optimiser le SI</li>
+<li>Investir pour garantir un bon fonctionnement</li>
+</ul>
+<h2 id="les-4-fonctions-itil-v3">Les 4 fonctions ITIL v3</h2>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="./img/ITIL/../../../img/ITIL/fonction_ITILv3.png"><img alt="4 fonctions ITILv3" src="./img/ITIL/../../../img/ITIL/fonction_ITILv3.png"/></a></p>
+<h2 id="le-centre-de-service-au-coeur-de-lexploitation">Le centre de service : au coeur de l'exploitation</h2>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="./img/ITIL/../../../img/ITIL/centre_service.png"><img alt="centre de service" src="./img/ITIL/../../../img/ITIL/centre_service.png"/></a></p>
+<h3 id="fonction-centre-de-service">Fonction centre de service</h3>
+<p><u>Ses missions</u> </p>
+<ul>
+<li>Le "service Desk"</li>
+<li>Etre point de contact unique pour les utilisateurs</li>
+<li>Porter toute la relation avec les utilisateurs : relation bidirectionnelle</li>
+<li>Servir les utilisateurs et les satisfaires</li>
+<li>Garantir la bonne image de la DSI auprès des utilisateurs</li>
+<li>Etre vitrine du département informatique</li>
+<li>Répondre aux questions et demandes des utilisateurs</li>
+<li>Restaurer le service dans un état normal, standard le plus rapidement possible dans le respect des délais définis et contractuels</li>
+<li>Assurer les activités de N1, gérer les escalades aux groupes supérieurs et coordonner</li>
+</ul>
+<p><u>Les concepts</u> </p>
+<ul>
+<li>Le centre d'appels (Call Center)</li>
+<li>Le centre d'assistance (Help Desk)</li>
+<li>Le centre de services (Service Center)</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="./img/ITIL/../../../img/ITIL/fonction_centre_service.png"><img alt="fonction centre service" src="./img/ITIL/../../../img/ITIL/fonction_centre_service.png"/></a></p>
+<h3 id="centre-dappels">Centre d'appels</h3>
+<ul>
+<li>Prendre des appels</li>
+<li>PAsser des appels en masse</li>
+<li>Un standard téléphonique est en place</li>
+<li>On l'appelle / Il nous rappelle</li>
+<li>On s'identifie (nom, numéro de contrat, etc.)</li>
+<li>On explique les raisons de l'appel</li>
+<li>La réponse du centre d'appel est souvent: "On vous rappellera", "Un technicien vous rappellera"</li>
+<li>Très peu de valeur ajoutée, réponse minimale pour l'appelant</li>
+<li>Il est le niveau 0</li>
+<li>Gère très peu d'actions, amène une forte frustration des utilisateurs</li>
+<li>Transfert le ticket d'appel</li>
+</ul>
+<h3 id="centre-dassistance">Centre d'assistance</h3>
+<ul>
+<li>Gère les pannes et les dysfonctionnements remontés par les utilisateurs</li>
+<li>Gère et coordonne toutes les activités liées au dépannage de l'utilisateur</li>
+<li>Donne des informations sur l'avancement du dépannage si l'utilisateur le demande</li>
+<li>Est dans des actions de type réactif</li>
+<li>Attend que l'utilisateur appelle pour le renseigner</li>
+<li>Le centre d'assistance</li>
+<li>Est là en support des utilisateurs qui appellent</li>
+<li>Répond aux sollicitations des utilisateurs</li>
+<li>A peu ou pas d'actions proactives vers les utilisateurs</li>
+</ul>
+<h3 id="centre-de-service">Centre de service</h3>
+<ul>
+<li>Est un surensemble du centre d'assistance en ajoutant des activités de proactivité</li>
+<li>Intervient dans tous les processus de l'exploitation des services</li>
+<li>Et dans une partie des activités de deux processus de la transition des services</li>
+<li>La gestion des changements</li>
+<li>La gestion des déploiements et des mises en production</li>
+<li>Ses activités</li>
+<li>La prise en compte de l'appel de l'utilisateur </li>
+<li>Ouverture du ticket d'appel dans l'outil de gestion du centre de services</li>
+<li>Enregistrement des informations liées à l'appel de l'utilisateur</li>
+<li>La catégorisation</li>
+<li>La codification</li>
+<li>L'investigation et le diagnostic</li>
+<li>La réponse dépendra de la demande utilisateur</li>
+<li>Escalade vers les groupes support de niveau 2 et de niveau 3 si nécessaire</li>
+<li>La suivi de l'appel</li>
+<li>La résolution / clôture du ticket</li>
+<li>La gestion des enquêtes de satisfaction des utilisateurs</li>
+<li>La mise à jour de la base de connaissance</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="./img/ITIL/../../../img/ITIL/centre_service_configuration.png"><img alt="centre de service configuration" src="./img/ITIL/../../../img/ITIL/centre_service_configuration.png"/></a></p>
+<h4 id="centre-de-service-local">Centre de service local</h4>
+<p>Implanté sur le même site que les utilisateurs<br/>
+Architecture souvent représentée par un guichet, un bureau où les utilisateurs peuvent venir<br/>
+Implémente des environnements très spécialisés avec des besoins spécifiques  </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="./img/ITIL/../../../img/ITIL/1_centre_service_local.png"><img alt="centre service local" src="./img/ITIL/../../../img/ITIL/1_centre_service_local.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="./img/ITIL/../../../img/ITIL/2_centre_service_local.png"><img alt="centre service local 2" src="./img/ITIL/../../../img/ITIL/2_centre_service_local.png"/></a></p>
+<h4 id="centre-de-service-centralise">Centre de service centralisé</h4>
+<p>Implanté sur un site unique<br/>
+Externalisé<br/>
+Contacté par des canaux de télécommunication (téléphone, e-mail, intranet)  </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="./img/ITIL/../../../img/ITIL/1_centre_service_centralisé.png"><img alt="centre service centralisé" src="./img/ITIL/../../../img/ITIL/1_centre_service_centralisé.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="./img/ITIL/../../../img/ITIL/2_centre_service_centralisé.png"><img alt="centre service centralisé 2" src="./img/ITIL/../../../img/ITIL/2_centre_service_centralisé.png"/></a></p>
+<h4 id="centre-service-virtuel">Centre service virtuel</h4>
+<p>Mettre le demandeur en relation avec le technicien possédant le meilleur profil<br/>
+En fonction de :
+- L'heure
+- Du pays ou du site d'appel
+- Du profil de l'utilisateur appelant
+- Du métier du demandeur</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="./img/ITIL/../../../img/ITIL/1_centre_service_virtuel.png"><img alt="centre service virtuel" src="./img/ITIL/../../../img/ITIL/1_centre_service_virtuel.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="./img/ITIL/../../../img/ITIL/2_centre_service_virtuel.png"><img alt="centre service virtuel 2" src="./img/ITIL/../../../img/ITIL/2_centre_service_virtuel.png"/></a></p>
+<h4 id="centre-service-qui-suit-le-soleil">Centre service qui suit le soleil</h4>
+<p>Couvre une problématique particulière<br/>
+Fonctionne 24h/24<br/>
+Réparti dans plusieurs entités aux quatre coins du monde dans des faisceaux horaires différents<br/>
+A toute heure du jour ou de la nuit, l'appel est aiguillé vers un centre ou une équipe de jour présente<br/>
+Choix des moyens et des outils<br/>
+Avoir des procédures et des escalades communes et partagées<br/>
+Avoir une langue commune (souvent l'anglais)  </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="./img/ITIL/../../../img/ITIL/centre_service_soleil.png"><img alt="centre service soleil" src="./img/ITIL/../../../img/ITIL/centre_service_soleil.png"/></a></p>
+<h3 id="les-outils-du-centre-de-service">Les Outils du centre de service</h3>
+<p>L'autocommutateur téléphonique intelligent<br/>
+Serveur Vocal Interactif<br/>
+Couplage téléphonique informatique<br/>
+Logiciel de relation utilisateur (CRM)<br/>
+Intégration avec les autres outils  </p>
+<ul>
+<li>Le CMS</li>
+<li>La base des erreurs connues (KEDB)</li>
+<li>La gestion documentaire de l'entreprise (SKMS)</li>
+<li>Les outils de gestion de services</li>
+</ul>
+<p>Centre de services dit en libre-service (utilisateurs autonomes)</p>
+<h2 id="les-processus-de-lexploitation-des-services">Les processus de l'exploitation des services</h2>
+<ul>
+<li>L'exécution des requêtes</li>
+<li>Traiter les demandes de services provenant des utilisateurs</li>
+<li>La gestion des accès</li>
+<li>Traiter les requêtes relatives à l'accès, aux droits et aux privilèges des utilisateurs</li>
+<li>La gestion des incidents</li>
+<li>Restauration au plus vite du service dégradé ou arrêté dans les délais impartis</li>
+<li>La gestion des problèmes</li>
+<li>Rechercher les causes et solutions à des incidents récurrents</li>
+<li>La gestion des évènements</li>
+<li>Interpréter et gérer tous les faits détectables qui arrivent sur l'infrastructure, qu'ils soient normaux ou anormaux</li>
+</ul>
+<h3 id="lexecution-des-requetes">L'exécution des requêtes</h3>
+<p><u>Objectifs</u> </p>
+<p>Fournir un canal privilégié vers la DSI aux utilisateurs pour émettre et traiter leurs demandes<br/>
+Fournir de l'assistance auprès des utilisateurs sur l'utilisation des services<br/>
+Approvisionner des composants standards des services suivant les demandes des utilisateurs<br/>
+Fournir un canal pour faire remonter les plaintes des utilisateurs vers la DSI  </p>
+<p><u>Une requête : demande de service provenant d'un utilisateur</u> </p>
+<p>Assistance<br/>
+Conseil<br/>
+Information<br/>
+Changement standard simple  </p>
+<p><u>Une requête va réaliser une action</u> </p>
+<p>Limitée dans le temps<br/>
+A faible risque et coût<br/>
+Traitée par une seule personne  </p>
+<p><u>Le catalogue des requêtes</u> </p>
+<p>Base du fonctionnement de ce processus<br/>
+Liste précise et détaillée des demandes de services provenant des utilisateurs<br/>
+Identifie précisément quel profil d'utilisateur a le droit de demander telle requête<br/>
+Diffusion et promotion de ce catalogue auprès de tous les utilisateurs sont un enjeu majeur  </p>
+<h3 id="la-gestion-des-acces">La gestion des accès</h3>
+<p><u>Objectifs</u> </p>
+<p>Mettre en place les procédures définies par :  </p>
+<ul>
+<li>La politique de sécurité de la DSI</li>
+<li>Les recommandations de la gestion de la disponibilité</li>
+<li>Les procédures doivent aussi être connues et diffusées auprès de tous</li>
+</ul>
+<p>Fournir aux utilisateurs les droits et privilèges d'un service ou d'un groupe de services  </p>
+<p><u>Les droits</u> </p>
+<p>Ensemble des règles qui vont définir les types d'accès à un service ou un groupe de services  </p>
+<p><u>L'identité</u> </p>
+<p>Gestion d'une installation fiable des utilisateurs qui vont accéder à ce service  </p>
+<p><u>L'accès au service</u> </p>
+<p>Est le niveau, le périmètre de fonctionnalités ou de données auquel un utilisateur peut avoir accès<br/>
+Notions de confidentialité, gestion des mots de passe et règles associées (initialisation, validation et revalidation)  </p>
+<p><u>L'identité des groupes</u> </p>
+<p>Cartographie des groupes de l'entreprise nécessaire<br/>
+Notions de groupe de services offerts à un utilisateur ou groupe d'utilisateurs<br/>
+Cartographie des services mettant en avant les familles de services en fonction des droits  </p>
+<h2 id="la-gestion-des-incidents">La gestion des incidents</h2>
+<p><u>Objectifs</u> </p>
+<ul>
+<li>Rétablir le service dans un état normal le plus rapidement possible conformément au <strong>SLA</strong></li>
+<li>Rétablir c'est trouver une solution, un palliatif, qui va relancer le service dans son état normal</li>
+<li>Minimiser l'impact de l'incident sur les utilisateurs (les conséquences pour l'utilisateur)</li>
+<li>Rétablir le service dans les délais contractuels (engagement auprès du client)</li>
+<li>Ce processus ne s'occupe pas de trouver la cause de l'incident</li>
+</ul>
+<p><u>Définition d'un incident</u> </p>
+<ul>
+<li>Ne pas confondre <strong>incident</strong>, <strong>évènement</strong> et <strong>problème</strong></li>
+<li>Un évènement est un fait détectable qui arrive du SI alors que l'incident est un évènement qui altère ou dégrade le service rendu</li>
+<li>Il survient lorsque le service est arrêté ou quand la qualité du service est diminuée</li>
+<li>L'incident a pour origine un évènement (détecté ou non), mais tous les évènements ne créent pas d'incident</li>
+<li>Il est détecté soit par un utilisateur, des outils de supervision ou de pilotage par la gestion des évènements</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Codifier un incident</p>
+<p>C'est déterminer la priorité que l'on va lui attribuer<br/>
+Pour cela:<br/>
+      - Identifier l'impact de l'incident<br/>
+      - Identifier l'urgence de l'incident<br/>
+      - Utilisation d'une matrice ou d'un référentiel applicatif<br/>
+Détermination du délai de rétablissement  </p>
+</div>
+<div class="admonition danger">
+<p>Toutes ces notions devront être notées dans les SLA pour chaque service et négociées avec les clients avant la mise en exploitation du service.</p>
+</div>
+<p>L'impact : effet de l'incident sur l'utilisation d'un service  </p>
+<ul>
+<li>Perte d'exploitation:</li>
+<li>Nombre d'utilisateurs bloqués</li>
+<li>Non-respect des dispositions légales</li>
+<li>Positionné sur une échelle de 1 à 3 ou de 1 à 5 (1 élevé, 3 ou 5 faible)</li>
+</ul>
+<p>L'urgence : temps dont dispose la DSI pour rétablir le service  </p>
+<ul>
+<li>Positionnée sur une échelle de 1 à 3 ou de 1 à 5</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="./img/ITIL/../../../img/ITIL/gestion_priorité.png"><img alt="gestion des incidents" src="./img/ITIL/../../../img/ITIL/gestion_priorité.png"/></a></p>
+<h3 id="lincident-majeur">L'incident majeur</h3>
+<ul>
+<li>Fort impact sur les clients</li>
+<li>Hors grille de codification</li>
+<li>D'une priorité très élevée</li>
+<li>Traité différemment des autres incidents</li>
+<li>Utilisation d'une procédure dite de "crise"</li>
+</ul>
+<p><u>Les escalades</u> </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="./img/ITIL/../../../img/ITIL/1_gestion_incidents.png"><img alt="gestion incident" src="./img/ITIL/../../../img/ITIL/1_gestion_incidents.png"/></a></p>
+<p><u>Concepts</u></p>
+<ul>
+<li>Période de fourniture des services : définir un calendrier d'utilisation des services</li>
+<li>Arbre de résolution</li>
+<li>Modèle d'incident - Branche de l'arbre la plus souvent parcourue</li>
+<li>Listing de dépannage - Check-list</li>
+<li>Base de connaissance : liste des incidents connus et leurs solutions</li>
+<li>Incident majeur : gravité importante pour les clients</li>
+<li>Crises : incident majeur à résoudre tout de suite. Peut donner suite à un Post-Mortem</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="./img/ITIL/../../../img/ITIL/2_gestion_incidents.png"><img alt="gestion incident" src="./img/ITIL/../../../img/ITIL/2_gestion_incidents.png"/></a></p>
+<h2 id="gestion-des-problemes">Gestion des problèmes</h2>
+<p><u>Objectifs</u> </p>
+<ul>
+<li>Faire diminuer le nombre d'incidents  </li>
+<li>Prévenir l'apparition de nouveaux incidents et problèmes  </li>
+<li>Minimiser l'impact des incidents  </li>
+<li>Optimiser l'efficacité des équipes supports  </li>
+<li>Contrôler les problèmes : les transformer en erreurs connues  </li>
+<li>Gérer les erreurs  </li>
+<li>La proactivité:</li>
+<li>Participe à maintenir le niveau de qualité de service demandé</li>
+<li>Prend l'iniative de la recherche de situations qui dégradent ce niveau</li>
+</ul>
+<p><u>Un problème</u> </p>
+<p>Situation dont on recherche la cause inconnue d'un ou plusieurs incidents<br/>
+La gestion des incidents traite en temps réel les situations (front line)<br/>
+La gestion des problèmes traite les causes de ces situations (back office)<br/>
+Tous les incidents ne déclenchent pas de problèmes<br/>
+On ouvre un problème dans le cas d'incidents récurrents ou dans un contexte d'incident majeur  </p>
+<p><u>Une erreur connue</u> </p>
+<p>Problème dont on connait la cause et dont on a identifié une solution temporaire ou définitive<br/>
+La base des erreurs connues (KEBD) contient l'ensemble de ces problèmes transformés en erreurs connues<br/>
+Base mise à disposition du centre de services sous la responsabilité des groupes support  </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="./img/ITIL/../../../img/ITIL/gestion_problèmes.png"><img alt="gestion problèmes" src="./img/ITIL/../../../img/ITIL/gestion_problèmes.png"/></a></p>
+<h2 id="gestion-evenements">Gestion évènements</h2>
+<p><u>Objectifs</u> </p>
+<ul>
+<li>Minimiser le nombre d'incidents  </li>
+<li>Objectif principal:</li>
+<li>Plus d'efficacité dans la gestion des évènements entraîne moins d'incidents</li>
+<li>Surveiller les évènements et les comprendre</li>
+<li>Positionner des seuils et des alarmes</li>
+<li>Garantir le niveau de qualité de service</li>
+<li>Anticiper les situations pouvant détériorer le niveau de qualité de service</li>
+<li>Avoir une action proactive sur la gestion des évènements pour maintenir et garantir le niveau de qualité de service</li>
+<li>Positionner des seuils sur les composants clés</li>
+</ul>
+<p><u>Définition d'un évènement</u> </p>
+<p>Fait détectable arrivant sur le système d'information ou sur la fourniture d'un service<br/>
+Changement d'état d'un ou plusieurs composants de l'infrastructure<br/>
+Aléatoire, observable et mesurable<br/>
+Des outils sont nécessaires pour le détecter et le mesurer<br/>
+Sans outillage, pas d'évènements  </p>
+<p><u>4 types d'évènements</u> </p>
+<pre class="mermaid"><code>graph TB
+ A[Normal];
+ B[Exception];
+ C[Avertissement];
+ D[Alerte ou alarme];
+</code></pre>
+<details class="note" open="open">
+<summary>Type Evènements</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Normal</label><label for="__tabbed_1_2">Exception</label><label for="__tabbed_1_3">Avertissement</label><label for="__tabbed_1_4">Alerte (Alarme)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Indique un fonctionnement normal dans la Baseline.  </p>
+</div>
+<div class="tabbed-block">
+<p>Evènement anormal survenu sur l'infrastructure<br/>
+Peut-être visible par les utilisateurs sans dégrader le niveau de qualité de service offert<br/>
+Peut se transformer en incident si la situation impacte le niveau de qualité de service  </p>
+</div>
+<div class="tabbed-block">
+<p>Evènement inhabituel, un avertissement (Approche d'un seuil critique, un pic d'activité)  </p>
+</div>
+<div class="tabbed-block">
+<p>Exception nécessitant une intervention<br/>
+Prédéfini en avance avec positionnement d'un seuil<br/>
+Des consignes préétablies vont permettre d'intervenir<br/>
+Un travail préliminaire sur l'identification des seuils est nécessaire  </p>
+</div>
+</div>
+</input></input></input></input></div>
+</details>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="./img/ITIL/../../../img/ITIL/gestion_evenements.png"><img alt="gestion evenements" src="./img/ITIL/../../../img/ITIL/gestion_evenements.png"/></a></p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+  Retour en haut de la page
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2023 - Mathieu Lecat
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/in/mathieu-lecat" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.tabs", "navigation.top", "navigation.indexes", "navigation.tracking", "navigation.instant", "navigation.path", "navigation.indexes", "search.suggest", "content.code.annotation", "content.code.copy", "content.tooltips"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+<script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+window.mermaidConfig = {default: {
+    startOnLoad: false
+}};</script><script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

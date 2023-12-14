@@ -1,0 +1,4694 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://192.168.1.90:8000/index.md/Windows/Serveur/administration_windows/">
+      
+      
+        <link rel="prev" href="../../OS_Windows/">
+      
+      
+        <link rel="next" href="../active_directory/notion/">
+      
+      
+      <link rel="icon" href="../../../img/computer-2.svg">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>Administration Windows - MyDocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m1 5h-2v4H7v2h4v4h2v-4h4v-2h-4V7Z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#administration-windows" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="MyDocs" class="md-header__button md-logo" aria-label="MyDocs" data-md-component="logo">
+      
+  <img src="../../../img/network.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MyDocs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Administration Windows
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../Reseaux/Module-Couche_OSI/" class="md-tabs__link">
+          
+  
+    
+  
+  Cours
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Cisco/ios/" class="md-tabs__link">
+        
+  
+    
+  
+  Cisco IOS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Cloud_M365/cloud/" class="md-tabs__link">
+        
+  
+    
+  
+  Cloud & Microsoft 365
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Virtualisation/Virtualisation/" class="md-tabs__link">
+          
+  
+    
+  
+  Virtualisation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../supervision/supervision/" class="md-tabs__link">
+          
+  
+    
+  
+  Supervision Infrastructure avec Centreon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../GLPI/glpi/" class="md-tabs__link">
+        
+  
+    
+  
+  GLPI
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Outils/Putty/putty/" class="md-tabs__link">
+          
+  
+    
+  
+  Outils
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../page_test/" class="md-tabs__link">
+          
+  
+    
+  
+  Aide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MyDocs" class="md-nav__button md-logo" aria-label="MyDocs" data-md-component="logo">
+      
+  <img src="../../../img/network.png" alt="logo">
+
+    </a>
+    MyDocs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cours
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reseaux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Reseaux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Reseaux/Module-Couche_OSI/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Modèle OSI
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Modèle OSI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module-Couche_OSI/7_Couche_Applicative/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Applicative
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module-Couche_OSI/6_Couche_Presentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Présentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module-Couche_OSI/5_Couche_Session/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Session
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module-Couche_OSI/4_Couche_Transport/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Transport
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module-Couche_OSI/3_Couche_Reseau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Réseau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module-Couche_OSI/2_Couche_Liaison/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Liaison
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module-Couche_OSI/1_Couche_Physique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Physique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module-Couche_OSI/Encapsulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Encapsulation & Désencapsulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module-Couche_OSI/Unites_donnees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unités de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Adressage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Adressage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module_IP/trame_ethernet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trame Ethernet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module_IP/Adressage_IPv4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ipv4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module_IP/sous_reseau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sous-Réseau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Diffusion/Collision
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Diffusion/Collision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Domaine_diffusion_collision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Domaine de Diffusion et de Collision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Routage/le_routeur/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Routage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Switch & VLAN
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            Switch & VLAN
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Switch_VLAN/Switch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <span style="color: #3498DB;">Le Switch</span>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Switch_VLAN/VLAN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <span style="color: #3498DB;">VLAN: Virtual Local Area Network</span>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/dhcp/dhcp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DHCP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/dns/dns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DNS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TOIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Système d'Exploitation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Système d'Exploitation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Os/OS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unix/Linux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Unix/Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Introduction_UNIX_Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Administration_Debian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Administration Debian
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Fichiers_Dossiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fichiers et Dossier
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Lire_editer_texte/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lire et Editer du texte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Gestion_reseau_debian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion Réseau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Gestion_paquets_logiciel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion des paquets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Gestion_debian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion d'une machine Debian
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Espace_stockage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion Stockage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/utilisateurs_groupe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion des Groupes & Utilisateurs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2_10" id="__nav_2_2_2_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bash
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            Bash
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Bash_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    101
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Bash_avance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    201
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MicroSoft
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            MicroSoft
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_1" id="__nav_2_2_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Windows
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS_Windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OS Client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Definir_un_Pilote.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pilotes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_2" id="__nav_2_2_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Windows Serveur
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Windows Serveur
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Administration Windows
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Administration Windows
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#windows-serveur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows Serveur
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-differentes-editions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les différentes éditions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-services-pris-en-charge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les services pris en charge
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-du-systeme-et-composants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation du système et composants
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation du système et composants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimale-server-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minimale / Server Core
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-composants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les composants
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les composants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#role-et-fonctionnalites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rôle et Fonctionnalités
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outils-de-gestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outils de gestion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-du-stockage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestion du Stockage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestion du Stockage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format-de-table-de-partition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format de table de partition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-de-configuration-des-disques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types de configuration des disques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partitionnement-et-raid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partitionnement et RAID
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Partitionnement et RAID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disque-de-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disque de Base
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disque-dynamique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disque Dynamique
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Disque Dynamique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#volume-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Volume Simple
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#volume-fractionne" class="md-nav__link">
+    <span class="md-ellipsis">
+      Volume Fractionné
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid-0-volume-agrege-par-bandes" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAID-0 - Volume agrégé par bandes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid-1-volume-en-miroir" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAID-1 - Volume en miroir
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid-5-volume-agrege-par-bandes-avec-parite" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAID-5 - Volume agrégé par bandes avec parité
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formatage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formatage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-outils" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les outils
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_2_2" id="__nav_2_2_3_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Active Directory
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_2_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Active Directory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../active_directory/notion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../active_directory/gestion_domaine/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion d'un domaine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../active_directory/acces_ressources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L'accès aux Ressources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../active_directory/GPO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stratégies de Groupe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../active_directory/service_impression.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Service d'impression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rds/rds/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RDS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CLI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_4" id="__nav_2_2_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PowerShell
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            PowerShell
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Powershell/Presentation_de_Powershell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Présentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Powershell/Cmdlets_de_base_et_objets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cmdlet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Powershell/aide_de_powershell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L'aide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Powershell/Le_Filtrage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le Filtrage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Powershell/Le_Formatage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le Formatage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Powershell/Redirection_de_flux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redirection de Flux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Powershell/Utilisation_du_PipeLine/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Utilisation du Pipeline "|"
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../service_web_securite/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Serveur Web
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Serveur Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service_web_securite/serveur_apache/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apache2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service_web_securite/serveur_IIS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Serveur IIS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service_web_securite/Gestion_PKI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion des PKI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service_web_securite/VPN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VPN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ITIL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            ITIL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ITIL/ITIL1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Présentation et historique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ITIL/ITIL2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    La gestion des services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ITIL/ITIL3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Livre 1 - stratégie des services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ITIL/ITIL4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Livre 2 - Conception des services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ITIL/ITIL5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Livre 3 - La transition des services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ITIL/ITIL7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Livre 4 - Exploitation des services - publication centrales
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ITIL/ITIL8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Livre 5 - Amélioration continue des services - publication centrales
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ITIL/ITIL9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Savoirs, savoir-faire et savoir-être
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ITIL/ITIL6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GLPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ITIL/ITIL10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assistance avec GLPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Scripting
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Scripting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Script_bash/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Bash
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5_1" id="__nav_2_5_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Bash
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Script_bash/scripting_bash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Construction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Script_bash/exemple_script/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Script
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PowerShell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python3/python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cisco/ios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cisco IOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud_M365/cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud & Microsoft 365
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Virtualisation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Virtualisation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Virtualisation/Virtualisation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Applications de virtualisation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Applications de virtualisation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Virtualisation/vmware_workstation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VMware WorkStation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VMware vSphere
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Hyper-V
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion du réseau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion du Stockage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion de Data-Center
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Virtualisation/virtualisation_srv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualisation de serveurs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Supervision Infrastructure avec Centreon
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Supervision Infrastructure avec Centreon
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../supervision/supervision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Supervision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../supervision/snmp_nrpe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Protocoles SNMP & NRPE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Centreon
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Centreon
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../supervision/Centreon/installation_centreon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../supervision/Centreon/commandes_supervision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Commandes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../supervision/Centreon/Configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GLPI/glpi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GLPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Outils
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Outils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Outils/Putty/putty/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Putty
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Outils/Nmap/nmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nmaps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/FogProject/fogproject/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FogProject
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Aide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Aide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../page_test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Page Test
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Kaisen/modification_terminal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kaisen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GLPI/mariadb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MariaDB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../revision/revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Révision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#windows-serveur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows Serveur
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-differentes-editions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les différentes éditions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-services-pris-en-charge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les services pris en charge
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-du-systeme-et-composants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation du système et composants
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation du système et composants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimale-server-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minimale / Server Core
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-composants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les composants
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les composants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#role-et-fonctionnalites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rôle et Fonctionnalités
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outils-de-gestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outils de gestion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-du-stockage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestion du Stockage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestion du Stockage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format-de-table-de-partition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format de table de partition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-de-configuration-des-disques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types de configuration des disques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partitionnement-et-raid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partitionnement et RAID
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Partitionnement et RAID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disque-de-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disque de Base
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disque-dynamique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disque Dynamique
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Disque Dynamique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#volume-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Volume Simple
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#volume-fractionne" class="md-nav__link">
+    <span class="md-ellipsis">
+      Volume Fractionné
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid-0-volume-agrege-par-bandes" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAID-0 - Volume agrégé par bandes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid-1-volume-en-miroir" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAID-1 - Volume en miroir
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid-5-volume-agrege-par-bandes-avec-parite" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAID-5 - Volume agrégé par bandes avec parité
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formatage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formatage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-outils" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les outils
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="administration-windows"><span style="color: #3498DB;">Administration Windows</span></h1>
+<h2 id="windows-serveur"><span style="color: #F39C12;"><u>Windows Serveur</u></span></h2>
+<figure>
+<p><a class="glightbox" href="../img/famille_serveur.png#only-light" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/famille_serveur.png#only-light" width="600" /></a>
+<a class="glightbox" href="../img/famille_serveur_nonmodifie.png#only-dark" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/famille_serveur_nonmodifie.png#only-dark" width="600" /></a></p>
+</figure>
+<p>Au même titre que la version client, les éditions serveur recoivent des releases permettant l'amélioration de l'OS en matière de sécurité, de performances etc.  </p>
+<h2 id="les-differentes-editions"><span style="color: #F39C12;"><u>Les différentes éditions</u></span></h2>
+<figure>
+<p><a class="glightbox" href="../img/edition_serveur.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/edition_serveur.png" width="600" /></a></p>
+</figure>
+<h2 id="les-services-pris-en-charge"><span style="color: #F39C12;"><u>Les services pris en charge</u></span></h2>
+<p>L'installation d'un serveur en entreprise permet d'allouer des services spécifiques facilitant la gestion de l'infrastructure de cette même entreprise.<br />
+Un ensemble de services est nativement pris en charge par les systèmes d'exploitation Windows Server:  </p>
+<p>Les services de domaine :  </p>
+<ul>
+<li>Services de domaine Active Directory (AD DS) : Fournit la gestion de contextes de domaine Active Directory;</li>
+<li>Service de fédération AD (AD FS) : Services fédérés de gestion des identités;</li>
+<li>Services de gestion des droits AD (AD RMS) : Protection des ressources contre une utilisation non autorisée, basée sur des certificats ( permettant notamment d'interdire la copie ou l'impression d'un fichier);</li>
+<li>Service de certificat AD (AD CS) : Service de gestion d'une autorité de certification (fournit une infrastructure à clef publique);</li>
+</ul>
+<p>Autres services pris en charge :  </p>
+<ul>
+<li>DNS : Service de résolution de noms d'hôtes;</li>
+<li>DHCP : Service de gestion de l'adressage IP;</li>
+<li>Hyper-V : Service de virtualisation Microsoft;</li>
+<li>WDS : Service de déploiement d'OS Windows à travers le réseau;</li>
+<li>WSUS : Service de prise en charge de mise à jour de produit Microsoft;</li>
+<li>Service d'impression et de numérisation : Service permettant la gestion centralisée des périphériques d'impressions et de numérisations.</li>
+</ul>
+<p>D'autre solutions, outils, applications peuvent être pris en charge et mis en oeuvre comme par exemple un serveur de messagerie EXchange, un serveur de base de données Microsoft SQL etc.  </p>
+<h2 id="installation-du-systeme-et-composants"><span style="color: #F39C12;"><u>Installation du système et composants</u></span></h2>
+<h3 id="installation"><span style="color: #1ABC9C;">Installation</span></h3>
+<h4 id="standard"><span style="color: #0C76F5;">Standard</span></h4>
+<p>Il s'agit de l'installation avec environnement graphique (GUI : Graphic User Interface)  </p>
+<h4 id="minimale-server-core"><span style="color: #0C76F5;">Minimale / Server Core</span></h4>
+<p>Il s'agit du mode d'installation par défaut et demandant le moins de ressource.<br />
+Ce mode d'installation est disponible depuis Windows Server 2008.<br />
+Cette installation sera en "Core" sans interface graphique et exclusivement en commande Powershell</p>
+<h3 id="les-composants"><span style="color: #1ABC9C;"><u>Les composants</u></span></h3>
+<h4 id="role-et-fonctionnalites"><span style="color: #0C76F5;">Rôle et Fonctionnalités</span></h4>
+<p>Une fois le serveur installé, des composants peuvent être ajoutés par :  </p>
+<ul>
+<li>Le gestionnaire de Serveur (ou DashBoard)</li>
+<li>En commandes Powershell (exclusivement utilisé si le serveur est installé sans GUI)</li>
+</ul>
+<p>Il existe 2 types de composants : </p>
+<ul>
+<li>Les rôles : correspond généralement à un <strong>service que l'on fournit à des clients</strong></li>
+<li>Les fonctionnalités : correspond généralement à un outil/composant <strong>utile sur l'élément sur lequel on l'ajoute</strong></li>
+</ul>
+<h4 id="outils-de-gestion"><span style="color: #0C76F5;">Outils de gestion</span></h4>
+<p>les différents outils sont :  </p>
+<ul>
+<li>Le gestionnaire de serveur : élément central d'administration du ou des serveurs</li>
+</ul>
+<p>Via ce gestionnaire des services (vu précédemment) pourront être installés.</p>
+<ul>
+<li>Les consoles de gestion des services (Console MMC):<ul>
+<li>Disponibles suite à l'ajout d'un rôle sur le serveur</li>
+<li>Peuvent être ajoutées sur un poste d'administration ne disposant pas du rôle à gérer</li>
+</ul>
+</li>
+<li>Elle peuvent être utilisable et administrable<ul>
+<li>via CMD</li>
+<li>via Powershell, propose des éléments plus complexe que l'interface graphique</li>
+</ul>
+</li>
+</ul>
+<h2 id="gestion-du-stockage"><span style="color: #F39C12;"><u>Gestion du Stockage</u></span></h2>
+<h3 id="format-de-table-de-partition"><span style="color: #1ABC9C;">Format de table de partition</span></h3>
+<div class="admonition note">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">MBR (historique)</label><label for="__tabbed_1_2">GPT</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>Cette table faisait partie des informations stockées sur le premier secteur adressable du disque</li>
+<li>Le BIOS recherche un secteur d'amorçage sur les médias bootable.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Caractéristiques</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>Plus faible tolérance aux pannes</li>
+<li>Nom donnée au premier secteur physique d'un disque</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>A ce jour, la majorité des machines disposent d'un UEFI</li>
+<li>Les SSD sont, généralement, préconfigurés de cette manière</li>
+<li>Meilleure performance avec les cartes mères UEFI</li>
+<li>Optimiser pour les systèmes d'exploitation en 64 bits</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Caractéristiques</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>Meilleure tolérance aux pannes</li>
+<li>Les données sont dupliquées sur plusieurs secteurs<ul>
+<li>Possibilité de reconstruction</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Possibilité de conversion</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>La conversion MBR &rarr; GPT en s'assurant que le disque ne contiennent pas de données</p>
+</div>
+</div>
+</div>
+<h3 id="types-de-configuration-des-disques"><span style="color: #1ABC9C;">Types de configuration des disques</span></h3>
+<p>Il existe 2 types de configurations des disques  </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Configuration de base</label><label for="__tabbed_5_2">Configuration Dynamique</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>Simplifie la gestion du disque</li>
+<li>Toutes les données sont inscrites dans des partitions</li>
+<li>Sur un seul disque physique<ul>
+<li>Partition C: &rarr; Système</li>
+<li>Partition D: &rarr; Données</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Gestion faite par ensemble de disques</li>
+<li>Les données sont inscrites dans des volumes</li>
+<li>Nécessaire pour le RAID logiciel  </li>
+</ul>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Conversion Base &rarr; Dynamique</label><label for="__tabbed_6_2">Conversion Dynamique &rarr; Base</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Sans incidence pour les données</p>
+</div>
+<div class="tabbed-block">
+<p>Nécessite la suppression préalable des volumes</p>
+</div>
+</div>
+</div>
+<h3 id="partitionnement-et-raid"><span style="color: #1ABC9C;">Partitionnement et RAID</span></h3>
+<h4 id="disque-de-base"><span style="color: #0C76F5;">Disque de Base</span></h4>
+<figure>
+<p><a class="glightbox" href="../img/disque_windows.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/disque_windows.png" /></a></p>
+</figure>
+<p>Sur un disque de base, on peut créer au maximum soit :  </p>
+<ul>
+<li>4 partitions principales</li>
+<li>3 partitions principales et 1 partition étendue pouvant contenir des lecteurs logique</li>
+<li>Les lecteurs logiques seront formatés et il sera impossible d'installer un système d'exploitation sur ces lecteurs logiques</li>
+</ul>
+<p>Les partitions peuvent être étendues ou réduites sur l'espace contigu du même disque.<br />
+Le lancement d'un OS à partir d'un lecteur logique n'est pas possible !  </p>
+<h4 id="disque-dynamique"><span style="color: #0C76F5;">Disque Dynamique</span></h4>
+<p>Il est composé de volumes qui peuvent être de plusieurs type:<br />
+- Volume Simple
+- Volume Fractionné
+- Volume agrégé par bandes
+- Volume en miroir
+- Volume agrégé par bandes de parité</p>
+<p>Nous parlerons pour ces volumes de RAID (<strong>R</strong>edundancy <strong>A</strong>rray of <strong>I</strong>nexpensive <strong>D</strong>isk)  </p>
+<h5 id="volume-simple"><span style="color: #790CF5;">Volume Simple</span></h5>
+<p>On parlera d'espace de disque.  </p>
+<p>Il s'agit du seul type de volume qui utilise un seul disque physique.  </p>
+<figure>
+<p><a class="glightbox" href="../img/1_volume_simple.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/1_volume_simple.png" /></a></p>
+</figure>
+<p>Il peut être étendu au sein du même disque  </p>
+<figure>
+<p><a class="glightbox" href="../img/2_volume_simple.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/2_volume_simple.png" /></a></p>
+</figure>
+<h5 id="volume-fractionne"><span style="color: #790CF5;">Volume Fractionné</span></h5>
+<p>Un volume fractionné utilise plusieurs espaces sur plusieurs disques physiques.<br />
+Pour le mettre en place il faudra au <u>minimum</u> 2 disques.  </p>
+<p><strong>Situation Initiale</strong> : 2 disques installés, Seulement 1 d'utilisé
+<a class="glightbox" href="../img/1_volume_fract.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/1_volume_fract.png" /></a></p>
+<p><strong>Extension du <span style="color: #0CF576;">volume simple 2</span> sur le <span style="color: #99A3A4;">disque dynamique 2</span></strong>
+<a class="glightbox" href="../img/2_volume_fract.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/2_volume_fract.png" /></a></p>
+<h4 id="raid-0-volume-agrege-par-bandes"><span style="color: #0C76F5;">RAID-0 - Volume agrégé par bandes</span></h4>
+<figure>
+<p><a class="glightbox" href="../img/2_raid0.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/2_raid0.png" /></a></p>
+</figure>
+<div class="admonition inline end failure">
+<p class="admonition-title"><img alt="⛔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/26d4.svg" title=":no_entry:" /></p>
+<p>Aucune tolérance de panne !</p>
+</div>
+<ul>
+<li>La taille des bandes doit être identique sur chaque disque  </li>
+<li>Réparti sur 2 à "x" disques  </li>
+<li>Rapidité décriture accrue</li>
+<li>Tout l'espace disque alloué est utilisable<ul>
+<li>Volume utile = Nombre de disque totale</li>
+<li>Pour 2 disques de 200Go, on aurait 400Go de volume utile</li>
+</ul>
+</li>
+</ul>
+<figure>
+<p><a class="glightbox" href="../img/1_raid0.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/1_raid0.png" width="300" /></a></p>
+</figure>
+<h4 id="raid-1-volume-en-miroir"><span style="color: #0C76F5;">RAID-1 - Volume en miroir</span></h4>
+<figure>
+<p><a class="glightbox" href="../img/1_raid1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/1_raid1.png" /></a></p>
+</figure>
+<div class="admonition inline end success">
+<p class="admonition-title"><img alt="👍" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f44d.svg" title=":+1:" /></p>
+<p>Tolérance aux pannes accrues<br />
+Un des disques peut-être perdu sans<br />
+impact sur les données</p>
+</div>
+<ul>
+<li>Réparti sur 2 disques</li>
+<li>L'espace alloué sur les 2 disques doit être identique</li>
+<li>Les mêmes données sont écrites simultanément sur les 2 disques</li>
+<li>La moitié de l'espace disque alloué n'est pas directement utilisable<ul>
+<li>Volume utile = Nombre de disque / 2</li>
+<li>Pour 2 disques de 200Go, on aurait 200Go de volume utile</li>
+</ul>
+</li>
+</ul>
+<figure>
+<p><a class="glightbox" href="../img/2_raid1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/2_raid1.png" width="300" /></a></p>
+</figure>
+<h4 id="raid-5-volume-agrege-par-bandes-avec-parite"><span style="color: #0C76F5;">RAID-5 - Volume agrégé par bandes avec parité</span></h4>
+<figure>
+<p><a class="glightbox" href="../img/1_raid5.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/1_raid5.png" /></a></p>
+</figure>
+<div class="admonition inline end tip">
+<p class="admonition-title"><img alt="👍" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f44d.svg" title=":+1:" /></p>
+<p>Tolérance de panne d'un seul disque</p>
+</div>
+<ul>
+<li>3 disques <u>minimum</u></li>
+<li>1 disque (espace d'une bande) est alloué à la tolérance de panne<ul>
+<li>Volume utile = Nombre de disque -1 x capacité d'un disque</li>
+<li>Pour 3 disques de 200Go, on aurait 3-1 x 200 = 400Go de volume utile</li>
+</ul>
+</li>
+<li>Bon compromis tolérance panne/coûts</li>
+</ul>
+<figure>
+<p><a class="glightbox" href="../img/2_raid5.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/2_raid5.png" width="350" /></a></p>
+</figure>
+<h3 id="formatage"><span style="color: #1ABC9C;">Formatage</span></h3>
+<p>Premièrement les disques doivent être initialisé et en ligne pour pouvoir être formaté.<br />
+Les partitions principales, lecteurs logiques et volumes  doivent être formatés pour être utilisables.  </p>
+<p>Le formatage est l'installation d'un système de fichier (hébergement de données).  </p>
+<p>Les systèmes de fichiers disponibles sont :<br />
+- <strong>FAT32</strong> - Depuis windows 9x
+  - Taille max de fichier = 4Go
+  - Taille max de partition = 2To
+- <strong>NTFS</strong> - Depuis windows NT (norma actuelle pour la plupart des systèmes)
+  - Taille max fichier et partition = 256To
+- <strong>ReFS</strong> - Depuis Windows 2012 (pour les espaces de stockage)</p>
+<figure>
+<p><a class="glightbox" href="../img/schema_disque.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/schema_disque.png" /></a></p>
+</figure>
+<h4 id="les-outils"><span style="color: #0C76F5;">Les outils</span></h4>
+<p>Les outils permettant la gestion des disques et le formatage sont :  </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">La console de <strong>gestion des disques</strong></label><label for="__tabbed_7_2">La commande <strong>diskpart</strong> utilisable en cmd</label><label for="__tabbed_7_3">Les commandes <strong>PowerShell</strong></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>diskmgmt.msc</strong> via <span class="keys"><kbd class="key-windows">Win</kbd><span>+</span><kbd class="key-r">R</kbd></span> - console mmc"<br />
+<figure markdown=1>
+<a class="glightbox" href="../img/mmc_disque.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="MMC_Gestion de disque" src="../img/mmc_disque.png" width="450" /></a><br />
+</figure></p>
+</div>
+<div class="tabbed-block">
+<p><figure markdown=1>
+<a class="glightbox" href="../img/diskpart.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="diskpart" src="../img/diskpart.png" width="450" /></a><br />
+</figure></p>
+</div>
+<div class="tabbed-block">
+<p><figure markdown=1>
+<a class="glightbox" href="../img/Powershell.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Powershell" src="../img/Powershell.png" width="450" /></a><br />
+</figure>  </p>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 - Mathieu Lecat
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/mathieu-lecat" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.tabs", "navigation.top", "navigation.indexes", "navigation.tracking", "navigation.instant", "navigation.path", "navigation.indexes", "search.suggest", "content.code.annotation", "content.code.copy", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

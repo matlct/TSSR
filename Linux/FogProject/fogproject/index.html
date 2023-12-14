@@ -1,0 +1,4772 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://192.168.1.90:8000/index.md/Linux/FogProject/fogproject/">
+      
+      
+        <link rel="prev" href="../../../Outils/Nmap/nmap/">
+      
+      
+        <link rel="next" href="../../../page_test/">
+      
+      
+      <link rel="icon" href="../../../img/computer-2.svg">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>FogProject - MyDocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m1 5h-2v4H7v2h4v4h2v-4h4v-2h-4V7Z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tuto-deploiement-fogproject" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="MyDocs" class="md-header__button md-logo" aria-label="MyDocs" data-md-component="logo">
+      
+  <img src="../../../img/network.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MyDocs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FogProject
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Reseaux/Module-Couche_OSI/" class="md-tabs__link">
+          
+  
+    
+  
+  Cours
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Cisco/ios/" class="md-tabs__link">
+        
+  
+    
+  
+  Cisco IOS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Cloud_M365/cloud/" class="md-tabs__link">
+        
+  
+    
+  
+  Cloud & Microsoft 365
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Virtualisation/Virtualisation/" class="md-tabs__link">
+          
+  
+    
+  
+  Virtualisation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../supervision/supervision/" class="md-tabs__link">
+          
+  
+    
+  
+  Supervision Infrastructure avec Centreon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../GLPI/glpi/" class="md-tabs__link">
+        
+  
+    
+  
+  GLPI
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../Outils/Putty/putty/" class="md-tabs__link">
+          
+  
+    
+  
+  Outils
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../page_test/" class="md-tabs__link">
+          
+  
+    
+  
+  Aide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MyDocs" class="md-nav__button md-logo" aria-label="MyDocs" data-md-component="logo">
+      
+  <img src="../../../img/network.png" alt="logo">
+
+    </a>
+    MyDocs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cours
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reseaux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Reseaux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Reseaux/Module-Couche_OSI/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Modèle OSI
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Modèle OSI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module-Couche_OSI/7_Couche_Applicative/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Applicative
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module-Couche_OSI/6_Couche_Presentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Présentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module-Couche_OSI/5_Couche_Session/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Session
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module-Couche_OSI/4_Couche_Transport/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Transport
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module-Couche_OSI/3_Couche_Reseau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Réseau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module-Couche_OSI/2_Couche_Liaison/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Liaison
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module-Couche_OSI/1_Couche_Physique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Physique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module-Couche_OSI/Encapsulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Encapsulation & Désencapsulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module-Couche_OSI/Unites_donnees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unités de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Adressage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Adressage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module_IP/trame_ethernet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trame Ethernet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module_IP/Adressage_IPv4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ipv4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Module_IP/sous_reseau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sous-Réseau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Diffusion/Collision
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Diffusion/Collision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Domaine_diffusion_collision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Domaine de Diffusion et de Collision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Routage/le_routeur/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Routage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Switch & VLAN
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            Switch & VLAN
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Switch_VLAN/Switch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <span style="color: #3498DB;">Le Switch</span>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/Switch_VLAN/VLAN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <span style="color: #3498DB;">VLAN: Virtual Local Area Network</span>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/dhcp/dhcp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DHCP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reseaux/dns/dns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DNS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TOIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Système d'Exploitation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Système d'Exploitation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Os/OS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unix/Linux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Unix/Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Introduction_UNIX_Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Administration_Debian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Administration Debian
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fichiers_Dossiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fichiers et Dossier
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Lire_editer_texte/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lire et Editer du texte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gestion_reseau_debian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion Réseau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gestion_paquets_logiciel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion des paquets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gestion_debian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion d'une machine Debian
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Espace_stockage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion Stockage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utilisateurs_groupe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion des Groupes & Utilisateurs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2_10" id="__nav_2_2_2_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bash
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            Bash
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bash_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    101
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bash_avance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    201
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MicroSoft
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            MicroSoft
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_1" id="__nav_2_2_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Windows
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Windows/OS_Windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OS Client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Windows/Definir_un_Pilote.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pilotes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_2" id="__nav_2_2_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Windows Serveur
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Windows Serveur
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Windows/Serveur/administration_windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Administration Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_2_2" id="__nav_2_2_3_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Active Directory
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_2_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Active Directory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Windows/Serveur/active_directory/notion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Windows/Serveur/active_directory/gestion_domaine/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion d'un domaine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Windows/Serveur/active_directory/acces_ressources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L'accès aux Ressources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Windows/Serveur/active_directory/GPO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stratégies de Groupe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Windows/Serveur/active_directory/service_impression.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Service d'impression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Windows/Serveur/rds/rds/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RDS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Windows/CLI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_4" id="__nav_2_2_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PowerShell
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            PowerShell
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Windows/Powershell/Presentation_de_Powershell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Présentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Windows/Powershell/Cmdlets_de_base_et_objets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cmdlet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Windows/Powershell/aide_de_powershell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L'aide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Windows/Powershell/Le_Filtrage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le Filtrage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Windows/Powershell/Le_Formatage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le Formatage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Windows/Powershell/Redirection_de_flux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redirection de Flux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Windows/Powershell/Utilisation_du_PipeLine/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Utilisation du Pipeline "|"
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../service_web_securite/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Serveur Web
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Serveur Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service_web_securite/serveur_apache/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apache2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service_web_securite/serveur_IIS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Serveur IIS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service_web_securite/Gestion_PKI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion des PKI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service_web_securite/VPN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VPN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ITIL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            ITIL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ITIL/ITIL1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Présentation et historique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ITIL/ITIL2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    La gestion des services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ITIL/ITIL3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Livre 1 - stratégie des services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ITIL/ITIL4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Livre 2 - Conception des services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ITIL/ITIL5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Livre 3 - La transition des services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ITIL/ITIL7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Livre 4 - Exploitation des services - publication centrales
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ITIL/ITIL8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Livre 5 - Amélioration continue des services - publication centrales
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ITIL/ITIL9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Savoirs, savoir-faire et savoir-être
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ITIL/ITIL6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GLPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ITIL/ITIL10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assistance avec GLPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Scripting
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Scripting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Script_bash/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Bash
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5_1" id="__nav_2_5_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Bash
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Script_bash/scripting_bash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Construction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Script_bash/exemple_script/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Script
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PowerShell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python3/python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cisco/ios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cisco IOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud_M365/cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud & Microsoft 365
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Virtualisation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Virtualisation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Virtualisation/Virtualisation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Applications de virtualisation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Applications de virtualisation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Virtualisation/vmware_workstation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VMware WorkStation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VMware vSphere
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Hyper-V
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion du réseau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion du Stockage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion de Data-Center
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Virtualisation/virtualisation_srv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualisation de serveurs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Supervision Infrastructure avec Centreon
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Supervision Infrastructure avec Centreon
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../supervision/supervision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Supervision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../supervision/snmp_nrpe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Protocoles SNMP & NRPE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Centreon
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Centreon
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../supervision/Centreon/installation_centreon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../supervision/Centreon/commandes_supervision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Commandes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../supervision/Centreon/Configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GLPI/glpi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GLPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Outils
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Outils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Outils/Putty/putty/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Putty
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Outils/Nmap/nmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nmaps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    FogProject
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    FogProject
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pré-requis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recuperation-de-fog-via-le-depot-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Récupération de FOG via le dépot Github
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Récupération de FOG via le dépot Github">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-install-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 - Install Git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-clonage-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 - Clonage repository
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-lancement-script-dinstallation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 - Lancement Script d'Installation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-graphique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface Graphique
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Graphique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#page-de-connexion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Page de connexion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dashboard
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dashboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#premieres-modification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Premieres modification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Premieres modification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passage-en-francais-de-linterface-graphique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passage en Français de l'interface graphique
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modification-des-identifiants-de-connexion-par-defaut" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modification des Identifiants de connexion par défaut
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capture-dune-image-windows-10-egalement-applicable-sur-windows-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capture d'une image Windows 10 (également applicable sur Windows 11 ?)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Aide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Aide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../page_test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Page Test
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Kaisen/modification_terminal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kaisen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GLPI/mariadb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MariaDB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../revision/revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Révision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pré-requis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recuperation-de-fog-via-le-depot-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Récupération de FOG via le dépot Github
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Récupération de FOG via le dépot Github">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-install-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 - Install Git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-clonage-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 - Clonage repository
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-lancement-script-dinstallation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 - Lancement Script d'Installation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-graphique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface Graphique
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Graphique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#page-de-connexion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Page de connexion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dashboard
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dashboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#premieres-modification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Premieres modification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Premieres modification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passage-en-francais-de-linterface-graphique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passage en Français de l'interface graphique
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modification-des-identifiants-de-connexion-par-defaut" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modification des Identifiants de connexion par défaut
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capture-dune-image-windows-10-egalement-applicable-sur-windows-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capture d'une image Windows 10 (également applicable sur Windows 11 ?)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<figure>
+<p><a class="glightbox" href="../img/1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/1.png" width="300" /></a></p>
+</figure>
+<h1 id="tuto-deploiement-fogproject">Tuto déploiement FogProject</h1>
+<p>Fog Project est un logiciel permettant, via le PXE (Preboot Execution Environment) :<br />
+- Gestion de parc informatique (inscription des machines du parc)<br />
+- La capture et le déploiement d'images système (Microsoft Windows, Linux, MacOS).<br />
+- Exécution de scripts sur un ensemble de machine  </p>
+<h2 id="pre-requis">Pré-requis</h2>
+<ul>
+<li>Disposer des droits administrateur  </li>
+<li>Disposer d'une connexion internet configurée et activée  </li>
+<li>Avoir une adresse IP fixe pour le serveur  </li>
+</ul>
+<div class="admonition warning">
+<p>Il est fortement recommandé d'installer FOG sur un serveur dédié.<br />
+Le script d'installation est prévu pour un système fraichement installé.  </p>
+</div>
+<h2 id="recuperation-de-fog-via-le-depot-github">Récupération de FOG via le dépot Github</h2>
+<div class="admonition tip">
+<p>Selon la machine utilisé la commande d'installation peut varier.<br />
+Etant sur une machine <code>Rocky Linux</code> mes commandes seront faite avec <code>yum</code><br />
+A vous d'adapter avec la commande de votre Distribution  </p>
+</div>
+<h3 id="1-install-git">1 - Install Git</h3>
+<p>Avant d'installer la dernière version de <code>FOG</code> il est nécéssaire d'sintaller <code>git</code> afin de cloner le dépot sur la machine :  </p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">install git</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#__codelineno-0-43">43</a></span>
+<span class="normal"><a href="#__codelineno-0-44">44</a></span>
+<span class="normal"><a href="#__codelineno-0-45">45</a></span>
+<span class="normal"><a href="#__codelineno-0-46">46</a></span>
+<span class="normal"><a href="#__codelineno-0-47">47</a></span>
+<span class="normal"><a href="#__codelineno-0-48">48</a></span>
+<span class="normal"><a href="#__codelineno-0-49">49</a></span>
+<span class="normal"><a href="#__codelineno-0-50">50</a></span>
+<span class="normal"><a href="#__codelineno-0-51">51</a></span>
+<span class="normal"><a href="#__codelineno-0-52">52</a></span>
+<span class="normal"><a href="#__codelineno-0-53">53</a></span>
+<span class="normal"><a href="#__codelineno-0-54">54</a></span>
+<span class="normal"><a href="#__codelineno-0-55">55</a></span>
+<span class="normal"><a href="#__codelineno-0-56">56</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="o">[</span>root@fogsrv<span class="w"> </span>~<span class="o">]</span><span class="c1"># apt install git</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>Dernière<span class="w"> </span>vérification<span class="w"> </span>de<span class="w"> </span>l’expiration<span class="w"> </span>des<span class="w"> </span>métadonnées<span class="w"> </span>effectuée<span class="w"> </span>il<span class="w"> </span>y<span class="w"> </span>a<span class="w"> </span><span class="m">0</span>:44:44<span class="w"> </span>le<span class="w"> </span>jeu.<span class="w"> </span><span class="m">02</span><span class="w"> </span>nov.<span class="w"> </span><span class="m">2023</span><span class="w"> </span><span class="m">12</span>:01:37.
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>Dépendances<span class="w"> </span>résolues.
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="o">=============================================================================================================================================</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w"> </span>Paquet<span class="w">                                </span>Architecture<span class="w">                </span>Version<span class="w">                              </span>Dépôt<span class="w">                          </span><span class="nv">Taille</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="o">=============================================================================================================================================</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>Installation:
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w"> </span>git<span class="w">                                   </span>x86_64<span class="w">                      </span><span class="m">2</span>.39.3-1.el9_2<span class="w">                       </span>appstream<span class="w">                       </span><span class="m">61</span><span class="w"> </span>k
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>Installation<span class="w"> </span>des<span class="w"> </span>dépendances:
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w"> </span>git-core-doc<span class="w">                          </span>noarch<span class="w">                      </span><span class="m">2</span>.39.3-1.el9_2<span class="w">                       </span>appstream<span class="w">                      </span><span class="m">2</span>.6<span class="w"> </span>M
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w"> </span>perl-Error<span class="w">                            </span>noarch<span class="w">                      </span><span class="m">1</span>:0.17029-7.el9<span class="w">                      </span>appstream<span class="w">                       </span><span class="m">41</span><span class="w"> </span>k
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w"> </span>perl-Git<span class="w">                              </span>noarch<span class="w">                      </span><span class="m">2</span>.39.3-1.el9_2<span class="w">                       </span>appstream<span class="w">                       </span><span class="m">37</span><span class="w"> </span>k
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w"> </span>perl-TermReadKey<span class="w">                      </span>x86_64<span class="w">                      </span><span class="m">2</span>.38-11.el9<span class="w">                          </span>appstream<span class="w">                       </span><span class="m">36</span><span class="w"> </span>k
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w"> </span>perl-lib<span class="w">                              </span>x86_64<span class="w">                      </span><span class="m">0</span>.65-480.el9<span class="w">                         </span>appstream<span class="w">                       </span><span class="m">15</span><span class="w"> </span>k
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a>Résumé<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span><span class="nv">transaction</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="o">=============================================================================================================================================</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a>Installer<span class="w">  </span><span class="m">6</span><span class="w"> </span>Paquets
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a>Taille<span class="w"> </span>totale<span class="w"> </span>des<span class="w"> </span>téléchargements<span class="w"> </span>:<span class="w"> </span><span class="m">2</span>.8<span class="w"> </span>M
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a>Taille<span class="w"> </span>des<span class="w"> </span>paquets<span class="w"> </span>installés<span class="w"> </span>:<span class="w"> </span><span class="m">17</span><span class="w"> </span>M
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a>Voulez-vous<span class="w"> </span>continuer<span class="w"> </span>?<span class="w"> </span><span class="o">[</span>o/N<span class="o">]</span><span class="w"> </span>:<span class="w"> </span>o
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a>Téléchargement<span class="w"> </span>des<span class="w"> </span>paquets<span class="w"> </span>:
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="o">(</span><span class="m">1</span>/6<span class="o">)</span>:<span class="w"> </span>perl-lib-0.65-480.el9.x86_64.rpm<span class="w">                                                                       </span><span class="m">77</span><span class="w"> </span>kB/s<span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="m">15</span><span class="w"> </span>kB<span class="w">     </span><span class="m">00</span>:00<span class="w">    </span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="o">(</span><span class="m">2</span>/6<span class="o">)</span>:<span class="w"> </span>perl-Error-0.17029-7.el9.noarch.rpm<span class="w">                                                                   </span><span class="m">201</span><span class="w"> </span>kB/s<span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="m">41</span><span class="w"> </span>kB<span class="w">     </span><span class="m">00</span>:00<span class="w">    </span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="o">(</span><span class="m">3</span>/6<span class="o">)</span>:<span class="w"> </span>perl-TermReadKey-2.38-11.el9.x86_64.rpm<span class="w">                                                               </span><span class="m">173</span><span class="w"> </span>kB/s<span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="m">36</span><span class="w"> </span>kB<span class="w">     </span><span class="m">00</span>:00<span class="w">    </span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="o">(</span><span class="m">4</span>/6<span class="o">)</span>:<span class="w"> </span>git-2.39.3-1.el9_2.x86_64.rpm<span class="w">                                                                         </span><span class="m">804</span><span class="w"> </span>kB/s<span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="m">61</span><span class="w"> </span>kB<span class="w">     </span><span class="m">00</span>:00<span class="w">    </span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="o">(</span><span class="m">5</span>/6<span class="o">)</span>:<span class="w"> </span>perl-Git-2.39.3-1.el9_2.noarch.rpm<span class="w">                                                                    </span><span class="m">369</span><span class="w"> </span>kB/s<span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="m">37</span><span class="w"> </span>kB<span class="w">     </span><span class="m">00</span>:00<span class="w">    </span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="o">(</span><span class="m">6</span>/6<span class="o">)</span>:<span class="w"> </span>git-core-doc-2.39.3-1.el9_2.noarch.rpm<span class="w">                                                                </span><span class="m">9</span>.2<span class="w"> </span>MB/s<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">2</span>.6<span class="w"> </span>MB<span class="w">     </span><span class="m">00</span>:00<span class="w">    </span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a>---------------------------------------------------------------------------------------------------------------------------------------------
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a>Total<span class="w">                                                                                                        </span><span class="m">3</span>.8<span class="w"> </span>MB/s<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">2</span>.8<span class="w"> </span>MB<span class="w">     </span><span class="m">00</span>:00<span class="w">     </span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a>Test<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>transaction
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a>La<span class="w"> </span>vérification<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>transaction<span class="w"> </span>a<span class="w"> </span>réussi.
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a>Lancement<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>transaction<span class="w"> </span>de<span class="w"> </span><span class="nb">test</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a>Transaction<span class="w"> </span>de<span class="w"> </span><span class="nb">test</span><span class="w"> </span>réussie.
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a>Exécution<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>transaction
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="w">  </span>Préparation<span class="w">           </span>:<span class="w">                                                                                                                </span><span class="m">1</span>/1<span class="w"> </span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="w">  </span>Installation<span class="w">          </span>:<span class="w"> </span>git-core-doc-2.39.3-1.el9_2.noarch<span class="w">                                                                             </span><span class="m">1</span>/6<span class="w"> </span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="w">  </span>Installation<span class="w">          </span>:<span class="w"> </span>perl-TermReadKey-2.38-11.el9.x86_64<span class="w">                                                                            </span><span class="m">2</span>/6<span class="w"> </span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="w">  </span>Installation<span class="w">          </span>:<span class="w"> </span>perl-lib-0.65-480.el9.x86_64<span class="w">                                                                                   </span><span class="m">3</span>/6<span class="w"> </span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="w">  </span>Installation<span class="w">          </span>:<span class="w"> </span>perl-Error-1:0.17029-7.el9.noarch<span class="w">                                                                              </span><span class="m">4</span>/6<span class="w"> </span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="w">  </span>Installation<span class="w">          </span>:<span class="w"> </span>git-2.39.3-1.el9_2.x86_64<span class="w">                                                                                      </span><span class="m">5</span>/6<span class="w"> </span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="w">  </span>Installation<span class="w">          </span>:<span class="w"> </span>perl-Git-2.39.3-1.el9_2.noarch<span class="w">                                                                                 </span><span class="m">6</span>/6<span class="w"> </span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="w">  </span>Exécution<span class="w"> </span>du<span class="w"> </span>scriptlet:<span class="w"> </span>perl-Git-2.39.3-1.el9_2.noarch<span class="w">                                                                                 </span><span class="m">6</span>/6<span class="w"> </span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="w">  </span>Vérification<span class="w"> </span>de<span class="w">       </span>:<span class="w"> </span>perl-Error-1:0.17029-7.el9.noarch<span class="w">                                                                              </span><span class="m">1</span>/6<span class="w"> </span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="w">  </span>Vérification<span class="w"> </span>de<span class="w">       </span>:<span class="w"> </span>perl-lib-0.65-480.el9.x86_64<span class="w">                                                                                   </span><span class="m">2</span>/6<span class="w"> </span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="w">  </span>Vérification<span class="w"> </span>de<span class="w">       </span>:<span class="w"> </span>perl-TermReadKey-2.38-11.el9.x86_64<span class="w">                                                                            </span><span class="m">3</span>/6<span class="w"> </span>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="w">  </span>Vérification<span class="w"> </span>de<span class="w">       </span>:<span class="w"> </span>perl-Git-2.39.3-1.el9_2.noarch<span class="w">                                                                                 </span><span class="m">4</span>/6<span class="w"> </span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="w">  </span>Vérification<span class="w"> </span>de<span class="w">       </span>:<span class="w"> </span>git-core-doc-2.39.3-1.el9_2.noarch<span class="w">                                                                             </span><span class="m">5</span>/6<span class="w"> </span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="w">  </span>Vérification<span class="w"> </span>de<span class="w">       </span>:<span class="w"> </span>git-2.39.3-1.el9_2.x86_64<span class="w">                                                                                      </span><span class="m">6</span>/6<span class="w"> </span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51"></a>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52"></a>Installé:
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="w">  </span>git-2.39.3-1.el9_2.x86_64<span class="w">            </span>git-core-doc-2.39.3-1.el9_2.noarch<span class="w">  </span>perl-Error-1:0.17029-7.el9.noarch<span class="w">  </span>perl-Git-2.39.3-1.el9_2.noarch<span class="w"> </span>
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="w">  </span>perl-TermReadKey-2.38-11.el9.x86_64<span class="w">  </span>perl-lib-0.65-480.el9.x86_64<span class="w">       </span>
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55"></a>
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a>Terminé<span class="w"> </span>!
+</span></code></pre></div></td></tr></table></div>
+<h3 id="2-clonage-repository">2 - Clonage repository</h3>
+<p>Maintenant nous procédons au clonage du dépôt <code>github</code> :  </p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">clonage repository github</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>root@fogsrv:/#<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/opt
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/FOGProject/fogproject.git<span class="w"> </span>fog_stable/
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>Clonage<span class="w"> </span>dans<span class="w"> </span><span class="s1">&#39;fog_stable&#39;</span>...
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>remote:<span class="w"> </span>Enumerating<span class="w"> </span>objects:<span class="w"> </span><span class="m">158144</span>,<span class="w"> </span><span class="k">done</span>.
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>remote:<span class="w"> </span>Counting<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">4146</span>/4146<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a>remote:<span class="w"> </span>Compressing<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">1059</span>/1059<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>remote:<span class="w"> </span>Total<span class="w"> </span><span class="m">158144</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">3078</span><span class="o">)</span>,<span class="w"> </span>reused<span class="w"> </span><span class="m">3988</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">2975</span><span class="o">)</span>,<span class="w"> </span>pack-reused<span class="w"> </span><span class="m">153998</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>Réception<span class="w"> </span>d<span class="err">&#39;</span>objets:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">158144</span>/158144<span class="o">)</span>,<span class="w"> </span><span class="m">848</span>.71<span class="w"> </span>Mio<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">8</span>.47<span class="w"> </span>Mio/s,<span class="w"> </span>fait.
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a>Résolution<span class="w"> </span>des<span class="w"> </span>deltas:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">112889</span>/112889<span class="o">)</span>,<span class="w"> </span>fait.
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a>root@fogsrv:/opt#<span class="w"> </span>ls
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a>fog_stable
+</span></code></pre></div></td></tr></table></div>
+<h3 id="3-lancement-script-dinstallation">3 - Lancement Script d'Installation</h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>root@fogsrv:/opt#<span class="w"> </span>ls
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>fog_stable
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>root@fogsrv<span class="w"> </span>~#<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>fogproject/
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>root@fogsrv<span class="w"> </span>fogproject<span class="o">]</span><span class="c1"># ls</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w"> </span>authors.txt<span class="w">   </span>bin<span class="w">   </span>CONTRIBUTING.md<span class="w">   </span>lib<span class="w">   </span>LICENSE<span class="w">   </span>packages<span class="w">   </span>README.md<span class="w">  </span><span class="s1">&#39;Release Notes.MD&#39;</span><span class="w">   </span>SECURITY.md<span class="w">   </span>SELinux<span class="w">   </span>src<span class="w">   </span>utils
+</span></code></pre></div></td></tr></table></div>
+<p>Il suffit de ce rendre dans le dossier <code>/bin</code><br />
+et de lancer le script <code>installfog.sh</code>  </p>
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Lancement Script ./installfog.sh</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span>
+<span class="normal"><a href="#__codelineno-3-27">27</a></span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span>
+<span class="normal"><a href="#__codelineno-3-29">29</a></span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span>
+<span class="normal"><a href="#__codelineno-3-31">31</a></span>
+<span class="normal"><a href="#__codelineno-3-32">32</a></span>
+<span class="normal"><a href="#__codelineno-3-33">33</a></span>
+<span class="normal"><a href="#__codelineno-3-34">34</a></span>
+<span class="normal"><a href="#__codelineno-3-35">35</a></span>
+<span class="normal"><a href="#__codelineno-3-36">36</a></span>
+<span class="normal"><a href="#__codelineno-3-37">37</a></span>
+<span class="normal"><a href="#__codelineno-3-38">38</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>root@fogsrv:/opt#<span class="w"> </span>ls
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>fog_stable
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>root@fogsrv:/opt#<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>fog_stable/
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a>root@fogsrv:/opt/fog_stable#<span class="w"> </span>ls
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w"> </span>authors.txt<span class="w">   </span>CONTRIBUTING.md<span class="w">   </span>LICENSE<span class="w">    </span>README.md<span class="w">            </span>SECURITY.md<span class="w">   </span>src
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w"> </span>bin<span class="w">           </span>lib<span class="w">               </span>packages<span class="w">   </span><span class="s1">&#39;Release Notes.MD&#39;</span><span class="w">   </span>SELinux<span class="w">       </span>utils
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a>root@fogsrv:/opt/fog_stable/bin#<span class="w"> </span>./installfog.sh
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a>Installing<span class="w"> </span>LSB_Release<span class="w"> </span>as<span class="w"> </span>needed
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w"> </span>*<span class="w"> </span>Attempting<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>release<span class="w"> </span>information......................../installfog.sh:<span class="w"> </span>ligne<span class="w"> </span><span class="m">369</span>:<span class="w"> </span>lsb_release<span class="w"> </span>:<span class="w"> </span>commande<span class="w"> </span>introuvable
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a>Done
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">   </span>+------------------------------------------+
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">   </span><span class="p">|</span><span class="w">     </span>..#######:.<span class="w">    </span>..,#,..<span class="w">     </span>.::##::.<span class="w">  </span><span class="p">|</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="w">   </span><span class="p">|</span>.:######<span class="w">          </span>.:<span class="p">;</span><span class="c1">####:......;#;..     |</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="w">   </span><span class="p">|</span>...##...<span class="w">        </span>...##<span class="p">;</span>,<span class="p">;</span><span class="c1">##::::.##...      |</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="w">   </span><span class="p">|</span><span class="w">   </span>,#<span class="w">          </span>...##.....##:::##<span class="w">     </span>..::<span class="w"> </span><span class="p">|</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="w">   </span><span class="p">|</span><span class="w">   </span><span class="c1">##    .::###,,##.   . ##.::#.:######::.|</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="w">   </span><span class="p">|</span>...##:::###::....#.<span class="w"> </span>..<span class="w">  </span>.#...#.<span class="w"> </span><span class="c1">#...#:::. |</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="w">   </span><span class="p">|</span>..:####:..<span class="w">    </span>..##......##::##<span class="w">  </span>..<span class="w">  </span><span class="c1">#     |</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="w">   </span><span class="p">|</span><span class="w">    </span><span class="c1">#  .      ...##:,;##;:::#: ... ##..   |</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="w">   </span><span class="p">|</span><span class="w">   </span>.#<span class="w">  </span>.<span class="w">       </span>.:<span class="p">;</span><span class="c1">####;::::.##:::;#:..    |</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="w">   </span><span class="p">|</span><span class="w">    </span><span class="c1">#                     ..:;###..       |</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="w">   </span><span class="p">|</span><span class="w">                                          </span><span class="p">|</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="w">   </span>+------------------------------------------+
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="w">   </span><span class="p">|</span><span class="w">      </span>Free<span class="w"> </span>Computer<span class="w"> </span>Imaging<span class="w"> </span>Solution<span class="w">      </span><span class="p">|</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="w">   </span>+------------------------------------------+
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="w">   </span><span class="p">|</span><span class="w">  </span>Credits:<span class="w"> </span>http://fogproject.org/Credits<span class="w">  </span><span class="p">|</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="w">   </span><span class="p">|</span><span class="w">       </span>http://fogproject.org/Credits<span class="w">      </span><span class="p">|</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="w">   </span><span class="p">|</span><span class="w">       </span>Released<span class="w"> </span>under<span class="w"> </span>GPL<span class="w"> </span>Version<span class="w"> </span><span class="m">3</span><span class="w">       </span><span class="p">|</span>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="w">   </span>+------------------------------------------+
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32"></a>
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33"></a>
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34"></a><span class="w">   </span>Version:<span class="w"> </span><span class="m">1</span>.5.10<span class="w"> </span>Installer/Updater
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35"></a>
+</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36"></a><span class="w"> </span>*<span class="w"> </span>SELinux<span class="w"> </span>is<span class="w"> </span>currently<span class="w"> </span>enabled<span class="w"> </span>on<span class="w"> </span>your<span class="w"> </span>system.<span class="w"> </span>This<span class="w"> </span>is<span class="w"> </span>often<span class="w"> </span>causing
+</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37"></a><span class="w"> </span>*<span class="w"> </span>issues<span class="w"> </span>and<span class="w"> </span>we<span class="w"> </span>recommend<span class="w"> </span>setting<span class="w"> </span>to<span class="w"> </span>permissive<span class="w"> </span>on<span class="w"> </span>FOG<span class="w"> </span>Servers<span class="w"> </span>as<span class="w"> </span>of<span class="w"> </span>now.
+</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38"></a><span class="w"> </span>*<span class="w"> </span>Should<span class="w"> </span>the<span class="w"> </span>installer<span class="w"> </span><span class="nb">set</span><span class="w"> </span>this<span class="w"> </span><span class="k">for</span><span class="w"> </span>you<span class="w"> </span>now?<span class="w"> </span><span class="o">(</span>Y/n<span class="o">)</span><span class="w"> </span>Y
+</span></code></pre></div></td></tr></table></div>
+Suite à la validation les étapes de configuration de l'installation se lance  </p>
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Installation Fog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">  1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">  2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">  3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">  4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">  5</a></span>
+<span class="normal"><a href="#__codelineno-4-6">  6</a></span>
+<span class="normal"><a href="#__codelineno-4-7">  7</a></span>
+<span class="normal"><a href="#__codelineno-4-8">  8</a></span>
+<span class="normal"><a href="#__codelineno-4-9">  9</a></span>
+<span class="normal"><a href="#__codelineno-4-10"> 10</a></span>
+<span class="normal"><a href="#__codelineno-4-11"> 11</a></span>
+<span class="normal"><a href="#__codelineno-4-12"> 12</a></span>
+<span class="normal"><a href="#__codelineno-4-13"> 13</a></span>
+<span class="normal"><a href="#__codelineno-4-14"> 14</a></span>
+<span class="normal"><a href="#__codelineno-4-15"> 15</a></span>
+<span class="normal"><a href="#__codelineno-4-16"> 16</a></span>
+<span class="normal"><a href="#__codelineno-4-17"> 17</a></span>
+<span class="normal"><a href="#__codelineno-4-18"> 18</a></span>
+<span class="normal"><a href="#__codelineno-4-19"> 19</a></span>
+<span class="normal"><a href="#__codelineno-4-20"> 20</a></span>
+<span class="normal"><a href="#__codelineno-4-21"> 21</a></span>
+<span class="normal"><a href="#__codelineno-4-22"> 22</a></span>
+<span class="normal"><a href="#__codelineno-4-23"> 23</a></span>
+<span class="normal"><a href="#__codelineno-4-24"> 24</a></span>
+<span class="normal"><a href="#__codelineno-4-25"> 25</a></span>
+<span class="normal"><a href="#__codelineno-4-26"> 26</a></span>
+<span class="normal"><a href="#__codelineno-4-27"> 27</a></span>
+<span class="normal"><a href="#__codelineno-4-28"> 28</a></span>
+<span class="normal"><a href="#__codelineno-4-29"> 29</a></span>
+<span class="normal"><a href="#__codelineno-4-30"> 30</a></span>
+<span class="normal"><a href="#__codelineno-4-31"> 31</a></span>
+<span class="normal"><a href="#__codelineno-4-32"> 32</a></span>
+<span class="normal"><a href="#__codelineno-4-33"> 33</a></span>
+<span class="normal"><a href="#__codelineno-4-34"> 34</a></span>
+<span class="normal"><a href="#__codelineno-4-35"> 35</a></span>
+<span class="normal"><a href="#__codelineno-4-36"> 36</a></span>
+<span class="normal"><a href="#__codelineno-4-37"> 37</a></span>
+<span class="normal"><a href="#__codelineno-4-38"> 38</a></span>
+<span class="normal"><a href="#__codelineno-4-39"> 39</a></span>
+<span class="normal"><a href="#__codelineno-4-40"> 40</a></span>
+<span class="normal"><a href="#__codelineno-4-41"> 41</a></span>
+<span class="normal"><a href="#__codelineno-4-42"> 42</a></span>
+<span class="normal"><a href="#__codelineno-4-43"> 43</a></span>
+<span class="normal"><a href="#__codelineno-4-44"> 44</a></span>
+<span class="normal"><a href="#__codelineno-4-45"> 45</a></span>
+<span class="normal"><a href="#__codelineno-4-46"> 46</a></span>
+<span class="normal"><a href="#__codelineno-4-47"> 47</a></span>
+<span class="normal"><a href="#__codelineno-4-48"> 48</a></span>
+<span class="normal"><a href="#__codelineno-4-49"> 49</a></span>
+<span class="normal"><a href="#__codelineno-4-50"> 50</a></span>
+<span class="normal"><a href="#__codelineno-4-51"> 51</a></span>
+<span class="normal"><a href="#__codelineno-4-52"> 52</a></span>
+<span class="normal"><a href="#__codelineno-4-53"> 53</a></span>
+<span class="normal"><a href="#__codelineno-4-54"> 54</a></span>
+<span class="normal"><a href="#__codelineno-4-55"> 55</a></span>
+<span class="normal"><a href="#__codelineno-4-56"> 56</a></span>
+<span class="normal"><a href="#__codelineno-4-57"> 57</a></span>
+<span class="normal"><a href="#__codelineno-4-58"> 58</a></span>
+<span class="normal"><a href="#__codelineno-4-59"> 59</a></span>
+<span class="normal"><a href="#__codelineno-4-60"> 60</a></span>
+<span class="normal"><a href="#__codelineno-4-61"> 61</a></span>
+<span class="normal"><a href="#__codelineno-4-62"> 62</a></span>
+<span class="normal"><a href="#__codelineno-4-63"> 63</a></span>
+<span class="normal"><a href="#__codelineno-4-64"> 64</a></span>
+<span class="normal"><a href="#__codelineno-4-65"> 65</a></span>
+<span class="normal"><a href="#__codelineno-4-66"> 66</a></span>
+<span class="normal"><a href="#__codelineno-4-67"> 67</a></span>
+<span class="normal"><a href="#__codelineno-4-68"> 68</a></span>
+<span class="normal"><a href="#__codelineno-4-69"> 69</a></span>
+<span class="normal"><a href="#__codelineno-4-70"> 70</a></span>
+<span class="normal"><a href="#__codelineno-4-71"> 71</a></span>
+<span class="normal"><a href="#__codelineno-4-72"> 72</a></span>
+<span class="normal"><a href="#__codelineno-4-73"> 73</a></span>
+<span class="normal"><a href="#__codelineno-4-74"> 74</a></span>
+<span class="normal"><a href="#__codelineno-4-75"> 75</a></span>
+<span class="normal"><a href="#__codelineno-4-76"> 76</a></span>
+<span class="normal"><a href="#__codelineno-4-77"> 77</a></span>
+<span class="normal"><a href="#__codelineno-4-78"> 78</a></span>
+<span class="normal"><a href="#__codelineno-4-79"> 79</a></span>
+<span class="normal"><a href="#__codelineno-4-80"> 80</a></span>
+<span class="normal"><a href="#__codelineno-4-81"> 81</a></span>
+<span class="normal"><a href="#__codelineno-4-82"> 82</a></span>
+<span class="normal"><a href="#__codelineno-4-83"> 83</a></span>
+<span class="normal"><a href="#__codelineno-4-84"> 84</a></span>
+<span class="normal"><a href="#__codelineno-4-85"> 85</a></span>
+<span class="normal"><a href="#__codelineno-4-86"> 86</a></span>
+<span class="normal"><a href="#__codelineno-4-87"> 87</a></span>
+<span class="normal"><a href="#__codelineno-4-88"> 88</a></span>
+<span class="normal"><a href="#__codelineno-4-89"> 89</a></span>
+<span class="normal"><a href="#__codelineno-4-90"> 90</a></span>
+<span class="normal"><a href="#__codelineno-4-91"> 91</a></span>
+<span class="normal"><a href="#__codelineno-4-92"> 92</a></span>
+<span class="normal"><a href="#__codelineno-4-93"> 93</a></span>
+<span class="normal"><a href="#__codelineno-4-94"> 94</a></span>
+<span class="normal"><a href="#__codelineno-4-95"> 95</a></span>
+<span class="normal"><a href="#__codelineno-4-96"> 96</a></span>
+<span class="normal"><a href="#__codelineno-4-97"> 97</a></span>
+<span class="normal"><a href="#__codelineno-4-98"> 98</a></span>
+<span class="normal"><a href="#__codelineno-4-99"> 99</a></span>
+<span class="normal"><a href="#__codelineno-4-100">100</a></span>
+<span class="normal"><a href="#__codelineno-4-101">101</a></span>
+<span class="normal"><a href="#__codelineno-4-102">102</a></span>
+<span class="normal"><a href="#__codelineno-4-103">103</a></span>
+<span class="normal"><a href="#__codelineno-4-104">104</a></span>
+<span class="normal"><a href="#__codelineno-4-105">105</a></span>
+<span class="normal"><a href="#__codelineno-4-106">106</a></span>
+<span class="normal"><a href="#__codelineno-4-107">107</a></span>
+<span class="normal"><a href="#__codelineno-4-108">108</a></span>
+<span class="normal"><a href="#__codelineno-4-109">109</a></span>
+<span class="normal"><a href="#__codelineno-4-110">110</a></span>
+<span class="normal"><a href="#__codelineno-4-111">111</a></span>
+<span class="normal"><a href="#__codelineno-4-112">112</a></span>
+<span class="normal"><a href="#__codelineno-4-113">113</a></span>
+<span class="normal"><a href="#__codelineno-4-114">114</a></span>
+<span class="normal"><a href="#__codelineno-4-115">115</a></span>
+<span class="normal"><a href="#__codelineno-4-116">116</a></span>
+<span class="normal"><a href="#__codelineno-4-117">117</a></span>
+<span class="normal"><a href="#__codelineno-4-118">118</a></span>
+<span class="normal"><a href="#__codelineno-4-119">119</a></span>
+<span class="normal"><a href="#__codelineno-4-120">120</a></span>
+<span class="normal"><a href="#__codelineno-4-121">121</a></span>
+<span class="normal"><a href="#__codelineno-4-122">122</a></span>
+<span class="normal"><a href="#__codelineno-4-123">123</a></span>
+<span class="normal"><a href="#__codelineno-4-124">124</a></span>
+<span class="normal"><a href="#__codelineno-4-125">125</a></span>
+<span class="normal"><a href="#__codelineno-4-126">126</a></span>
+<span class="normal"><a href="#__codelineno-4-127">127</a></span>
+<span class="normal"><a href="#__codelineno-4-128">128</a></span>
+<span class="normal"><a href="#__codelineno-4-129">129</a></span>
+<span class="normal"><a href="#__codelineno-4-130">130</a></span>
+<span class="normal"><a href="#__codelineno-4-131">131</a></span>
+<span class="normal"><a href="#__codelineno-4-132">132</a></span>
+<span class="normal"><a href="#__codelineno-4-133">133</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="w"> </span>*<span class="w"> </span>The<span class="w"> </span><span class="nb">local</span><span class="w"> </span>firewall,<span class="w"> </span>currently,<span class="w"> </span>seems<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>enabled<span class="w"> </span>on<span class="w"> </span>your<span class="w"> </span>system.<span class="w"> </span>This<span class="w"> </span>can<span class="w"> </span>cause
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w"> </span>*<span class="w"> </span>issues<span class="w"> </span>on<span class="w"> </span>FOG<span class="w"> </span>Servers<span class="w"> </span><span class="k">if</span><span class="w"> </span>you<span class="w"> </span>are<span class="w"> </span>not<span class="w"> </span>well<span class="w"> </span>experienced<span class="w"> </span>and<span class="w"> </span>know<span class="w"> </span>what<span class="w"> </span>you<span class="w"> </span>are<span class="w"> </span>doing.
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w"> </span>*<span class="w"> </span>Should<span class="w"> </span>the<span class="w"> </span>installer<span class="w"> </span>try<span class="w"> </span>to<span class="w"> </span>disable<span class="w"> </span>the<span class="w"> </span><span class="nb">local</span><span class="w"> </span>firewall<span class="w"> </span><span class="k">for</span><span class="w"> </span>you<span class="w"> </span>now?<span class="w"> </span><span class="o">(</span>y/N<span class="o">)</span><span class="w"> </span>y
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w"> </span>*<span class="w"> </span>Firewall<span class="w"> </span>disabled<span class="w"> </span>-<span class="w"> </span>proceeding<span class="w"> </span>with<span class="w"> </span>installation...
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">  </span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">  </span><span class="c1"># La question suivante vous demande la version de votre OS Linux</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">  </span><span class="c1"># (Celui-ci est normalement deja choisi)  </span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">  </span>What<span class="w"> </span>version<span class="w"> </span>of<span class="w"> </span>Linux<span class="w"> </span>would<span class="w"> </span>you<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>run<span class="w"> </span>the<span class="w"> </span>installation<span class="w"> </span><span class="k">for</span>?
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">          </span><span class="m">1</span><span class="o">)</span><span class="w"> </span>Redhat<span class="w"> </span>Based<span class="w"> </span>Linux<span class="w"> </span><span class="o">(</span>Redhat,<span class="w"> </span>Alma,<span class="w"> </span>Rocky,<span class="w"> </span>CentOS,<span class="w"> </span>Mageia<span class="o">)</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">          </span><span class="m">2</span><span class="o">)</span><span class="w"> </span>Debian<span class="w"> </span>Based<span class="w"> </span>Linux<span class="w"> </span><span class="o">(</span>Debian,<span class="w"> </span>Ubuntu,<span class="w"> </span>Kubuntu,<span class="w"> </span>Edubuntu<span class="o">)</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">          </span><span class="m">3</span><span class="o">)</span><span class="w"> </span>Arch<span class="w"> </span>Linux
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w"> </span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w"> </span>Choice:<span class="w"> </span><span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">  </span>Starting<span class="w"> </span>Redhat<span class="w"> </span>based<span class="w"> </span>Installation
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17"></a>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">  </span><span class="c1"># Fog Demande si il s&#39;agit d&#39;une installation de Serveur Classique ou de Stockage  </span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">  </span><span class="c1"># Dans mon cas il s&#39;agit d&#39;une installation de serveur classique </span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">  </span>FOG<span class="w"> </span>Server<span class="w"> </span>installation<span class="w"> </span>modes:
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">      </span>*<span class="w"> </span>Normal<span class="w"> </span>Server:<span class="w"> </span><span class="o">(</span>Choice<span class="w"> </span>N<span class="o">)</span><span class="w"> </span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">          </span>This<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>typical<span class="w"> </span>installation<span class="w"> </span><span class="nb">type</span><span class="w"> </span>and
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="w">          </span>will<span class="w"> </span>install<span class="w"> </span>all<span class="w"> </span>FOG<span class="w"> </span>components<span class="w"> </span><span class="k">for</span><span class="w"> </span>you<span class="w"> </span>on<span class="w"> </span>this
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">          </span>machine.<span class="w">  </span>Pick<span class="w"> </span>this<span class="w"> </span>option<span class="w"> </span><span class="k">if</span><span class="w"> </span>you<span class="w"> </span>are<span class="w"> </span>unsure<span class="w"> </span>what<span class="w"> </span>to<span class="w"> </span>pick.
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25"></a>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="w">      </span>*<span class="w"> </span>Storage<span class="w"> </span>Node:<span class="w"> </span><span class="o">(</span>Choice<span class="w"> </span>S<span class="o">)</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="w">          </span>This<span class="w"> </span>install<span class="w"> </span>mode<span class="w"> </span>will<span class="w"> </span>only<span class="w"> </span>install<span class="w"> </span>the<span class="w"> </span>software<span class="w"> </span>required
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="w">          </span>to<span class="w"> </span>make<span class="w"> </span>this<span class="w"> </span>server<span class="w"> </span>act<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>node<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>storage<span class="w"> </span>group
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29"></a>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="w">  </span>More<span class="w"> </span>information:<span class="w">  </span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="w">     </span>http://www.fogproject.org/wiki/index.php?title<span class="o">=</span>InstallationModes
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32"></a>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33"></a><span class="w">  </span>What<span class="w"> </span><span class="nb">type</span><span class="w"> </span>of<span class="w"> </span>installation<span class="w"> </span>would<span class="w"> </span>you<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span><span class="k">do</span>?<span class="w"> </span><span class="o">[</span>N/s<span class="w"> </span><span class="o">(</span>Normal/Storage<span class="o">)]</span><span class="w"> </span>N
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34"></a>
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="w">  </span>We<span class="w"> </span>found<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>interfaces<span class="w"> </span>on<span class="w"> </span>your<span class="w"> </span>system:
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36"></a><span class="w">      </span>*<span class="w"> </span>ens160<span class="w"> </span>-<span class="w"> </span><span class="m">192</span>.168.10.42/24
+</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37"></a><span class="w">  </span><span class="c1"># A ce stade l&#39;installateur demande si vous voulez utiliser la carte réseau détectée </span>
+</span><span id="__span-4-38"><a id="__codelineno-4-38" name="__codelineno-4-38"></a><span class="w">  </span><span class="c1"># et si vous voulez ou non changer l&#39;IP associée à celle-ci</span>
+</span><span id="__span-4-39"><a id="__codelineno-4-39" name="__codelineno-4-39"></a><span class="w">  </span>Would<span class="w"> </span>you<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>change<span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span>network<span class="w"> </span>interface<span class="w"> </span>from<span class="w"> </span>ens160?
+</span><span id="__span-4-40"><a id="__codelineno-4-40" name="__codelineno-4-40"></a><span class="w">  </span>If<span class="w"> </span>you<span class="w"> </span>are<span class="w"> </span>not<span class="w"> </span>sure,<span class="w"> </span><span class="k">select</span><span class="w"> </span>No.<span class="w"> </span><span class="o">[</span>y/N<span class="o">]</span><span class="w"> </span>N
+</span><span id="__span-4-41"><a id="__codelineno-4-41" name="__codelineno-4-41"></a>
+</span><span id="__span-4-42"><a id="__codelineno-4-42" name="__codelineno-4-42"></a><span class="w">  </span><span class="c1"># Question concernant la passerelle utilisé pour le DHCP </span>
+</span><span id="__span-4-43"><a id="__codelineno-4-43" name="__codelineno-4-43"></a><span class="w">  </span><span class="c1"># et donc l&#39;attribution d&#39;IP pendant le déploiement  </span>
+</span><span id="__span-4-44"><a id="__codelineno-4-44" name="__codelineno-4-44"></a><span class="w">  </span><span class="c1"># Généralement indiquer la passerelle sur lequel votre serveur est raccordé</span>
+</span><span id="__span-4-45"><a id="__codelineno-4-45" name="__codelineno-4-45"></a><span class="w">  </span>Would<span class="w"> </span>you<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>setup<span class="w"> </span>a<span class="w"> </span>router<span class="w"> </span>address<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>DHCP<span class="w"> </span>server?<span class="w"> </span><span class="o">[</span>Y/n<span class="o">]</span><span class="w"> </span>Y
+</span><span id="__span-4-46"><a id="__codelineno-4-46" name="__codelineno-4-46"></a><span class="w">  </span>What<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>IP<span class="w"> </span>address<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>router<span class="w"> </span>on
+</span><span id="__span-4-47"><a id="__codelineno-4-47" name="__codelineno-4-47"></a><span class="w">      </span>the<span class="w"> </span>DHCP<span class="w"> </span>server?<span class="w"> </span><span class="o">[</span><span class="m">192</span>.168.10.254<span class="o">]</span>
+</span><span id="__span-4-48"><a id="__codelineno-4-48" name="__codelineno-4-48"></a><span class="w">  </span>
+</span><span id="__span-4-49"><a id="__codelineno-4-49" name="__codelineno-4-49"></a><span class="w">  </span><span class="c1"># Indiquer l&#39;adresse du serveur DNS de votre DHCP  </span>
+</span><span id="__span-4-50"><a id="__codelineno-4-50" name="__codelineno-4-50"></a><span class="w">  </span><span class="c1"># (Dans le cas d&#39;un domaine il s&#39;agit du DNS du Domaine)  </span>
+</span><span id="__span-4-51"><a id="__codelineno-4-51" name="__codelineno-4-51"></a><span class="w">  </span>Would<span class="w"> </span>you<span class="w"> </span>like<span class="w"> </span>DHCP<span class="w"> </span>to<span class="w"> </span>handle<span class="w"> </span>DNS?<span class="w"> </span><span class="o">[</span>Y/n<span class="o">]</span><span class="w"> </span>Y
+</span><span id="__span-4-52"><a id="__codelineno-4-52" name="__codelineno-4-52"></a><span class="w">  </span>What<span class="w"> </span>DNS<span class="w"> </span>address<span class="w"> </span>should<span class="w"> </span>DHCP<span class="w"> </span>allow?<span class="w"> </span><span class="o">[</span><span class="m">192</span>.168.10.20<span class="o">]</span>
+</span><span id="__span-4-53"><a id="__codelineno-4-53" name="__codelineno-4-53"></a><span class="w">  </span>
+</span><span id="__span-4-54"><a id="__codelineno-4-54" name="__codelineno-4-54"></a><span class="w">  </span><span class="c1"># A ce stade il s&#39;agit d&#39;activer ou non le service DHCP de FOG  </span>
+</span><span id="__span-4-55"><a id="__codelineno-4-55" name="__codelineno-4-55"></a><span class="w">  </span><span class="c1"># Si vous possédez un serveur DHCP déja présent sur votre réseau </span>
+</span><span id="__span-4-56"><a id="__codelineno-4-56" name="__codelineno-4-56"></a><span class="w">  </span><span class="c1"># Il sera nécessaire de répondre non</span>
+</span><span id="__span-4-57"><a id="__codelineno-4-57" name="__codelineno-4-57"></a><span class="w">  </span>Would<span class="w"> </span>you<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span>the<span class="w"> </span>FOG<span class="w"> </span>server<span class="w"> </span><span class="k">for</span><span class="w"> </span>DHCP<span class="w"> </span>service?<span class="w"> </span><span class="o">[</span>y/N<span class="o">]</span><span class="w"> </span>N
+</span><span id="__span-4-58"><a id="__codelineno-4-58" name="__codelineno-4-58"></a><span class="w">  </span>
+</span><span id="__span-4-59"><a id="__codelineno-4-59" name="__codelineno-4-59"></a><span class="w">  </span><span class="c1"># FOG demande si vous voulez installer les packs de langue supplémentaire</span>
+</span><span id="__span-4-60"><a id="__codelineno-4-60" name="__codelineno-4-60"></a><span class="w">  </span><span class="c1"># (Répondre oui pour bénéficier du Français sur l&#39;interface graphique)</span>
+</span><span id="__span-4-61"><a id="__codelineno-4-61" name="__codelineno-4-61"></a><span class="w">  </span>This<span class="w"> </span>version<span class="w"> </span>of<span class="w"> </span>FOG<span class="w"> </span>has<span class="w"> </span>internationalization<span class="w"> </span>support,<span class="w"> </span>would<span class="w">  </span>
+</span><span id="__span-4-62"><a id="__codelineno-4-62" name="__codelineno-4-62"></a><span class="w">  </span>you<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>install<span class="w"> </span>the<span class="w"> </span>additional<span class="w"> </span>language<span class="w"> </span>packs?<span class="w"> </span><span class="o">[</span>y/N<span class="o">]</span><span class="w"> </span>y
+</span><span id="__span-4-63"><a id="__codelineno-4-63" name="__codelineno-4-63"></a><span class="w">  </span>
+</span><span id="__span-4-64"><a id="__codelineno-4-64" name="__codelineno-4-64"></a><span class="w">  </span><span class="c1"># Il s&#39;agit de rebalancer toutes les connexions au web via HTTPS  </span>
+</span><span id="__span-4-65"><a id="__codelineno-4-65" name="__codelineno-4-65"></a><span class="w">  </span><span class="c1"># Bien entendu à activer ! (dans mon environnement de test et afin de bénéficier  </span>
+</span><span id="__span-4-66"><a id="__codelineno-4-66" name="__codelineno-4-66"></a><span class="w">  </span><span class="c1"># d&#39;une installation plus rapide j&#39;ai répondu Non)</span>
+</span><span id="__span-4-67"><a id="__codelineno-4-67" name="__codelineno-4-67"></a><span class="w">  </span>Using<span class="w"> </span>encrypted<span class="w"> </span>connections<span class="w"> </span>is<span class="w"> </span>state<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>art<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>web<span class="w"> </span>and<span class="w"> </span>we
+</span><span id="__span-4-68"><a id="__codelineno-4-68" name="__codelineno-4-68"></a><span class="w">  </span>encourage<span class="w"> </span>you<span class="w"> </span>to<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>this<span class="w"> </span><span class="k">for</span><span class="w"> </span>your<span class="w"> </span>FOG<span class="w"> </span>server.<span class="w"> </span>But<span class="w"> </span>using<span class="w"> </span>HTTPS
+</span><span id="__span-4-69"><a id="__codelineno-4-69" name="__codelineno-4-69"></a><span class="w">  </span>has<span class="w"> </span>some<span class="w"> </span>implications<span class="w"> </span>within<span class="w"> </span>FOG,<span class="w"> </span>PXE<span class="w"> </span>and<span class="w"> </span>fog-client<span class="w"> </span>and<span class="w"> </span>you<span class="w"> </span>want
+</span><span id="__span-4-70"><a id="__codelineno-4-70" name="__codelineno-4-70"></a><span class="w">  </span>to<span class="w"> </span><span class="nb">read</span><span class="w"> </span>https://wiki.fogproject.org/HTTPS<span class="w"> </span>before<span class="w"> </span>you<span class="w"> </span>decide!
+</span><span id="__span-4-71"><a id="__codelineno-4-71" name="__codelineno-4-71"></a><span class="w">  </span>Would<span class="w"> </span>you<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>secure<span class="w"> </span>HTTPS<span class="w"> </span>on<span class="w"> </span>your<span class="w"> </span>FOG<span class="w"> </span>server?<span class="w"> </span><span class="o">[</span>y/N<span class="o">]</span><span class="w"> </span>N
+</span><span id="__span-4-72"><a id="__codelineno-4-72" name="__codelineno-4-72"></a><span class="w">  </span>
+</span><span id="__span-4-73"><a id="__codelineno-4-73" name="__codelineno-4-73"></a><span class="w">  </span><span class="c1"># Choisir le Nom de votre Machine</span>
+</span><span id="__span-4-74"><a id="__codelineno-4-74" name="__codelineno-4-74"></a><span class="w">  </span>Which<span class="w"> </span>hostname<span class="w"> </span>would<span class="w"> </span>you<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>use?<span class="w"> </span>Currently<span class="w"> </span>is:<span class="w"> </span>fogsrv
+</span><span id="__span-4-75"><a id="__codelineno-4-75" name="__codelineno-4-75"></a><span class="w">  </span>Note:<span class="w"> </span>This<span class="w"> </span>hostname<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>certificate<span class="w"> </span>we<span class="w"> </span>generate<span class="w"> </span><span class="k">for</span><span class="w"> </span>your
+</span><span id="__span-4-76"><a id="__codelineno-4-76" name="__codelineno-4-76"></a><span class="w">  </span>FOG<span class="w"> </span>webserver.<span class="w"> </span>The<span class="w"> </span>hostname<span class="w"> </span>will<span class="w"> </span>only<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span><span class="k">for</span><span class="w"> </span>this<span class="w"> </span>but<span class="w"> </span>won<span class="err">&#39;</span>t<span class="w"> </span>be
+</span><span id="__span-4-77"><a id="__codelineno-4-77" name="__codelineno-4-77"></a><span class="w">  </span><span class="nb">set</span><span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span><span class="nb">local</span><span class="w"> </span>hostname<span class="w"> </span>on<span class="w"> </span>your<span class="w"> </span>server!
+</span><span id="__span-4-78"><a id="__codelineno-4-78" name="__codelineno-4-78"></a><span class="w">  </span>Would<span class="w"> </span>you<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>change<span class="w"> </span>it?<span class="w"> </span>If<span class="w"> </span>you<span class="w"> </span>are<span class="w"> </span>not<span class="w"> </span>sure,<span class="w"> </span><span class="k">select</span><span class="w"> </span>No.<span class="w"> </span><span class="o">[</span>y/N<span class="o">]</span><span class="w"> </span>N
+</span><span id="__span-4-79"><a id="__codelineno-4-79" name="__codelineno-4-79"></a><span class="w">  </span>
+</span><span id="__span-4-80"><a id="__codelineno-4-80" name="__codelineno-4-80"></a><span class="w">  </span>FOG<span class="w"> </span>would<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>collect<span class="w"> </span>some<span class="w"> </span>data:
+</span><span id="__span-4-81"><a id="__codelineno-4-81" name="__codelineno-4-81"></a><span class="w">      </span>We<span class="w"> </span>would<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>collect<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>information:
+</span><span id="__span-4-82"><a id="__codelineno-4-82" name="__codelineno-4-82"></a><span class="w">        </span><span class="m">1</span>.<span class="w"> </span>OS<span class="w"> </span>Name<span class="w"> </span><span class="o">(</span>CentOS,<span class="w"> </span>RedHat,<span class="w"> </span>Debian,<span class="w"> </span>etc....<span class="o">)</span>
+</span><span id="__span-4-83"><a id="__codelineno-4-83" name="__codelineno-4-83"></a><span class="w">        </span><span class="m">2</span>.<span class="w"> </span>OS<span class="w"> </span>Version<span class="w"> </span><span class="o">(</span><span class="m">8</span>.0.2004,<span class="w"> </span><span class="m">7</span>.2.1409,<span class="w"> </span><span class="m">9</span>,<span class="w"> </span>etc....<span class="o">)</span>
+</span><span id="__span-4-84"><a id="__codelineno-4-84" name="__codelineno-4-84"></a><span class="w">        </span><span class="m">3</span>.<span class="w"> </span>FOG<span class="w"> </span>Version<span class="w"> </span><span class="o">(</span><span class="m">1</span>.5.9,<span class="w"> </span><span class="m">1</span>.6,<span class="w"> </span>etc....<span class="o">)</span>
+</span><span id="__span-4-85"><a id="__codelineno-4-85" name="__codelineno-4-85"></a>
+</span><span id="__span-4-86"><a id="__codelineno-4-86" name="__codelineno-4-86"></a><span class="w">  </span>What<span class="w"> </span>is<span class="w"> </span>this<span class="w"> </span>information<span class="w"> </span>used<span class="w"> </span><span class="k">for</span>?
+</span><span id="__span-4-87"><a id="__codelineno-4-87" name="__codelineno-4-87"></a><span class="w">      </span>We<span class="w"> </span>would<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>simply<span class="w"> </span>track<span class="w"> </span>the<span class="w"> </span>common<span class="w"> </span>types<span class="w"> </span>of<span class="w"> </span>OS
+</span><span id="__span-4-88"><a id="__codelineno-4-88" name="__codelineno-4-88"></a><span class="w">      </span>being<span class="w"> </span>used,<span class="w"> </span>along<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>OS<span class="w"> </span>Version,<span class="w"> </span>and<span class="w"> </span>the<span class="w"> </span>various
+</span><span id="__span-4-89"><a id="__codelineno-4-89" name="__codelineno-4-89"></a><span class="w">      </span>versions<span class="w"> </span>of<span class="w"> </span>FOG<span class="w"> </span>being<span class="w"> </span>used.
+</span><span id="__span-4-90"><a id="__codelineno-4-90" name="__codelineno-4-90"></a>
+</span><span id="__span-4-91"><a id="__codelineno-4-91" name="__codelineno-4-91"></a><span class="w">  </span>Are<span class="w"> </span>you<span class="w"> </span>ok<span class="w"> </span>with<span class="w"> </span>sending<span class="w"> </span>this<span class="w"> </span>information?<span class="w"> </span><span class="o">[</span>Y/n<span class="o">]</span><span class="w"> </span>n
+</span><span id="__span-4-92"><a id="__codelineno-4-92" name="__codelineno-4-92"></a>
+</span><span id="__span-4-93"><a id="__codelineno-4-93" name="__codelineno-4-93"></a><span class="w">   </span><span class="c1">######################################################################</span>
+</span><span id="__span-4-94"><a id="__codelineno-4-94" name="__codelineno-4-94"></a><span class="w">   </span><span class="c1">#     FOG now has everything it needs for this setup, but please     #</span>
+</span><span id="__span-4-95"><a id="__codelineno-4-95" name="__codelineno-4-95"></a><span class="w">   </span><span class="c1">#   understand that this script will overwrite any setting you may   #</span>
+</span><span id="__span-4-96"><a id="__codelineno-4-96" name="__codelineno-4-96"></a><span class="w">   </span><span class="c1">#   have setup for services like DHCP, apache, pxe, tftp, and NFS.   #</span>
+</span><span id="__span-4-97"><a id="__codelineno-4-97" name="__codelineno-4-97"></a><span class="w">   </span><span class="c1">######################################################################</span>
+</span><span id="__span-4-98"><a id="__codelineno-4-98" name="__codelineno-4-98"></a><span class="w">   </span><span class="c1"># It is not recommended that you install this on a production system #</span>
+</span><span id="__span-4-99"><a id="__codelineno-4-99" name="__codelineno-4-99"></a><span class="w">   </span><span class="c1">#        as this script modifies many of your system settings.       #</span>
+</span><span id="__span-4-100"><a id="__codelineno-4-100" name="__codelineno-4-100"></a><span class="w">   </span><span class="c1">######################################################################</span>
+</span><span id="__span-4-101"><a id="__codelineno-4-101" name="__codelineno-4-101"></a><span class="w">   </span><span class="c1">#             This script should be run by the root user.            #</span>
+</span><span id="__span-4-102"><a id="__codelineno-4-102" name="__codelineno-4-102"></a><span class="w">   </span><span class="c1">#      It will prepend the running with sudo if root is not set      #</span>
+</span><span id="__span-4-103"><a id="__codelineno-4-103" name="__codelineno-4-103"></a><span class="w">   </span><span class="c1">######################################################################</span>
+</span><span id="__span-4-104"><a id="__codelineno-4-104" name="__codelineno-4-104"></a><span class="w">   </span><span class="c1">#            Please see our wiki for more information at:            #</span>
+</span><span id="__span-4-105"><a id="__codelineno-4-105" name="__codelineno-4-105"></a><span class="w">   </span><span class="c1">######################################################################</span>
+</span><span id="__span-4-106"><a id="__codelineno-4-106" name="__codelineno-4-106"></a><span class="w">   </span><span class="c1">#             https://wiki.fogproject.org/wiki/index.php             #</span>
+</span><span id="__span-4-107"><a id="__codelineno-4-107" name="__codelineno-4-107"></a><span class="w">   </span><span class="c1">######################################################################</span>
+</span><span id="__span-4-108"><a id="__codelineno-4-108" name="__codelineno-4-108"></a>
+</span><span id="__span-4-109"><a id="__codelineno-4-109" name="__codelineno-4-109"></a><span class="w"> </span><span class="c1"># Voici un récapitulatif des choix effectués  </span>
+</span><span id="__span-4-110"><a id="__codelineno-4-110" name="__codelineno-4-110"></a>
+</span><span id="__span-4-111"><a id="__codelineno-4-111" name="__codelineno-4-111"></a><span class="w"> </span>*<span class="w"> </span>Here<span class="w"> </span>are<span class="w"> </span>the<span class="w"> </span>settings<span class="w"> </span>FOG<span class="w"> </span>will<span class="w"> </span>use:
+</span><span id="__span-4-112"><a id="__codelineno-4-112" name="__codelineno-4-112"></a><span class="w"> </span>*<span class="w"> </span>Base<span class="w"> </span>Linux:<span class="w"> </span>Redhat
+</span><span id="__span-4-113"><a id="__codelineno-4-113" name="__codelineno-4-113"></a><span class="w"> </span>*<span class="w"> </span>Detected<span class="w"> </span>Linux<span class="w"> </span>Distribution:<span class="w"> </span>Rocky<span class="w"> </span>Linux
+</span><span id="__span-4-114"><a id="__codelineno-4-114" name="__codelineno-4-114"></a><span class="w"> </span>*<span class="w"> </span>Interface:<span class="w"> </span>ens160
+</span><span id="__span-4-115"><a id="__codelineno-4-115" name="__codelineno-4-115"></a><span class="w"> </span>*<span class="w"> </span>Server<span class="w"> </span>IP<span class="w"> </span>Address:<span class="w"> </span><span class="m">192</span>.168.10.42
+</span><span id="__span-4-116"><a id="__codelineno-4-116" name="__codelineno-4-116"></a><span class="w"> </span>*<span class="w"> </span>Server<span class="w"> </span>Subnet<span class="w"> </span>Mask:<span class="w"> </span><span class="m">255</span>.255.255.0
+</span><span id="__span-4-117"><a id="__codelineno-4-117" name="__codelineno-4-117"></a><span class="w"> </span>*<span class="w"> </span>Hostname:<span class="w"> </span>fogsrv
+</span><span id="__span-4-118"><a id="__codelineno-4-118" name="__codelineno-4-118"></a><span class="w"> </span>*<span class="w"> </span>Installation<span class="w"> </span>Type:<span class="w"> </span>Normal<span class="w"> </span>Server
+</span><span id="__span-4-119"><a id="__codelineno-4-119" name="__codelineno-4-119"></a><span class="w"> </span>*<span class="w"> </span>Internationalization:<span class="w"> </span>Yes
+</span><span id="__span-4-120"><a id="__codelineno-4-120" name="__codelineno-4-120"></a><span class="w"> </span>*<span class="w"> </span>Image<span class="w"> </span>Storage<span class="w"> </span>Location:<span class="w"> </span>/images
+</span><span id="__span-4-121"><a id="__codelineno-4-121" name="__codelineno-4-121"></a><span class="w"> </span>*<span class="w"> </span>Using<span class="w"> </span>FOG<span class="w"> </span>DHCP:<span class="w"> </span>No
+</span><span id="__span-4-122"><a id="__codelineno-4-122" name="__codelineno-4-122"></a><span class="w"> </span>*<span class="w"> </span>DHCP<span class="w"> </span>will<span class="w"> </span>NOT<span class="w"> </span>be<span class="w"> </span>setup<span class="w"> </span>but<span class="w"> </span>you<span class="w"> </span>must<span class="w"> </span>setup<span class="w"> </span>your
+</span><span id="__span-4-123"><a id="__codelineno-4-123" name="__codelineno-4-123"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span>current<span class="w"> </span>DHCP<span class="w"> </span>server<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span>FOG<span class="w"> </span><span class="k">for</span><span class="w"> </span>PXE<span class="w"> </span>services.
+</span><span id="__span-4-124"><a id="__codelineno-4-124" name="__codelineno-4-124"></a>
+</span><span id="__span-4-125"><a id="__codelineno-4-125" name="__codelineno-4-125"></a><span class="w"> </span>*<span class="w"> </span>On<span class="w"> </span>a<span class="w"> </span>Linux<span class="w"> </span>DHCP<span class="w"> </span>server<span class="w"> </span>you<span class="w"> </span>must<span class="w"> </span>set:<span class="w"> </span>next-server<span class="w"> </span>and<span class="w"> </span>filename
+</span><span id="__span-4-126"><a id="__codelineno-4-126" name="__codelineno-4-126"></a>
+</span><span id="__span-4-127"><a id="__codelineno-4-127" name="__codelineno-4-127"></a><span class="w"> </span>*<span class="w"> </span>On<span class="w"> </span>a<span class="w"> </span>Windows<span class="w"> </span>DHCP<span class="w"> </span>server<span class="w"> </span>you<span class="w"> </span>must<span class="w"> </span><span class="nb">set</span><span class="w"> </span>options<span class="w"> </span><span class="m">066</span><span class="w"> </span>and<span class="w"> </span><span class="m">067</span>
+</span><span id="__span-4-128"><a id="__codelineno-4-128" name="__codelineno-4-128"></a>
+</span><span id="__span-4-129"><a id="__codelineno-4-129" name="__codelineno-4-129"></a><span class="w"> </span>*<span class="w"> </span>Option<span class="w"> </span><span class="m">066</span>/next-server<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>IP<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>FOG<span class="w"> </span>Server:<span class="w"> </span><span class="o">(</span>e.g.<span class="w"> </span><span class="m">192</span>.168.10.42<span class="o">)</span>
+</span><span id="__span-4-130"><a id="__codelineno-4-130" name="__codelineno-4-130"></a><span class="w"> </span>*<span class="w"> </span>Option<span class="w"> </span><span class="m">067</span>/filename<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>bootfile:<span class="w"> </span><span class="o">(</span>e.g.<span class="w"> </span>undionly.kkpxe<span class="w"> </span>or<span class="w"> </span>snponly.efi<span class="o">)</span>
+</span><span id="__span-4-131"><a id="__codelineno-4-131" name="__codelineno-4-131"></a><span class="w"> </span>*<span class="w"> </span>Send<span class="w"> </span>OS<span class="w"> </span>Name,<span class="w"> </span>OS<span class="w"> </span>Version,<span class="w"> </span>and<span class="w"> </span>FOG<span class="w"> </span>Version:<span class="w"> </span>No
+</span><span id="__span-4-132"><a id="__codelineno-4-132" name="__codelineno-4-132"></a>
+</span><span id="__span-4-133"><a id="__codelineno-4-133" name="__codelineno-4-133"></a><span class="w"> </span>*<span class="w"> </span>Are<span class="w"> </span>you<span class="w"> </span>sure<span class="w"> </span>you<span class="w"> </span>wish<span class="w"> </span>to<span class="w"> </span><span class="k">continue</span><span class="w"> </span><span class="o">(</span>Y/N<span class="o">)</span><span class="w"> </span>Y
+</span></code></pre></div></td></tr></table></div>
+Je vous passe les installations de paquets, après un certain temps vous devriez avoir ce message signifiant que l'installation c'est bien passé.  </p>
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Installation base de donnée</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="w"> </span>*<span class="w"> </span>You<span class="w"> </span>still<span class="w"> </span>need<span class="w"> </span>to<span class="w"> </span>install/update<span class="w"> </span>your<span class="w"> </span>database<span class="w"> </span>schema.
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w"> </span>*<span class="w"> </span>This<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span><span class="k">done</span><span class="w"> </span>by<span class="w"> </span>opening<span class="w"> </span>a<span class="w"> </span>web<span class="w"> </span>browser<span class="w"> </span>and<span class="w"> </span>going<span class="w"> </span>to:
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">   </span>http://192.168.10.43/fog/management
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w"> </span>*<span class="w"> </span>Press<span class="w"> </span><span class="o">[</span>Enter<span class="o">]</span><span class="w"> </span>key<span class="w"> </span>when<span class="w"> </span>database<span class="w"> </span>is<span class="w"> </span>updated/installed.
+</span></code></pre></div></td></tr></table></div>
+Il faudra ce rendre sur l'URL indiqué et d'initialiser la base de donnée afin de finaliser l'installation de celle-ci  </p>
+<figure>
+<p><a class="glightbox" href="../img/2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/2.png" width="450" /></a></p>
+</figure>
+<figure>
+<p><a class="glightbox" href="../img/3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/3.png" width="450" /></a></p>
+</figure>
+<p>Sur le terminal la validation de la base de donnée en interface web se traduira par cette affichage<br />
+Celui-ci stipule les informations de connexion par défaut<br />
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Finalisation d'installation</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span>
+<span class="normal"><a href="#__codelineno-6-14">14</a></span>
+<span class="normal"><a href="#__codelineno-6-15">15</a></span>
+<span class="normal"><a href="#__codelineno-6-16">16</a></span>
+<span class="normal"><a href="#__codelineno-6-17">17</a></span>
+<span class="normal"><a href="#__codelineno-6-18">18</a></span>
+<span class="normal"><a href="#__codelineno-6-19">19</a></span>
+<span class="normal"><a href="#__codelineno-6-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="w"> </span>*<span class="w"> </span>Setup<span class="w"> </span><span class="nb">complete</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">   </span>You<span class="w"> </span>can<span class="w"> </span>now<span class="w"> </span>login<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>FOG<span class="w"> </span>Management<span class="w"> </span>Portal<span class="w"> </span>using
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">   </span>the<span class="w"> </span>information<span class="w"> </span>listed<span class="w"> </span>below.<span class="w">  </span>The<span class="w"> </span>login<span class="w"> </span>information
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">   </span>is<span class="w"> </span>only<span class="w"> </span><span class="k">if</span><span class="w"> </span>this<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>first<span class="w"> </span>install.
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">   </span>This<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span><span class="k">done</span><span class="w"> </span>by<span class="w"> </span>opening<span class="w"> </span>a<span class="w"> </span>web<span class="w"> </span>browser<span class="w"> </span>and<span class="w"> </span>going<span class="w"> </span>to:
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">   </span>http://192.168.10.43/fog/management
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">   </span>Default<span class="w"> </span>User<span class="w"> </span>Information
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">   </span>Username:<span class="w"> </span>fog
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">   </span>Password:<span class="w"> </span>password
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="w"> </span>*<span class="w"> </span>Changed<span class="w"> </span>configurations:
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16"></a>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="w">   </span>The<span class="w"> </span>FOG<span class="w"> </span>installer<span class="w"> </span>changed<span class="w"> </span>configuration<span class="w"> </span>files<span class="w"> </span>and<span class="w"> </span>created<span class="w"> </span>the
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="w">   </span>following<span class="w"> </span>backup<span class="w"> </span>files<span class="w"> </span>from<span class="w"> </span>your<span class="w"> </span>original<span class="w"> </span>files:
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="w">   </span>*<span class="w"> </span>/etc/vsftpd/vsftpd.conf<span class="w"> </span>&lt;<span class="o">=</span>&gt;<span class="w"> </span>/etc/vsftpd/vsftpd.conf.1698936954
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="w">   </span>*<span class="w"> </span>/etc/exports<span class="w"> </span>&lt;<span class="o">=</span>&gt;<span class="w"> </span>/etc/exports.1698936954
+</span></code></pre></div></td></tr></table></div></p>
+<h2 id="interface-graphique">Interface Graphique</h2>
+<h3 id="page-de-connexion">Page de connexion</h3>
+<figure>
+<p><a class="glightbox" href="../img/4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/4.png" width="480" /></a></p>
+</figure>
+<h3 id="dashboard">Dashboard</h3>
+<figure>
+<p><a class="glightbox" href="../img/5.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/5.png" width="480" /></a></p>
+</figure>
+<h4 id="premieres-modification">Premieres modification</h4>
+<h5 id="passage-en-francais-de-linterface-graphique">Passage en Français de l'interface graphique</h5>
+<p>Pour cela il faut ce rendre dans le menu de configuration  </p>
+<figure>
+<p><a class="glightbox" href="../img/6.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/6.png" /></a></p>
+</figure>
+<p>Selection de "FOG Settings"  </p>
+<figure>
+<p><a class="glightbox" href="../img/7.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/7.png" width="250" /></a></p>
+</figure>
+<p>Descendre jusqu'a l'onglet "General Settings" puis changer le "Default Locale" de "English-&gt;Français"  </p>
+<figure>
+<p><a class="glightbox" href="../img/8.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/8.png" width="480" /></a></p>
+</figure>
+<h5 id="modification-des-identifiants-de-connexion-par-defaut">Modification des Identifiants de connexion par défaut</h5>
+<figure>
+<p><a class="glightbox" href="../img/11.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/11.png" /></a></p>
+</figure>
+<p>Une fois sur l'interface "Utilisateurs" selectionné "Fog" puis choisir un nom "admin" dans mon cas  </p>
+<figure>
+<p><a class="glightbox" href="../img/9.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/9.png" width="480" /></a></p>
+</figure>
+<p>Ensuite pour des raisons de sécurité il faudra changer le mdp par défaut  </p>
+<figure>
+<p><a class="glightbox" href="../img/10.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="../img/10.png" width="480" /></a></p>
+</figure>
+<h4 id="capture-dune-image-windows-10-egalement-applicable-sur-windows-11">Capture d'une image Windows 10 (également applicable sur Windows 11 ?)</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 - Mathieu Lecat
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/mathieu-lecat" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.tabs", "navigation.top", "navigation.indexes", "navigation.tracking", "navigation.instant", "navigation.path", "navigation.indexes", "search.suggest", "content.code.annotation", "content.code.copy", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

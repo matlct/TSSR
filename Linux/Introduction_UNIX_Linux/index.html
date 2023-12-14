@@ -1,0 +1,1737 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="http://192.168.1.90:8000/index.md/Linux/Introduction_UNIX_Linux/" rel="canonical"/>
+<link href="../../Os/OS/" rel="prev"/>
+<link href="../Administration_Debian/" rel="next"/>
+<link href="../../img/computer-2.svg" rel="icon"/>
+<meta content="mkdocs-1.5.3, mkdocs-material-9.5.2" name="generator"/>
+<title>Introduction - MyDocs</title>
+<link href="../../assets/stylesheets/main.50c56a3b.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m1 5h-2v4H7v2h4v4h2v-4h4v-2h-4V7Z"/></svg>');}</style>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+ <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="blue" data-md-color-primary="blue" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#linux">
+          Aller au contenu
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="En-tête" class="md-header__inner md-grid">
+<a aria-label="MyDocs" class="md-header__button md-logo" data-md-component="logo" href="../.." title="MyDocs">
+<img alt="logo" src="../../img/network.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            MyDocs
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Introduction
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="blue" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="blue" data-md-color-media="" data-md-color-primary="blue" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="" data-md-color-primary="blue" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"></path></svg>
+</label>
+</form>
+<script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Rechercher" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Rechercher" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Recherche" class="md-search__options">
+<button aria-label="Effacer" class="md-search__icon md-icon" tabindex="-1" title="Effacer" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Onglets" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../../Reseaux/Module-Couche_OSI/">
+          
+  
+    
+  
+  Cours
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../Cisco/ios/">
+        
+  
+    
+  
+  Cisco IOS
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../Cloud_M365/cloud/">
+        
+  
+    
+  
+  Cloud &amp; Microsoft 365
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../Virtualisation/Virtualisation/">
+          
+  
+    
+  
+  Virtualisation
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../supervision/supervision/">
+          
+  
+    
+  
+  Supervision Infrastructure avec Centreon
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../GLPI/glpi/">
+        
+  
+    
+  
+  GLPI
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../Outils/Putty/putty/">
+          
+  
+    
+  
+  Outils
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../page_test/">
+          
+  
+    
+  
+  Aide
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="MyDocs" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="MyDocs">
+<img alt="logo" src="../../img/network.png"/>
+</a>
+    MyDocs
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Accueil
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    Cours
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Cours
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Reseaux
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+            Reseaux
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../Reseaux/Module-Couche_OSI/">
+<span class="md-ellipsis">
+    Modèle OSI
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_1_1">
+<span class="md-nav__icon md-icon"></span>
+            Modèle OSI
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module-Couche_OSI/7_Couche_Applicative/">
+<span class="md-ellipsis">
+    Couche Applicative
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module-Couche_OSI/6_Couche_Presentation/">
+<span class="md-ellipsis">
+    Couche Présentation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module-Couche_OSI/5_Couche_Session/">
+<span class="md-ellipsis">
+    Couche Session
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module-Couche_OSI/4_Couche_Transport/">
+<span class="md-ellipsis">
+    Couche Transport
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module-Couche_OSI/3_Couche_Reseau/">
+<span class="md-ellipsis">
+    Couche Réseau
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module-Couche_OSI/2_Couche_Liaison/">
+<span class="md-ellipsis">
+    Couche Liaison
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module-Couche_OSI/1_Couche_Physique/">
+<span class="md-ellipsis">
+    Couche Physique
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module-Couche_OSI/Encapsulation/">
+<span class="md-ellipsis">
+    Encapsulation &amp; Désencapsulation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module-Couche_OSI/Unites_donnees/">
+<span class="md-ellipsis">
+    Unités de données
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Adressage
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_1_2">
+<span class="md-nav__icon md-icon"></span>
+            Adressage
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module_IP/trame_ethernet/">
+<span class="md-ellipsis">
+    Trame Ethernet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module_IP/Adressage_IPv4/">
+<span class="md-ellipsis">
+    Ipv4
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Module_IP/sous_reseau/">
+<span class="md-ellipsis">
+    Sous-Réseau
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Diffusion/Collision
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_1_3">
+<span class="md-nav__icon md-icon"></span>
+            Diffusion/Collision
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Domaine_diffusion_collision/">
+<span class="md-ellipsis">
+    Domaine de Diffusion et de Collision
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Routage/le_routeur/">
+<span class="md-ellipsis">
+    Routage
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Switch &amp; VLAN
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_1_5">
+<span class="md-nav__icon md-icon"></span>
+            Switch &amp; VLAN
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Switch_VLAN/Switch/">
+<span class="md-ellipsis">
+<span style="color: #3498DB;">Le Switch</span>
+</span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/Switch_VLAN/VLAN/">
+<span class="md-ellipsis">
+<span style="color: #3498DB;">VLAN: Virtual Local Area Network</span>
+</span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/dhcp/dhcp/">
+<span class="md-ellipsis">
+    DHCP
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Reseaux/dns/dns/">
+<span class="md-ellipsis">
+    DNS
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    TOIP
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Système d'Exploitation
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Système d'Exploitation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Os/OS/">
+<span class="md-ellipsis">
+    OS
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Unix/Linux
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Unix/Linux
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Introduction
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Introduction
+  </span>
+</a>
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#historique-unix">
+<span class="md-ellipsis">
+      Historique UNIX
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#historique-linux">
+<span class="md-ellipsis">
+      Historique LINUX
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#quest-ce-que-linux">
+<span class="md-ellipsis">
+      Qu’est-ce que Linux ?
+    </span>
+</a>
+<nav aria-label="Qu’est-ce que Linux ?" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#distribution-specialisee-liste-non-exhaustive">
+<span class="md-ellipsis">
+      Distribution spécialisée (liste non exhaustive)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#distribution-client-liste-non-exhaustive">
+<span class="md-ellipsis">
+      Distribution Client (Liste non exhaustive)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#licences-et-logiciels-libres">
+<span class="md-ellipsis">
+      Licences et logiciels libres
+    </span>
+</a>
+<nav aria-label="Licences et logiciels libres" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#la-licence-gnu-general-public-license-est-la-plus-connue-et-la-plus-frequente-celle-ci-est-actuellement-en-version-3">
+<span class="md-ellipsis">
+      La licence GNU General Public License est la plus connue et la plus fréquente, celle-ci est actuellement en version 3.
+    </span>
+</a>
+<nav aria-label="La licence GNU General Public License est la plus connue et la plus fréquente, celle-ci est actuellement en version 3." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#apache">
+<span class="md-ellipsis">
+      Apache
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bsd">
+<span class="md-ellipsis">
+      BSD
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cecill-license-francaise">
+<span class="md-ellipsis">
+      CeCILL (License Française)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creative-commons">
+<span class="md-ellipsis">
+      Creative Commons
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#debian">
+<span class="md-ellipsis">
+      Debian
+    </span>
+</a>
+<nav aria-label="Debian" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#differentes-branches-et-version">
+<span class="md-ellipsis">
+      différentes Branches et Version
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Administration_Debian/">
+<span class="md-ellipsis">
+    Administration Debian
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Fichiers_Dossiers/">
+<span class="md-ellipsis">
+    Fichiers et Dossier
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Lire_editer_texte/">
+<span class="md-ellipsis">
+    Lire et Editer du texte
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Gestion_reseau_debian/">
+<span class="md-ellipsis">
+    Gestion Réseau
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Gestion_paquets_logiciel/">
+<span class="md-ellipsis">
+    Gestion des paquets
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Gestion_debian/">
+<span class="md-ellipsis">
+    Gestion d'une machine Debian
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Espace_stockage/">
+<span class="md-ellipsis">
+    Gestion Stockage
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../utilisateurs_groupe/">
+<span class="md-ellipsis">
+    Gestion des Groupes &amp; Utilisateurs
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_2_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_2_10" id="__nav_2_2_2_10_label" tabindex="0">
+<span class="md-ellipsis">
+    Bash
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_2_10_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_2_10">
+<span class="md-nav__icon md-icon"></span>
+            Bash
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Bash_introduction/">
+<span class="md-ellipsis">
+    101
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Bash_avance/">
+<span class="md-ellipsis">
+    201
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+<span class="md-ellipsis">
+    MicroSoft
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_3">
+<span class="md-nav__icon md-icon"></span>
+            MicroSoft
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3_1" id="__nav_2_2_3_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Windows
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_1_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_3_1">
+<span class="md-nav__icon md-icon"></span>
+            Windows
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/OS_Windows/">
+<span class="md-ellipsis">
+    OS Client
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Definir_un_Pilote.md">
+<span class="md-ellipsis">
+    Pilotes
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3_2" id="__nav_2_2_3_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Windows Serveur
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_2_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_3_2">
+<span class="md-nav__icon md-icon"></span>
+            Windows Serveur
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Serveur/administration_windows/">
+<span class="md-ellipsis">
+    Administration Windows
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3_2_2" id="__nav_2_2_3_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Active Directory
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_2_2_label" class="md-nav" data-md-level="5">
+<label class="md-nav__title" for="__nav_2_2_3_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Active Directory
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Serveur/active_directory/notion/">
+<span class="md-ellipsis">
+    Notion
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Serveur/active_directory/gestion_domaine/">
+<span class="md-ellipsis">
+    Gestion d'un domaine
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Serveur/active_directory/acces_ressources/">
+<span class="md-ellipsis">
+    L'accès aux Ressources
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Serveur/active_directory/GPO/">
+<span class="md-ellipsis">
+    Stratégies de Groupe
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Serveur/active_directory/service_impression.md">
+<span class="md-ellipsis">
+    Service d'impression
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Serveur/rds/rds/">
+<span class="md-ellipsis">
+    RDS
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/CLI/">
+<span class="md-ellipsis">
+    CLI
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3_4" id="__nav_2_2_3_4_label" tabindex="0">
+<span class="md-ellipsis">
+    PowerShell
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_4_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_3_4">
+<span class="md-nav__icon md-icon"></span>
+            PowerShell
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Powershell/Presentation_de_Powershell/">
+<span class="md-ellipsis">
+    Présentation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Powershell/Cmdlets_de_base_et_objets/">
+<span class="md-ellipsis">
+    cmdlet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Powershell/aide_de_powershell/">
+<span class="md-ellipsis">
+    L'aide
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Powershell/Le_Filtrage/">
+<span class="md-ellipsis">
+    Le Filtrage
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Powershell/Le_Formatage/">
+<span class="md-ellipsis">
+    Le Formatage
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Powershell/Redirection_de_flux/">
+<span class="md-ellipsis">
+    Redirection de Flux
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Powershell/Utilisation_du_PipeLine/">
+<span class="md-ellipsis">
+    Utilisation du Pipeline "|"
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../service_web_securite/">
+<span class="md-ellipsis">
+    Serveur Web
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            Serveur Web
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../service_web_securite/serveur_apache/">
+<span class="md-ellipsis">
+    Apache2
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../service_web_securite/serveur_IIS/">
+<span class="md-ellipsis">
+    Serveur IIS
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../service_web_securite/Gestion_PKI/">
+<span class="md-ellipsis">
+    Gestion des PKI
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../service_web_securite/VPN/">
+<span class="md-ellipsis">
+    VPN
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-ellipsis">
+    ITIL
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            ITIL
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ITIL/ITIL1/">
+<span class="md-ellipsis">
+    Présentation et historique
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ITIL/ITIL2/">
+<span class="md-ellipsis">
+    La gestion des services
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ITIL/ITIL3/">
+<span class="md-ellipsis">
+    Livre 1 - stratégie des services
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ITIL/ITIL4/">
+<span class="md-ellipsis">
+    Livre 2 - Conception des services
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ITIL/ITIL5/">
+<span class="md-ellipsis">
+    Livre 3 - La transition des services
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ITIL/ITIL7/">
+<span class="md-ellipsis">
+    Livre 4 - Exploitation des services - publication centrales
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ITIL/ITIL8/">
+<span class="md-ellipsis">
+    Livre 5 - Amélioration continue des services - publication centrales
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ITIL/ITIL9/">
+<span class="md-ellipsis">
+    Savoirs, savoir-faire et savoir-être
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ITIL/ITIL6/">
+<span class="md-ellipsis">
+    GLPI
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ITIL/ITIL10/">
+<span class="md-ellipsis">
+    Assistance avec GLPI
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Scripting
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+            Scripting
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_5_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../Script_bash/">
+<span class="md-ellipsis">
+    Bash
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_5_1" id="__nav_2_5_1_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_1">
+<span class="md-nav__icon md-icon"></span>
+            Bash
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Script_bash/scripting_bash/">
+<span class="md-ellipsis">
+    Construction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Script_bash/exemple_script/">
+<span class="md-ellipsis">
+    Script
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    PowerShell
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Python3/python/">
+<span class="md-ellipsis">
+    Python
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Cisco/ios/">
+<span class="md-ellipsis">
+    Cisco IOS
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Cloud_M365/cloud/">
+<span class="md-ellipsis">
+    Cloud &amp; Microsoft 365
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+<span class="md-ellipsis">
+    Virtualisation
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Virtualisation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Virtualisation/Virtualisation/">
+<span class="md-ellipsis">
+    Virtualisation
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Applications de virtualisation
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+            Applications de virtualisation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Virtualisation/vmware_workstation/">
+<span class="md-ellipsis">
+    VMware WorkStation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    VMware vSphere
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Microsoft Hyper-V
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Gestion du réseau
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Gestion du Stockage
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Gestion de Data-Center
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Virtualisation/virtualisation_srv/">
+<span class="md-ellipsis">
+    Virtualisation de serveurs
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+<span class="md-ellipsis">
+    Supervision Infrastructure avec Centreon
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            Supervision Infrastructure avec Centreon
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../supervision/supervision/">
+<span class="md-ellipsis">
+    Supervision
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../supervision/snmp_nrpe/">
+<span class="md-ellipsis">
+    Protocoles SNMP &amp; NRPE
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Centreon
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+            Centreon
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../supervision/Centreon/installation_centreon/">
+<span class="md-ellipsis">
+    Installation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../supervision/Centreon/commandes_supervision/">
+<span class="md-ellipsis">
+    Commandes
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../supervision/Centreon/Configuration/">
+<span class="md-ellipsis">
+    Configuration
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../GLPI/glpi/">
+<span class="md-ellipsis">
+    GLPI
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+<span class="md-ellipsis">
+    Outils
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            Outils
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Outils/Putty/putty/">
+<span class="md-ellipsis">
+    Putty
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Outils/Nmap/nmap/">
+<span class="md-ellipsis">
+    Nmaps
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../FogProject/fogproject/">
+<span class="md-ellipsis">
+    FogProject
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+<span class="md-ellipsis">
+    Aide
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+            Aide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../page_test/">
+<span class="md-ellipsis">
+    Page Test
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Kaisen/modification_terminal/">
+<span class="md-ellipsis">
+    Kaisen
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../GLPI/mariadb/">
+<span class="md-ellipsis">
+    MariaDB
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../revision/revision/">
+<span class="md-ellipsis">
+    Révision
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#historique-unix">
+<span class="md-ellipsis">
+      Historique UNIX
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#historique-linux">
+<span class="md-ellipsis">
+      Historique LINUX
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#quest-ce-que-linux">
+<span class="md-ellipsis">
+      Qu’est-ce que Linux ?
+    </span>
+</a>
+<nav aria-label="Qu’est-ce que Linux ?" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#distribution-specialisee-liste-non-exhaustive">
+<span class="md-ellipsis">
+      Distribution spécialisée (liste non exhaustive)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#distribution-client-liste-non-exhaustive">
+<span class="md-ellipsis">
+      Distribution Client (Liste non exhaustive)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#licences-et-logiciels-libres">
+<span class="md-ellipsis">
+      Licences et logiciels libres
+    </span>
+</a>
+<nav aria-label="Licences et logiciels libres" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#la-licence-gnu-general-public-license-est-la-plus-connue-et-la-plus-frequente-celle-ci-est-actuellement-en-version-3">
+<span class="md-ellipsis">
+      La licence GNU General Public License est la plus connue et la plus fréquente, celle-ci est actuellement en version 3.
+    </span>
+</a>
+<nav aria-label="La licence GNU General Public License est la plus connue et la plus fréquente, celle-ci est actuellement en version 3." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#apache">
+<span class="md-ellipsis">
+      Apache
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bsd">
+<span class="md-ellipsis">
+      BSD
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cecill-license-francaise">
+<span class="md-ellipsis">
+      CeCILL (License Française)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creative-commons">
+<span class="md-ellipsis">
+      Creative Commons
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#debian">
+<span class="md-ellipsis">
+      Debian
+    </span>
+</a>
+<nav aria-label="Debian" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#differentes-branches-et-version">
+<span class="md-ellipsis">
+      différentes Branches et Version
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="linux">Linux</h1>
+<h2 id="historique-unix">Historique UNIX</h2>
+<p>Objectif :</p>
+<p>Connaitre les racines historiques de GNU/Linux<br/>
+Avoir une idée de l’importance de Linux dans le monde actuel<br/>
+Savoir donner des exemples d’utilisation de Linux dans la vie courante  </p>
+<p>1969/70 : création de unics par ken thompson, dennis Ritchie et brian Kernighan première version écrite en langage B (ken thompson et dennis ritchie)<br/>
+1971 : première version officielle d’UNIX (changement de nom définitif)
+1972 : Dennis Ritchie créé le langage C (amélioration du langage B plus portable)<br/>
+1973 : réécriture du noyau Unix en langage C, l’université de Berkeley est la première a disposer d’Unix.<br/>
+1976 : Unix Time-Sharing System V6. disponible avec les sources afin de pouvoir lire, modifier, comprendre le principe du fonctionnement du système<br/>
+1977 : Bill Joy travaille a la création de 1 BSD sur les bases d’Unix V6.
+1979 : sortie de 2 BSD incluant notamment le C Shell et l’éditeur Vi crées par Bill Joy (Bill joy sera un fondateur de la société Sun Microsystems célèbre pour les logiciels java et la suite bureautique open office)<br/>
+1983 : Richard MAthew Stallman créé le projet GNU, a la suite des fermetures des sources par de nombreux industriels (plus d’accès aux codes), le but du projet est de crée un OS dont tous les composants sera un logiciel libre, afin d’accéder au code sources modifiable a l’envies afin d’adapter ou modifier celui-ci<br/>
+le projet GNU ce developpe sans noyau jusque dans les années 90.<br/>
+1987 : création d’un clone Unix nommé minix compatible IBM PC par Andrew Tanenbaum, système destiné principalement aux gens qui souhaitent étudier le fonctionnement d’un système d’exploitation  </p>
+<h2 id="historique-linux">Historique LINUX</h2>
+<p>1991 : 25/08/1991 Linus Torvalds annonce son projet de création d’un système d’exploitation libre, aux utilisateurs de minix pour arch i386 compatible ibm pc.<br/>
+Il s’agit de base d’un hobbie et il ne souhaitait rien de massif et de professionnel comme le projet GNU.<br/>
+Projet GNU auquel il manquait un noyau, trouvera celui-ci dans le projet Linux<br/>
+1992 : sortie de première distribution GNU/Linux nommée SLS (distribution = différente version des systèmes complets GNU/Linux qui mélange le noyau Linux et tous les logiciels liés au projet GNU)<br/>
+1993 : SLS laisse place à Slackware et la création de la distribution Debian<br/>
+1994 : arrive les distributions Red Hat et SuSE, c’est 4 distributions sont toujours présentes à l’heure actuelle<br/>
+1996 : création de la mascotte Tux, création de l’environnement graphique KDE<br/>
+1997 : création de l’environnement graphique Gnome<br/>
+2004 : création de la distribution Ubuntu par Mark Shuttleworth, distribution Linux à destination du grand public, car plus facile d’accès  </p>
+<h2 id="quest-ce-que-linux">Qu’est-ce que Linux ?</h2>
+<ul>
+<li>Linux est un OS majeur, issue d’Unix, très fréquent dans les infrastructures réseau</li>
+<li>Linux s’utilise principalement en CLI, à la différence des OS plus graphiques (windows, MACoS)</li>
+<li>Linux peut aussi utiliser des GUI, plus intéressant pour des utilisateurs non initiés et/ou relancer des machines un peu vieilles (Linux demandant moins de ressources que Windows)  </li>
+<li>interface graphique les plus connue :</li>
+<li>Gnome</li>
+<li>KDE</li>
+<li>XFCE</li>
+<li>LXDE</li>
+</ul>
+<p>Les distributions GNU/Linux sont aujourd’hui très nombreuses.<br/>
+Avec parfois de simple variante Kubuntu, Lubuntu, Xubuntu variante de la distribution mère Ubuntu (Kubuntu = Ubuntu + GUI KDE, Lubuntu = Ubuntu + LXDE)
+Dans le monde professionnel, on rencontre principalement les distributions suivantes :</p>
+<ul>
+<li>Red Hat Entreprise Linux (RHEL) : Distribution soumise a licence de par son éditeur, abonnement donne accès au support privilégié de Red Hat.<br/>
+  Possibilité d’accéder à une licence gratuite pour tester la distribution avec le programme développeur, mais interdite en production.  </li>
+<li>CentOS : distribution issue de Red Hat, jusqu’en 2021 il s’agissait d’une version downstream, il s’agissait d’un Red Hat sans support officiel ce qui permettait de la déployer en entreprise sans s’acquitter d’une licence, il s’agit d’une distribution à part entière avec sa propre équipe de développement. En 2021 la distribution a évolué vers CentOS stream (version plus upstream) moins adapté pour les entreprises. (LTS)</li>
+<li>Debian : distribution GNU/Linux entièrement libre et gratuite, réputée pour sa stabilité (LTS)</li>
+<li>SuSE Linux : également en version libre au travers openSUSE et la version SUSE Linux entreprise, rencontrée à travers des appliances (un paquet avec un mini OS Linux sur lequel est apposé un produit logiciel particulier, un produit intégré directement dans l’OS et donne donc un ensemble prêt a l’emploi, à travers un DVD, une iso, une machine virtuelle)</li>
+<li>Ubuntu Server : a l’origine ubuntu était orientée machine de bureau (desktop) une version serveur est arrivée en 2006. Ubuntu propose un LTS (long Time Support) afin de bénéficié d’un support et des maj sur 5 ans, la ou une version intermédiaire ne propose 1 support que sur 1 an.  </li>
+</ul>
+<p>Linux est majoritairement présent dans le monde.<br/>
+Depuis le web avec UNIX, jusqu’aux nouveaux outils de miniaturisation (raspberry, Arduino). Linux est présent au quotidien dans nos utilisations<br/>
+cela grâce à une certaine stabilité liée a un impact relativement modique du système sur les performances en plus de sa relative gratuité (libre ne veut pas dire gratuit voir Red Hat).</p>
+<p>Grosse utilisation de Linux</p>
+<ul>
+<li>Serveur web </li>
+<li>service Apache, Nginx</li>
+<li>Serveurs de base de données</li>
+<li>MySql, OracleDB, MariaDB</li>
+<li>Serveurs d’applications Java</li>
+<li>Smartphone</li>
+<li>Android est un dérivé de Linux</li>
+<li>Internet des Objets (IoT= Internet Of Things)</li>
+<li>SmartWatch, Smart-TV, Véhicules Intelligents, …</li>
+</ul>
+<h3 id="distribution-specialisee-liste-non-exhaustive">Distribution spécialisée (liste non exhaustive)</h3>
+<ul>
+<li>Kali Linux (orientée sécurité) certain des outils natifs à Kali Linux peuvent être considéré comme des outils de piratage en entreprise, avant de le déployer bien se renseigner au niveau de la sécurité de l’entreprise.</li>
+<li>Debien pour Raspberry (Raspbian) (Debian sur RaspberryPi)</li>
+<li>3CX (Distribution basée sur Debian implémentant la solution de téléphonie éponyme)</li>
+<li>System Rescue CD (Récupération de système et de données en LiveCD/USB) peut faire partir de la boite à outils du technicien en entreprise.</li>
+<li>PrimTux (Distribution orientée éducation)</li>
+</ul>
+<h3 id="distribution-client-liste-non-exhaustive">Distribution Client (Liste non exhaustive)</h3>
+<p>Distribution orientée poste de travail, Linux étant moins gourmand au niveau ressource il peut servir a remettre en service des machines plus anciennes et sera largement suffisant pour effectuer de la bureautique, de la navigation web ou du multimédia (écoute de musique, lecture de vidéo)</p>
+<ul>
+<li>Linux Mint : Dérivé d’Ubuntu, très populaire et bien adapté aux débutants.</li>
+<li>ZorinOS : A pour but de permettre une transition facile depuis Windows ou MacOS avec un travail soigné sur la GUI. Existe aussi en version light et éducative.</li>
+<li>Kubuntu/Xubuntu/Lubuntu : Ubuntu et ses diverses déclinaisons avec divers environnements graphiques peuvent offrir plusieurs expériences aux utilisateurs.</li>
+</ul>
+<h2 id="licences-et-logiciels-libres">Licences et logiciels libres</h2>
+<p>La notion de logiciels libres est très importante dans le monde Linux.<br/>
+Cela permet à chacun de librement modifier, adapter les logiciels à ses besoins.  </p>
+<p>Free Software Foundations<br/>
+Sa mission première est de financer les logiciels libres
+Elle met en avant la liberté et non la gratuité des logiciels libres.</p>
+<ul>
+<li>Association fondée par Richard Stallman en 1985</li>
+<li>Promotion des logiciels libres</li>
+<li>Défense des utilisateurs</li>
+</ul>
+<p>Différentes licences dites libres coexistent.<br/>
+Elles précisent des droits et devoirs qui peuvent diverger sur la forme comme sur le fond.  </p>
+<h3 id="la-licence-gnu-general-public-license-est-la-plus-connue-et-la-plus-frequente-celle-ci-est-actuellement-en-version-3">La licence GNU General Public License est la plus connue et la plus fréquente, celle-ci est actuellement en version 3.</h3>
+<p>Licence utilisée par les développeurs du noyau Linux et des diverses briques du projet GNU.  </p>
+<ul>
+<li>Quatre droits et devoirs :</li>
+<li>Liberté d’exécuter le logiciel, pour n’importe quel usage.</li>
+<li>Liberté d’étudier un programme et de l’adapter, via l’accès aux codes sources.</li>
+<li>Liberté de redistribuer des copies.</li>
+<li>Faire bénéficier la communauté des versions modifiées.</li>
+</ul>
+<p>La licence GNU GPL n’est pas seule il y a notamment les licences </p>
+<h4 id="apache">Apache</h4>
+<ul>
+<li>Géré par Apache Software Foundation</li>
+<li>Autorise la modification et distribution du code source</li>
+<li>Respect du Copyright </li>
+</ul>
+<h4 id="bsd">BSD</h4>
+<ul>
+<li>Autorise la réutilisation sans restriction</li>
+<li>Licence dans le domaine public et librement modifiable</li>
+<li>Pas de copyleft</li>
+<li>Plusieurs versions (BSD, Bsd3)</li>
+</ul>
+<h4 id="cecill-license-francaise">CeCILL (License Française)</h4>
+<ul>
+<li>Abréviation de <strong>CE</strong>A <strong>C</strong>NRS <strong>I</strong>NRIA <strong>L</strong>ogiciels <strong>L</strong>ibres</li>
+<li>Conforme au droit Français</li>
+<li>Respect des principes du logiciel libre</li>
+<li>Intéressant pour des dev proposant les créations en interner, au sein du pays</li>
+</ul>
+<h4 id="creative-commons">Creative Commons</h4>
+<ul>
+<li>S’applique aux créations artistiques</li>
+<li>Utilisé pour les photos, logos, graphiques ou autres musiques présentes dans les logiciels libres</li>
+<li>De nombreuses sous-catégories</li>
+</ul>
+<h2 id="debian">Debian</h2>
+<p>1993 - Création de Debian depuis cette date une quinzaine de versions on vu le jour.  </p>
+<p>La distribution Debian a été conçue dès son origine pour les systèmes serveur.<br/>
+Ce qui implique un calendrier de sorties assez long et que cette distribution n’est pas une ergonomie d’utilisation propice au utilisateurs finaux.<br/>
+Ce dernier point ayant pu être comblé via les distributions Ubuntu et Linux Mint.  </p>
+<p>Debian a toujours, depuis sa création, eu 2 objectifs <strong>Qualité</strong> et <strong>Aspect non commercial</strong> </p>
+<p>Le projet Debian a défini les principes du logiciel libre, que la communauté s’engage à respecter :  </p>
+<ul>
+<li>Redistribution libre</li>
+<li>Disponibilité du code source</li>
+<li>Licences</li>
+</ul>
+<p>Par ce biais le projet Debian a également établi un contrat social avec la communauté :  </p>
+<ol>
+<li>Debian demeurera totalement libre.</li>
+<li>Nous donnerons nos travaux à la communauté des logiciels libres.</li>
+<li>Nous ne dissimulerons pas les problèmes.</li>
+<li>Nos priorités sont nos utilisateurs et les logiciels libres.</li>
+<li>Les travaux non conformes aux principes du logiciel libre pourront être disponibles dans des sections différenciées ne faisant pas partie du système Debian.</li>
+</ol>
+<p>[https://www.debian.org/social_contract.fr.html]</p>
+<h3 id="differentes-branches-et-version">différentes Branches et Version</h3>
+<p>La version actuelle de Debian est la 11 -Bulleyes (la 12 étant en cours de déploiement).</p>
+<p>Toutes les versions de Debian comportent 3 principales branches (Release)  </p>
+<pre class="mermaid"><code>graph LR
+ A[Version de Debian] --&gt; B[Stable];
+ B --&gt; C[Old-Stable];
+ C --&gt; D[Old-Old-Stable];
+ A --&gt; E[Testing];
+ A --&gt; F[Unstable];
+</code></pre>
+<p><strong>Stable</strong> : Version de production de Debian, celle recommandée d’utiliser<br/>
+<strong>Testing</strong>: contiens la future version stable de Debian<br/>
+<strong>Unstable</strong>: Version en constante évolution (on parle de Rolling Release). Cette version est toujours appelée <em>Sid</em>.  </p>
+<p>En plus des 3 branches principales, des sous-branches existent <strong>Old-Stable</strong> &amp; <strong>Old-Old-Stable</strong>, elles désignent les branches N-1 et N-2.  </p>
+<div class="admonition tip">
+<p>Version <strong>Stable</strong> actuel = 11,<br/>
+<strong>Old-Stable</strong> = 10<br/>
+<strong>Old-Old-Stable</strong> = 9</p>
+</div>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+  Retour en haut de la page
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2023 - Mathieu Lecat
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/in/mathieu-lecat" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.tabs", "navigation.top", "navigation.indexes", "navigation.tracking", "navigation.instant", "navigation.path", "navigation.indexes", "search.suggest", "content.code.annotation", "content.code.copy", "content.tooltips"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+<script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+window.mermaidConfig = {default: {
+    startOnLoad: false
+}};</script><script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

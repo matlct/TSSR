@@ -1,0 +1,3943 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://192.168.1.90:8000/index.md/Virtualisation/gestion_reseau/">
+      
+      
+      
+      
+      <link rel="icon" href="../../img/computer-2.svg">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>Gestion reseau - MyDocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m1 5h-2v4H7v2h4v4h2v-4h4v-2h-4V7Z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#les-vlan" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="MyDocs" class="md-header__button md-logo" aria-label="MyDocs" data-md-component="logo">
+      
+  <img src="../../img/network.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MyDocs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Gestion reseau
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Reseaux/Module-Couche_OSI/" class="md-tabs__link">
+          
+  
+    
+  
+  Cours
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Cisco/ios/" class="md-tabs__link">
+        
+  
+    
+  
+  Cisco IOS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Cloud_M365/cloud/" class="md-tabs__link">
+        
+  
+    
+  
+  Cloud & Microsoft 365
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Virtualisation/" class="md-tabs__link">
+          
+  
+    
+  
+  Virtualisation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../supervision/supervision/" class="md-tabs__link">
+          
+  
+    
+  
+  Supervision Infrastructure avec Centreon
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../GLPI/glpi/" class="md-tabs__link">
+        
+  
+    
+  
+  GLPI
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Outils/Putty/putty/" class="md-tabs__link">
+          
+  
+    
+  
+  Outils
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../page_test/" class="md-tabs__link">
+          
+  
+    
+  
+  Aide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MyDocs" class="md-nav__button md-logo" aria-label="MyDocs" data-md-component="logo">
+      
+  <img src="../../img/network.png" alt="logo">
+
+    </a>
+    MyDocs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cours
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reseaux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Reseaux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Reseaux/Module-Couche_OSI/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Modèle OSI
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Modèle OSI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module-Couche_OSI/7_Couche_Applicative/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Applicative
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module-Couche_OSI/6_Couche_Presentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Présentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module-Couche_OSI/5_Couche_Session/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Session
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module-Couche_OSI/4_Couche_Transport/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Transport
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module-Couche_OSI/3_Couche_Reseau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Réseau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module-Couche_OSI/2_Couche_Liaison/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Liaison
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module-Couche_OSI/1_Couche_Physique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Couche Physique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module-Couche_OSI/Encapsulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Encapsulation & Désencapsulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module-Couche_OSI/Unites_donnees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unités de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Adressage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Adressage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module_IP/trame_ethernet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trame Ethernet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module_IP/Adressage_IPv4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ipv4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Module_IP/sous_reseau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sous-Réseau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Diffusion/Collision
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Diffusion/Collision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Domaine_diffusion_collision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Domaine de Diffusion et de Collision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Routage/le_routeur/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Routage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Switch & VLAN
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            Switch & VLAN
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Switch_VLAN/Switch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <span style="color: #3498DB;">Le Switch</span>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/Switch_VLAN/VLAN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <span style="color: #3498DB;">VLAN: Virtual Local Area Network</span>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/dhcp/dhcp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DHCP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/dns/dns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DNS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TOIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Système d'Exploitation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Système d'Exploitation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Os/OS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unix/Linux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Unix/Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Introduction_UNIX_Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Administration_Debian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Administration Debian
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Fichiers_Dossiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fichiers et Dossier
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Lire_editer_texte/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lire et Editer du texte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Gestion_reseau_debian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion Réseau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Gestion_paquets_logiciel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion des paquets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Gestion_debian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion d'une machine Debian
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Espace_stockage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion Stockage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/utilisateurs_groupe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion des Groupes & Utilisateurs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2_10" id="__nav_2_2_2_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bash
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            Bash
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Bash_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    101
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Bash_avance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    201
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MicroSoft
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            MicroSoft
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_1" id="__nav_2_2_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Windows
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/OS_Windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OS Client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Definir_un_Pilote.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pilotes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_2" id="__nav_2_2_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Windows Serveur
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Windows Serveur
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Serveur/administration_windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Administration Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_2_2" id="__nav_2_2_3_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Active Directory
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_2_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Active Directory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Serveur/active_directory/notion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Serveur/active_directory/gestion_domaine/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion d'un domaine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Serveur/active_directory/acces_ressources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L'accès aux Ressources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Serveur/active_directory/GPO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stratégies de Groupe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Serveur/active_directory/service_impression.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Service d'impression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Serveur/rds/rds/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RDS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/CLI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_4" id="__nav_2_2_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PowerShell
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            PowerShell
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Powershell/Presentation_de_Powershell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Présentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Powershell/Cmdlets_de_base_et_objets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cmdlet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Powershell/aide_de_powershell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L'aide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Powershell/Le_Filtrage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le Filtrage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Powershell/Le_Formatage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le Formatage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Powershell/Redirection_de_flux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redirection de Flux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Powershell/Utilisation_du_PipeLine/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Utilisation du Pipeline "|"
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../service_web_securite/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Serveur Web
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Serveur Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../service_web_securite/serveur_apache/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apache2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../service_web_securite/serveur_IIS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Serveur IIS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../service_web_securite/Gestion_PKI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion des PKI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../service_web_securite/VPN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VPN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ITIL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            ITIL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ITIL/ITIL1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Présentation et historique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ITIL/ITIL2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    La gestion des services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ITIL/ITIL3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Livre 1 - stratégie des services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ITIL/ITIL4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Livre 2 - Conception des services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ITIL/ITIL5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Livre 3 - La transition des services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ITIL/ITIL7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Livre 4 - Exploitation des services - publication centrales
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ITIL/ITIL8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Livre 5 - Amélioration continue des services - publication centrales
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ITIL/ITIL9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Savoirs, savoir-faire et savoir-être
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ITIL/ITIL6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GLPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ITIL/ITIL10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assistance avec GLPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Scripting
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Scripting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Script_bash/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Bash
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5_1" id="__nav_2_5_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Bash
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Script_bash/scripting_bash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Construction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Script_bash/exemple_script/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Script
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PowerShell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python3/python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cisco/ios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cisco IOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud_M365/cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud & Microsoft 365
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Virtualisation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Virtualisation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Virtualisation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Applications de virtualisation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Applications de virtualisation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vmware_workstation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VMware WorkStation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VMware vSphere
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Hyper-V
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion du réseau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion du Stockage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion de Data-Center
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../virtualisation_srv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualisation de serveurs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Supervision Infrastructure avec Centreon
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Supervision Infrastructure avec Centreon
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../supervision/supervision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Supervision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../supervision/snmp_nrpe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Protocoles SNMP & NRPE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Centreon
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Centreon
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../supervision/Centreon/installation_centreon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../supervision/Centreon/commandes_supervision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Commandes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../supervision/Centreon/Configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GLPI/glpi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GLPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Outils
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Outils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Outils/Putty/putty/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Putty
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Outils/Nmap/nmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nmaps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/FogProject/fogproject/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FogProject
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Aide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Aide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../page_test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Page Test
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kaisen/modification_terminal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kaisen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GLPI/mariadb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MariaDB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../revision/revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Révision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#les-vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les VLAN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-trunks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les Trunks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vsphere-standard-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      vSphere Standard Switch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vswitch-distribue" class="md-nav__link">
+    <span class="md-ellipsis">
+      vSwitch distribué
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-groupements-de-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les Groupements de ports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vmnic-ou-pnic" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMNIC ou pNIC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-regroupement-de-carte-reseau-teaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le regroupement de carte réseau (Teaming)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vnic" class="md-nav__link">
+    <span class="md-ellipsis">
+      vNIC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vlan-en-environnement-virtualise" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLAN en environnement virtualisé
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Gestion reseau</h1>
+
+<h2 id="les-vlan">Les VLAN</h2>
+<p>Une solution de virtualisation va héberger plusieurs centaines voire plusieurs milliers de machines virtuelles ces machines virtuelles vont toutes avoir un rôle précis dans une infrastructure informatique l'accès au réseau va être déterminant pour la communication de ces monsieur virtuel avec l'ensemble des services de l'infrastructureafin de cloisonner ces machines virtuelles l'utilisation de vélan peut être employée dans une solution de virtualisation les .Dame vont permettre de cloisonner et ainsi de protéger un ensemble de machines du reste du réseau de l'infrastructure .Un vélan , l'abréviation de virtuel Lâne est un réseau logique qui est indépendant du reste de l'infrastructure reste. Les commutateurs virtuels ou réels vont employer CV Lane pour pouvoir interconnecter différents réseaux en fonction d'un critère .Les éléments raccordés à un vélan pourront communiquer uniquement sur les autres raccordés sur ce même vélin . En effet , une machine interconnectée sur un vélan identifié avec un numéro à langue de un à 1000 ne pourra communiquer qu'avec d'autres machines connectées sur ce même vélin . La commutation se fait au niveau de la trame . En effet , l'index de velham se fait par un commutateur .Ce commutateur va taguer la trame en fonction du velan souhaité .La mise en œuvre de vélanes doit être décidée de 2 côtés . On est .En effet , le velan doit être employé du côté physique sur les commutateurs physiques et également sur les commutateurs virtuels . Ces commutateurs virtuels sont hébergés au sein de la solution 2 virtualisation . Nous verrons le détail de leur fonctionnement dans un autre chapitre .Nous avons un exemple ici de répartition de commutation de type . En effet , sur un bandeau d'accès réseau , nous allons réserver les ports de un à 12 pour lever lundi post client .Sur les ports de 13 à 18 , nous aurons le vélo 10 serveurs et sur les ports de 19 à 24 , nous aurons les vélanes pour la téléphonie .Le résultat de ce découpage sera que les systèmes connectés sur les ports post clients ne pourront communiquer uniquement entre les .Qui vont circuler sur les ports de un à 12 seront toutes tagulées par le commutateur avec un vélan spécifique ce vélan sera différent du vélo serveur et également du vélo téléphonique ?Intérêts de mettre en œuvre le vélan le premier intérêt est d'apporter une segmentation au niveau du réseau en effet à l'intérieur d'une solution de virtualisation le nombre de matières virtuelles peut être très importantla mise en place d'un vélan va permettre de réduire les domaines de diffusion et aussi d'éviter un phénomène que l'on appelle tempête de broadcastce phénomène est .Lorsque beaucoup de machines tentent de découvrir les autres machines présentes à leur côté et par le jeu de la diffusion Eh bien ces requêtes de découverte vont être multipliées entre les commutateurs et cette multiplication de requêtes va sur solliciter les commutateurs jusqu'à prendre toute la puissance disponible et .Une défaillance du commutated pour éviter cette surdiffusion et étant donné le nombre très important de machines virtuelles Eh bien les machines virtuelles vont être segmentées au niveau de leur accès réseau voire l'utilisation des velin .La segmentation va également accroître la sécurité en effet si un logiciel espion ou un programme malveillant se répand à l'intérieur de la solution de virtualisation par l'accès réseau le fait d'avoir isolé les machines virtuelles entre elles par l'utilisation des vlanes va permettre d'éviter une propagation à l'ensemble des machines virtuelles du programme malvéla segmentation permet également d'appliquer des méthodes de qualité de service la QOS va permettre de prioriser des flux vers un ensemble de machines virtuelles qui participent à des services critiqueson peut donner un exemple ? Le contrôleur de domaine ou l'ensemble des contrôleurs de domaine qui participent à la réalisation d'un domaine actif directory ou d'une forêt active directory. Le fait de segmenter , c'est contre lors du domaine dans un vélane identique les .Intégrer à la solution de virtualisation pour les gestions du réseau vont nous permettre de mettre en place des règles au niveau des flux et de prioriser ces flux directement au niveau des commutateurs virtuels en effet nous verrons plus loin dans la trame nous pouvons à la fois taguer l'identifiant du réseau virtuel et nous pouvons également ajouter une valeur de prioritéle comêtateur virtuel comme le commutateur physique vont lire 7 index de priorité et vont renvoyer le flux les plus prioritaires au réseau virtuel déterminé dans la valise de ville .La segmentation va également permettre d'optimiser l'utilisation du matériel en effet on va d'abord prioriser l'emploi des ressources pour une certaine catégorie de machines virtuelles répondant à un vélan spécifique on peut citer notamment la téléphonie sur IP qui nécessite d'avoir des accès réseau extrêmement rapide afin d'éviter la perte de qualité de voix ou de vidéo on ?Donc héberger ces machines virtuelles sur des commutateurs virtuels performants et ces commutateurs virtuels vont être placés sur les hyperviseurs les plus performants .Il y a toutefois des limites à l'utilisation des vélanes .Il faut qu'à la fois les commutateurs virtuels et les commutateurs physiques prennent en charge la gestion des vélanes . Certains commutateurs de bas niveau ne prennent pas en charge . La gestion des vélas .Tous les commutateurs virtuels de toutes les solutions de virtualisation de serveur vont prendre en charge la gestion des vélos . La gestion des vélanes va se propager à la fois au sein de la solution de virtualisation , mais également au sein de chaque machine virtuelle . Attention toutefois à bien disposer de la gestion dévelane en dehors de la solution de virtualisation afin d'avoir une scène de communication réseau complète .Et puis le VLAN nécessité une configuration additionnelle . Cette configuration va se faire à la fois dans la solution de virtualisation au sein des communicateurs virtuels , mais également au sein des commutateurs physiques en dehors de la solution de virtualisation .Les vélins ne vous employaient sur différents niveaux d'accès au niveau du modèle osi en effet , le modèle osi est réparti en 8 causes . Levelane vont pouvoir être intégrés sur 3 couches différentes . On .On va à ce moment là parler de niveau 2 .Le premier niveau de vélane va s'appliquer au niveau des commutateurs et vous s'attribuer en fonction d'impôtimportant d'un commutateur réseau va être appliqué à un seul et unique VLAM ce qui . Ce qui veut dire que le trafic entrant sur ce port devra être tagué sur le vélane déterminé dans le communicateur et .Le trafic sortant sur ce port il sera automatiquement tagué sur le vélane déterminé dans le commutateurtoutes les trames qui ne seront pas tagués sur le vélin dédié à ce port seront rejetés par le commutateur ?On parle donc de vélane de niveau un . Ce vélane de niveau un correspond à la couche numéro 2 du modèle osi , la couche est liaison .Sur certains commutateurs , nous pouvons utiliser le vélo de niveau 2 , levez l'un de niveau 2 , 20 affecter un tag de vélal en fonction de l'adresse Mac, on se situe toujours sur la couche du veau 2 du modèle physique puisque nous te réveillons avec l'adresse Mac le .Le commutateur ne va pas dédier un port mais va lire l'adresse Mac associée dans la Somme et en fonction de la table de correspondance renseignée dans le commutateurlorsque l'adresse Mac va matcher dans cette table et bien lartex de veylan Weentz tagué sur cette trame là .L'avantage du vélane de niveau 2 est que chaque port peut commuter tous les vélins disponibles . L'affectation ne se fera plus sur le bord , mais un paragramme en fonction de l'adresse Mac de destination fournie dans l'intrame .Il existe également un vélen de 3 niveau . Cevelaine est réservé au commutateur capable de lire les paquets IP, l'ensemble des routeurs va être en mesure d'effectuer cette lecture . Nous passons donc sur la couche numéro 3 du modèle osi la gauche transport .Nous allons donc cette fois ci travailler sur l'adresse IP. Cette adresse IP va être lue et encore une fois en fonction d'une table de correspondance . La trame va être taguée en fonction de l'adresse IP de destination .En résumé , c'est 3 niveaux de vélane en 3 niveaux de service différents . Il faut faire très attention aux renseignements des tables de correspondance Mac ou IP et également savoir si le matériel est capable de prendre en charge ces différents niveaux de vélo .Concernant les commutateurs virtuels , toutes les tous les commutateurs virtuels sont en capacité de travailler sur les vélanes de niveau un et de niveau 2 concernant les vélins de niveau 3 sur certaines solutions de virtualisation . C'est une fonction additionnelle .Les affectations , on peut affecter un vélan directement sur un switch . On peut également affecter un vélan sur l'équipement final . Cette équipement finale peut être un poste de travail , un serveur , un téléphone IP , une imprimante et cetera .Dans ce cas là , si c'est le terminal qui est .Écouter un ce terminal ne pourra communiquer que avec les trames tagués sur le vélan attendu .L'utilisation d'everlan est normée . Le protocole correspondant et le 802 . Attention toutefois sur certains matériels propriétaires , le protocole et le DOT incul .Nous allons voir ici un exemple des trames .Donc le fait d'ajouter l'identification de VLIM , nous allons avoir sur un paquet de 4 .Multiplié par 8 bits . Nous avons donc 32 bits à disposition pour gérer les informations de notre Vladi. Nous avons donc ici en détail une trêve à l'intérieur de cette âme , on retrouve l'adresse Mac source , puis l'adresse Mac de destination . Nous avons donc nos 32 bits de tag véla sur la norme 802 .À l'intérieur , nous avons donc 16 bits pour le tipeee tag protocole identifiaire .Ce type il est détail protocole identifiant va nous permettre d'indiquer l'index de Vladi dans le détail de cette simple , nous voyons également sur 38 , nous allons voir la priorité . Cette valeur de priorité va être comprise de 0 à 7. La valeur de priorité la plus forte va être la valeur 0 . Nous voyons donc que sur les 32 bits réservés au vélane . Nous avons 3 bits qui vont être réservés à la priorité . Cette priorité va comprendre une valeur allant de 0 à 7 . La valeur l'a plus faible étant celle qui sera traitée avec la priorité la plus forte .Une trame qui va être taguée à une valeur à 0 aurait la priorité par rapport à une trame taguée avec une valeur supérieure .Les 12 derniers mythes de notre tag vélane vont comprendre le velan ID . C'est cette valeur qui va être lue par les commutateurs virtuels et physiques et qui va permettre de diriger la trame vers le port ou le commutateur de destination, levez l'âne va être référencé par une norme , la norme 802 un **** .Le nouvel analyse va également être limitée . Nous pouvons donc utiliser ici . L'identifiant allons de un à 4094 .Ce qui rend possible l'utilisation de 4095 vélane différent dans une solution de virtualisation et également dans un réseau physique .  </p>
+<h2 id="les-trunks">Les Trunks</h2>
+<p>Plus précédemment l'utilisation de vela les velanes vont nous permettre de réserver des emplacements réseaux dans l'autre solution de virtualisation et cloisonner nos machines virtuelles toutefois l'utilisation des vélanes doit être fait du côté virtuel mais également sur les commutateurs physiques la liaison entre les réseaux virtuels et les réseaux physiques va se faire par l'intermédiaire d'une fonctionnalité que l'on appelle le trunken effet un peu la commutateur peut être réservé à un seul velan .Lyon et que les commutateurs physiques doivent être en capacité de communauté la totalité des vélanes utilisés à l'intérieur de la solution de virtualisation il .Donc créer un point de connexion entre les commutateurs physiques et les commutateurs virtuels ce point de connexion doit être en capacité de faire passer la totalité du trafic de la totalité des vélos ce point de connexion s'appelle le truck le .5 est une capacité spéciale d'un commutateur qu'il soit virtuel ou physique il est généralement associé à un port spécifique d'un commutateur physique et il va permettre de relier un 2 commutateur .Dans donc dans notre exemple ici nous avons un assemblage de 3 commutateurs nous .Cette sœur sont répartis avec des vélanes de niveau un des points vont être assignés à des vélanes spécifiques et chaque commutateur va se voir réserver un port en particulier dans le cadre du premier commutateur que nous appelons Nantes RDC nous avons le port numéro 23 ce port numéro 23 va être associé en mode trunk et c'est pas vos numéros 23 à rediriger le flux du vélin numéro 3 postes clients ainsi que le flux du vélane numéro 2 téléphonevers le port numéro 23 du comité intermédiaire appeler Nantes cœur de réseau .Oui à partir de ce commutateur Nantes cœur du réseau nous avons le port numéro 24 qui va être relié au port numéro 24 du commutateur Nantes étage un support va être déclaré en mode trunk de chaque côté aussi bien du commutateur Nantes cœur de réseau que du Nantes étage un et ?C'est d'abord vont avoir une communication sur leveland numéro 3 et le zélan numéro 2 .Cet exemple nous montre que les . Le commutateur sont reliés entre eux par une fonctionnalité que l'on appelle le truc le .Le trunk n'est pas limité dans le nombre de vélins , il est possible de faire communiquer la totalité des vélanes disponibles à l'intérieur n'importe quoi .Il y a plusieurs types et plusieurs critères pour utiliser apporter . En effet , lorsque l'on connaît la liste des VLN disponibles sur un commutateur , il est facile de déclarer dans le Trucks levelane qui vont passer à celui ci pour atteindre un autre communauteur .Toutefois , lorsque l'on n'a pas à la connaissance de la totalité des vélanes disponibles . Il est possible de déclarer le port qui va héberger la fonctionnalité de Trump en mode Accessdans ce modèle , Eh bien le commutateur va communiquer avec non pas un autre commutateur , qu'il soit virtuel ou physique , mais avec un équipement terminal , un ordinateur un poste de client , un serveur de téléphonie et tout autre équipement. Dans ce cas là , en mode porc Access et bien secours ne pourra être tagué que sur un seul vélane en mode truck le port est utilisé pour la liaison vers d'autres commutateurs et un ensemble de vélins vont pouvoir lui être affectés , voir la totalité des vélos utilisables .Un autre paramètre doit être géré sur un commutateur . Le marquage , le marquage peut être actif ou inactif dans le cas d'un marquage actif , le champ tag vélo que nous avons vu précédemment va être propagé lorsque le trafic va sortir du commutate , c'est à dire que le trafic sortant va éviter du tag vélane assigné au port du commutateur . Nous sommes toujours sur un vélan de niveau un , c'est le marquage est inactif , alors l'action va êtrede supprimer le tag vélade . Si la trame en contient une c'est possible qu'une trame ne soit pas taguée .Mais si le chant , si le paramètre marquage était l'étape inactif , alors le commutateur va avoir l'effet de supprimer les informations de tags . Lorsque la trame va être utilisée par le communicateur . Il existe également un vélo dit par défaut . En effet , aujourd'hui , beaucoup de commutateurs ne vont pas avoir de configuration spécifique au niveau de leur vélo et vont simplement .Angela dit par défaut ce vélo par défaut va être comment à la grande majeure à la majeure partie des comutateurs et c'est le vélan dit numéro un .Lever l'âne un va être tagué systématiquement sur toutes les trames dans la totalité des commutateurs qu'il soit virtuel où physiquesans configuration toutes les trames seront taguées sur le vélane numéro un comment employer les vélanes sur une solution de virtualisation Eh bien chaque équipement virtuel de gestion du réseau comme un V switch ou 1 un virtuel distribué des switch c'est commutateur virtuel vont avoir un paramètre d'assignation de vélo .Certains équipements terminaux vont également pouvoir utiliser la norme 802 1 et lire les tags de velan des trames qui leur sont adressésles blessés virtuels vont pouvoir recevoir en tag vélation ? Attention toutefois , tous les systèmes d'exploitation ne sont pas en capacité ensuite de traiter cet algue .Nous avons un exemple ici sur 1 , un virtuel standard switch .Par défaut , ce VSS va communiquer sur le velan un , le velin par défaut , mais il est possible d'assigner un vélan spécifique à ce commutateur virtuel dans .Secomutateur va exploiter ce vélan et va assigner des ports virtuels à ceux là .En résumé , le trucing va permettre de propager la totalité du trafic des vélins utilisés sur des commutateurs physiques , vers des commutateurs virtuels et inversement. Les commutateurs virtuels vont continuer à employer le vélane par défaut tant que une configuration spécifique ne leur sera pas appliquée .La norme reste la même entre les comutateurs physiques et les commutateurs virtuels , la norme reste le 82 .  </p>
+<h2 id="vsphere-standard-switch">vSphere Standard Switch</h2>
+<p>Nous allons maintenant détailler plus précisément les composants vestphères du réseau nous allons voir les différents possibilités de virtualiser des trames et des paquets .Le premier élément est le VSS . L'abréviation VSS détermine le vesper standard switch .C'est le composant central de la gestion du réseau d'un NUSXI . Pour rappel , le SXXI est l'hyperviseur de V moins . C'est .Clément qui va permettre de relier les massines virtuelles au réseau physique connecté à l'autre de virtualisation le ?Laisse faire standard switch va être géré sur chaque hyperviseur en fonction des connexions disponibles sur cette hyperviseur .Dans le cadre d'une solution de gestion globale de type V Center , le V Center sera capable de d'administrer chaque VSS de chaque hyperviseur. 1 va être lié à un ou plusieurs groupements de port . En effet , un vesver standard switch et la représentation virtuelle , strictement identique à un commutateur physique .Le VSS est un élément de commutation de réseau qui .Qui va avoir les mêmes fonctionnalités qu'un commutateur physique ?Cevée 16 va pouvoir être nommé. On va retrouver à l'intérieur un groupement de porcs . Ce groupement de bons va permettre la liaison ou machine virtuelle .Chaque machine virtuelle disposant d'une ou de plusieurs cartes réseau va venir se connecter à un groupement de portes présent sur 1 sphère standard switch de la même .De la même manière qu'un terminal se connecte à un port sur un communisateur physique .Le VSS comporte donc différents groupes d'import permettant aux machines virtuelles de se raccorder et d'accéder au raisin .1 16 va également supporter des groupements de ports de type VM Carmen, c'est groupement de temps que nous détaillerons plus loin , vont héberger des services propres à l'hyperviseur comme l'hébergement de l'interface web d'administration . Enfin , 1 va être raccordé à une aux cartes réseau physique de l'autre 2 virtualisation. 1 16 peut être raccordé à une ou plusieurs cartes réseau . En effet , très souvent pour assurer la tolérance de panne , l'accès au réseau va se faire sur plusieurs cartes réseaux pour couvrir la défaillance de l'une ou l'autre de ces cartes réseau. En résumé 1 va avoir 2 parties . Il joue le rôle d'interface entre le réseau physique et le réseau virtuel .  </p>
+<h2 id="vswitch-distribue">vSwitch distribué</h2>
+<p>À la différence du vssper standard switch qui est lié à 1 nous allons retrouver dans les solutions de gestion globale de VM ware le VDS pour le V sphère distribuedate switch ?Différence majeure entre les 2 et dans le fait qu'un VDS ne sera lié à aucun hyperviseuren effet nous avons vu précédemment que des fonctionnalités de la vespère permettaient de déplacer une machine virtuelle d'un hyperviseur vers un autre hyperviseur sans pertede connexion au réseau pour cela le prérequis va être que la machine virtuelle a déplacé ne soit pas raccordé sur 1 qui apporterait une dépendance par rapport au réseau connecté à l'hyperviseur il soit relié sur 1ce VDS va être relié sur la totalité des hyperviseurs de l'ensemble de virtualisation ?Propriété va lui permettre d'assurer en permanence la connectivité au réseau physique et .Ajouter une tolérance de panne en cas de perte d'un hyperviseur .Le VDS est utilisable sur la totalité des autres ou sur un groupe d'hôtes spécifiques. En effet , lorsque nous allons créer ce VDS , nous allons choisir les autres et également les cartes réseau physique que nous avons que nous allons liées à ce niveau. Le VDS ne va pas être présent physiquement sur aucun hyperviseur . Il sera déclaré au sein du V Center le .Le V Center , qui est l'élément de contrôle global va assurer les liaisons entre les hyperviseurs et le VDS .L'emploi d'un VDS doit se faire avec un niveau , un nombre minimum d'hyperviseur .La fonctionnalité virtuelle distributée de switch est disponible à partir de la licence entreprises plus .  </p>
+<h2 id="les-groupements-de-ports">Les Groupements de ports</h2>
+<p>Bien rendu un veste switch standard peut héberger 2 types de groupements de porcs ces groupements de porc sont comparables au port disponible sur un commutateur physiqueun commutateur virtuel peut héberger des ports disponibles pour les machines virtuelles dans ce cas là ce type de groupement de porc sera un type VM Network sur ce type de groupement de porc seuls les VM peuvent être reliéscela va permettre aux machines virtuelles de communiquer entre elles mais également de bénéficier des liaisons montantes soient des cartes réseau de la machine haute attribuée au vest switch hébergeant le groupe vent de porc et de bénéficier des services disponibles sur ce réseauun vais switch standard peut héberger plusieurs groupements de porcs de type VM Networkces groupements de bord ces ronds clairement distincts et les machines virtuelles connectées sur chacun des groupements de porcs ne pourront pas communiquer avec d'autres machines virtuelles hébergées sur d'autres groupements de porcs même si celle ci sont sur le même V switch il est .Tellement possible de segmenter les vers switch et les groupements de porc en rajoutant le tag vélo sur chaque groupement de porc dans ce cas là chaque machine fonctionnera sur un seul velan le vélan attribué au groupement de temps le feu .Le 2 type de groupe Menton et le VM Kernel , il ne permet pas d'être assigné à une nation virtuelle . Il va servir uniquement pour héberger des services disponibles sur l'hyperviseur. On essaie l'hyperviseur a besoin de services renseignés par une adresse IP pour pouvoir communiquer avec ou l'u V Center ou d'autres hyperviseurs ou autres solutions comprises dans l'infrastructure .Pour cela , groupement de formes de type VM carnel va être disponible sur un V switch veut bénéficier d'une adresse IP et également d'un service spécifique .En résumé , un V switch peut être connecté sur plusieurs cartes réseau ou aucune . On peut créer des V switch pour isoler et faire communiquer les machines virtuelles entre elles dans la vie sphère . Le V switch peut à la fois héberger dégroupement de port de team VM Network et des groupements de porcs de team VM Canada .  </p>
+<h2 id="vmnic-ou-pnic">VMNIC ou pNIC</h2>
+<p>Les VMNIC et les PNIC sont 2 appellations qui désignent le même objet en effet ces appellations désignent les cartes réseaux physiques liées aux hôtes de virtualisation les abréviations sont différentes car elles désignent le même objet d'un côté ou de l'autre de la vaisselle on est ?Et on parlera de PNIC pour physical Network integrated card lorsque l'on parle de la carte réseau physique de l'autre mais cette carte réseau physique va être interprétée comme une VM et lycée V .Tu as le média Network intégrated card lorsque on retrouve l'objet à l'intérieur de la vaisselle en .Les VMNIC vont être les éléments qui vont permettre aux vais switch standard de pouvoir communiquer avec le réseau physique ?Attention le .Dommage DVMIC commence par la carte numéro 0 cette carte numéro 0 la VMNIC 0 indique la carte réseau physique numéro une 2 loute et ainsi de suite .Est importante bien différenciée les 2 lavez munissez comporte la même adresse Mac que la PMIC si la segmentation vélane a été indiquée sur la carte réseau physique il faut également reproduire la carte l'adressage la configuration vélane sur la VMNIC .Chaque carte est liée à un seul V switch un V switch peut être lié à plusieurs cartes mais une carte ne pourrait être rien qu'à un seul vSwitch.  </p>
+<h2 id="le-regroupement-de-carte-reseau-teaming">Le regroupement de carte réseau (Teaming)</h2>
+<p>Timing et la dénomination pour le regroupement de cartes en effet dans une solution de virtualisation de serveur un élément important et la consolidation il est important d'avoirun secours en cas de panne soit d'un autre soit d'un élément d'un autre pour secourir la connexion au réseau une des solutions est d'utiliser le timing le timing et le regroupement de plusieurs cartes réseau physiques en un seul objet logique .Ce regroupement peut être accompagné d'une stratégie 2 stratégies sont possibles le premier et le débit cumulé dans ce cas là 2 cartes réseaux minimum sont nécessaires ces 2 cartes réseau vont voir leur débit cumulé pour permettre un débit plus important et ainsi fournir plus de services ou machines virtuelles ou à l'hyperviseur en fonction du besoinles prérequis vont être un mode de configuration en mode actif actif chaque carte réseau sera active dans le teaming l'inconvénient de cette solution c'est qu'en cas de défaillance d'une des 2 cartes le débit sera réduit de la moitié .La 2 stratégie est d'utiliser ces 2 cartes en tolérance de panne ou faillover dans cette stratégie le mode est actif passif ou passif actif selon le besoin et la carte réseau passive prendra le relais de la carte réseau active en cas de défaillance de celle ci les avantages sont un secours en cas de défaillance et un secours qui se fera de manière automatique l'inconvénient et la mise en état passif d'une carte réseau cette carte réseau n'est donc pas d'utilité à part de remplacer la carte réseau active ?Rocky sont de disposer d'au moins 2 raccordés sur 1 switch standard .Sa mise en œuvre peut se faire soit on sélectionnant les 2 cartes au moment de la création du switcho virtuel ou par l'ajout plus tard d'une nouvelle liaison montante un switch Virtuel puis à la création du timing et au choix de la stratégie débicutée ou tolérance de Paris . La répartition de charge à l'intérieur du timing lorsque l'on choisit une stratégie de type débit cumulé , peut également être modifié par défaut . La répartition de charges se fera en .Type best effort c'est à dire que chaque demande soit satisfaite le plus rapidement possible mais il est également possible de modifier cette attribution du débit la .La solution est d'attribuer par VN en effet une VM étant raccordée à un port d'un groupement de port d'un vais switch on peut favoriser le port du groupement de port sollicité par cette VM et lui donner une priorité sur l'accèsil est également possible lorsqu'on ne souhaite pas privilégier la totalité d'import il est possible de privilégier une adresse Mac dansHein lorsque le groupe mon port aura une demande de l'adresse Mac cible Eh bien ces demandes seront satisfaites en priorité il est enfin possible de gérer les ressources par paquet cette fois ci en fonction de l'adressage source et destination un algorithme va déterminer la carte réseau la plus proche et va déterminer l'utilisation de celle ci en fonction de la destination à atteindrecette stratégie s'appelle le voisinage on va tenter de résoudre la demande de la machine virtuelle par rapport au réseau le plus proche de celle ci .Il est également possible de faire de l'ordonnancement de cartes .La défaillance d'une carte entraînera la répartition de charge sur la carte restante .  </p>
+<h2 id="vnic">vNIC</h2>
+<p>Puis c'est désigne les virtuels Network insigrat car ce sont les cartes réseau intégrées directement aux machines virtuellesces cartes réseau peuvent être unique ou multiples en fonction des besoins de la machine virtuelleen effet une VNIC va être raccordée à un ou plusieurs groupements de porcs en fonction du groupement de porc sur lequel elle va être reliée elle va pouvoir bénéficier d'un accès aux fonctionnalités mises à disposition par le V switch elle pourra être segmentée par l'utilisation des vélanes indiquées sur le groupe montantelle pourra également servir de faillover en cas de défaillance d'une carte réseau sur la machine virtuelle plusieurs topologies sont possibles .Et c'est il est important de les répartir correctement sur la machine virtuelle car un autre va disposer d'un ensemble de cartes réseau ces cartes réseau vont fournir différents services en fonction de leurs liens avec des commutateurs physiquesles besoins du réseau vont être le réseau pour les machines virtuelles le réseau de gestion de l'infrastructure le réseau de déplacement de machines virtuelles entre les autresle flux il s'est ici pour une solution de stockage externe et le .Ce que la fonctionnalité est disponible dans la veste faire l'utilisation de très haute disponibilité type folklance .Il est important de bien recenser les besoins pour identifier ce que l'on souhaite regrouper et ceux que l'on souhaite isoler . En effet , avec les fonctionnalités vues précédemment de timing de répartition de charges de V switch . On va pouvoir déterminer des accès communs . D'un autre exemple ici , le réseau à disposition des machines virtuelles passera par un flux dédié . Ce flux .Sera protégé pour éviter d'exposer les machines virtuelles au danger de l'internet . Ce flux ne pourra pas être regroupé avec d'autres flux .Le flux de gestion de l'infrastructure , donc d'accès à l'interface web et également de déplacement de machines virtuelles ne doit pas croiser le réseau à disposition pour les machines virtuelles . Ce flux est un flux d'administration , il est peu sollicité , donc les cartes réseau qui participent à ce flux pourront être communes .Enfin , le flux ISCSI va être dédié dans un mode que l'on appelle un mode trunk comme l'on a vu précédemment et ce lien va être unique entre .Entre notre hôte et la solution de stockage externe . En effet , le protocole IS , c'est ici que nous verrons dans un autre module , va être un protocole de stockage en réseau et utilise des fonctionnalités de réseau de stockage .Ce réseau ne doit pas être mélangé avec le réseau de gestion ou le réseau de déplacement du VN ou le réseau destination DVMEn résumé nous avons ici des VM et lycées nous voyons ici que la VMNIC un et la VMNIC 2 peut couvrir le .Zoo à disposition des VM l'emploi d'une stratégie de type teaming avec de la tolérance de panne peut être importante pour garantir un accès constant aux machines virtuelles .Puis la carte réseau VMI 73 peut inversement couvrir 2 besoins . Le besoin en gestion de l'infrastructure et le besoin des placements de VM quand la .Quant à la carte réseau VMI c'est 4 , elle sera totalement dédiée ou flux de stockage ISCSI .En résumé , nous avons ici un hôte qui est raccordé grâce à 2 commutateurs physiques SW un et SW 2commutateur vont permettre à l'hôte à la fois de donner l'accès au réseau externe à ces messine virtuelles donc . Donc par l'intermédiaire de la VMNIC 0 et de la VMÉIC 1 ces 2 cartes réseau physique vont être reliées sur le V switch 0 ce v switch 0 dispose d'un groupement de corps de type VM prod ce groupement de pommes et de types VM Network . Il est à disposition des machines virtuelles hébergées sur cette hôte . Ce veswich disposant de 2 liaisons montantes . Il est possible de mettre en place du timing puis .Stratégie de fail over et de garantir qu'en cas de perte d'une des 2 cartes réseau soit la V éminée c'est 0 soit la V émunicaire les machines virtuelles auront un accès continu aux réseaux externes .Puis c'est tout dispose également de la VMI c 2 et de la VMI c 3 . Ces 2 cartes réseau participent en tant que liaison montante au Veswitz , un . Ce verset un dispose d'un groupement de corps de type VMTRnel pour le service de gestion et également d'un groupement de ports de type VM carnel pour la fonctionnalité de Vemotion , fonctionnalité permettant de déplacer des machines virtuelles d'un autre vers un autre hôte . Encore une fois , 2 cartes étant présentes , le timing est disponible . La stratégie de faillover est applicable .Dans ce cas là , on ne perdra jamais l'accès à la console de gestion puisque le service de gestion étant hébergé sur un vaisseau disposant de 2 liaisons montantes dans le cadre de d'une perte d'une 2 cartes , l'accès à l'interface de gestion sera toujours possible par l'autre carte .Puis enfin la carte réseau , la VMNISE 4 et la VMNISS 5 vont participer exclusivement au V switcher 2 ce V switch 2 dispose d'un groupement de porcs de type VM Carmen et héberge de service de stockage .Ce service de stockage est uniquement relié à un commutateur de stockage ce commutateur n'a aucun lien avec aucun autre commutateur physique et ce commutateur est uniquement relié à une baie de stockage de disque cette belle de stockage de disque peut être une baie de type San ou de type NAS les protocoles d'échange de fichiers ou de blocs par réseau vont uniquement employer ce réseau de stockage .Carte réseau étant également disponible nous pouvons choisir soit de cumuler le débit des 2 cartes pour augmenter les performances ou d'appliquer une stratégie de fail over .Résumé un août va être composé de différentes piaisons chaque liaison va avoir un rôle précis au sein de la solution de virtualisation afin d'apporter soit des performances supérieures soit un secours en cas de défaillance .  </p>
+<h2 id="vlan-en-environnement-virtualise">VLAN en environnement virtualisé</h2>
+<p>Nous avons vu au tout début de ce module le fonctionnement des après avoir détaillé l'ensemble des fonctionnalités réseau dans une des sphères nous allons voir l'application des vélanes dans cet environnement virtualisé .Levelum peuvent être infectés à tout niveau sur tous les éléments réseaux d'une vestphère . En effet , on peut réserver un vers switch . À l'utilisation d'un seul et unique vella .Dans ce cas là , tout le trafic tel que soient les groupements de ports utilisés sera tagué sur ce Vladian .Il faut faire attention tout de même puisque la liaison montante la VMNIC attribuée à ce vers switch devra également permettre la communication sur ce Vélane . Il est possible d'assigner plusieurs vélanes dans ce cas là , la liaison montante devra être configurée en mode trunk .Il est possible d'assigner à un groupement de corps un vélane . Dans ce cas là , seules les machines virtuelles reliées à ce compoint de port utiliseront le vélan , attribut .Il est enfin possible d'attribuer des vélanes sur les VNIC , les cartes réseau virtuelles des machines virtuelles . Attention tout de même , il faudra configurer la prison du charge du protocole 800 de vaincu sur le système d'exploitation utilisé sur la machine virtuelle .Silverland sont affectés par l'hyperviseur , le Vichy doit être configuré en mode trunk , donc du côté physique .Lorsqu'un vélan est utilisé dans la partie virtuelle et bien le lien vers le commutateur physique doit être un lien de titres trunk . En effet , ce lien va devoir supporter .Un à plusieurs vélanes et doit permettre le transport de toutes les trames de la partie virtuelle vers la partie physique .</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 - Mathieu Lecat
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/mathieu-lecat" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.tabs", "navigation.top", "navigation.indexes", "navigation.tracking", "navigation.instant", "navigation.path", "navigation.indexes", "search.suggest", "content.code.annotation", "content.code.copy", "content.tooltips"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

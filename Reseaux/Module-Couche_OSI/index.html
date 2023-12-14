@@ -1,0 +1,2606 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="http://192.168.1.90:8000/index.md/Reseaux/Module-Couche_OSI/" rel="canonical"/>
+<link href="../.." rel="prev"/>
+<link href="7_Couche_Applicative/" rel="next"/>
+<link href="../../img/computer-2.svg" rel="icon"/>
+<meta content="mkdocs-1.5.3, mkdocs-material-9.5.2" name="generator"/>
+<title>Le Modèle OSI - MyDocs</title>
+<link href="../../assets/stylesheets/main.50c56a3b.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m1 5h-2v4H7v2h4v4h2v-4h4v-2h-4V7Z"/></svg>');}</style>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+ <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="blue" data-md-color-primary="blue" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#le-modele-osi">
+          Aller au contenu
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="En-tête" class="md-header__inner md-grid">
+<a aria-label="MyDocs" class="md-header__button md-logo" data-md-component="logo" href="../.." title="MyDocs">
+<img alt="logo" src="../../img/network.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            MyDocs
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+<span style="color: #3498DB;">Le Modèle OSI</span>
+</span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="blue" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="blue" data-md-color-media="" data-md-color-primary="blue" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="" data-md-color-primary="blue" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"></path></svg>
+</label>
+</form>
+<script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Rechercher" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Rechercher" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Recherche" class="md-search__options">
+<button aria-label="Effacer" class="md-search__icon md-icon" tabindex="-1" title="Effacer" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Onglets" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="./">
+          
+  
+    
+  
+  Cours
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../Cisco/ios/">
+        
+  
+    
+  
+  Cisco IOS
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../Cloud_M365/cloud/">
+        
+  
+    
+  
+  Cloud &amp; Microsoft 365
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../Virtualisation/Virtualisation/">
+          
+  
+    
+  
+  Virtualisation
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../supervision/supervision/">
+          
+  
+    
+  
+  Supervision Infrastructure avec Centreon
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../GLPI/glpi/">
+        
+  
+    
+  
+  GLPI
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../Outils/Putty/putty/">
+          
+  
+    
+  
+  Outils
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../page_test/">
+          
+  
+    
+  
+  Aide
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="MyDocs" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="MyDocs">
+<img alt="logo" src="../../img/network.png"/>
+</a>
+    MyDocs
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Accueil
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    Cours
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Cours
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Reseaux
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+            Reseaux
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_1_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Modèle OSI
+  </span>
+</a>
+<label class="md-nav__link md-nav__link--active" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_2_1_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_1_1">
+<span class="md-nav__icon md-icon"></span>
+            Modèle OSI
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="7_Couche_Applicative/">
+<span class="md-ellipsis">
+    Couche Applicative
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="6_Couche_Presentation/">
+<span class="md-ellipsis">
+    Couche Présentation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="5_Couche_Session/">
+<span class="md-ellipsis">
+    Couche Session
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="4_Couche_Transport/">
+<span class="md-ellipsis">
+    Couche Transport
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="3_Couche_Reseau/">
+<span class="md-ellipsis">
+    Couche Réseau
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="2_Couche_Liaison/">
+<span class="md-ellipsis">
+    Couche Liaison
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="1_Couche_Physique/">
+<span class="md-ellipsis">
+    Couche Physique
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="Encapsulation/">
+<span class="md-ellipsis">
+    Encapsulation &amp; Désencapsulation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="Unites_donnees/">
+<span class="md-ellipsis">
+    Unités de données
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Adressage
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_1_2">
+<span class="md-nav__icon md-icon"></span>
+            Adressage
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Module_IP/trame_ethernet/">
+<span class="md-ellipsis">
+    Trame Ethernet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Module_IP/Adressage_IPv4/">
+<span class="md-ellipsis">
+    Ipv4
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Module_IP/sous_reseau/">
+<span class="md-ellipsis">
+    Sous-Réseau
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Diffusion/Collision
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_1_3">
+<span class="md-nav__icon md-icon"></span>
+            Diffusion/Collision
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Domaine_diffusion_collision/">
+<span class="md-ellipsis">
+    Domaine de Diffusion et de Collision
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Routage/le_routeur/">
+<span class="md-ellipsis">
+    Routage
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Switch &amp; VLAN
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_1_5">
+<span class="md-nav__icon md-icon"></span>
+            Switch &amp; VLAN
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Switch_VLAN/Switch/">
+<span class="md-ellipsis">
+<span style="color: #3498DB;">Le Switch</span>
+</span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Switch_VLAN/VLAN/">
+<span class="md-ellipsis">
+<span style="color: #3498DB;">VLAN: Virtual Local Area Network</span>
+</span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../dhcp/dhcp/">
+<span class="md-ellipsis">
+    DHCP
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../dns/dns/">
+<span class="md-ellipsis">
+    DNS
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    TOIP
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Système d'Exploitation
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Système d'Exploitation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Os/OS/">
+<span class="md-ellipsis">
+    OS
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Unix/Linux
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Unix/Linux
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/Introduction_UNIX_Linux/">
+<span class="md-ellipsis">
+    Introduction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/Administration_Debian/">
+<span class="md-ellipsis">
+    Administration Debian
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/Fichiers_Dossiers/">
+<span class="md-ellipsis">
+    Fichiers et Dossier
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/Lire_editer_texte/">
+<span class="md-ellipsis">
+    Lire et Editer du texte
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/Gestion_reseau_debian/">
+<span class="md-ellipsis">
+    Gestion Réseau
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/Gestion_paquets_logiciel/">
+<span class="md-ellipsis">
+    Gestion des paquets
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/Gestion_debian/">
+<span class="md-ellipsis">
+    Gestion d'une machine Debian
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/Espace_stockage/">
+<span class="md-ellipsis">
+    Gestion Stockage
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/utilisateurs_groupe/">
+<span class="md-ellipsis">
+    Gestion des Groupes &amp; Utilisateurs
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_2_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_2_10" id="__nav_2_2_2_10_label" tabindex="0">
+<span class="md-ellipsis">
+    Bash
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_2_10_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_2_10">
+<span class="md-nav__icon md-icon"></span>
+            Bash
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/Bash_introduction/">
+<span class="md-ellipsis">
+    101
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/Bash_avance/">
+<span class="md-ellipsis">
+    201
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+<span class="md-ellipsis">
+    MicroSoft
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_3">
+<span class="md-nav__icon md-icon"></span>
+            MicroSoft
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3_1" id="__nav_2_2_3_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Windows
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_1_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_3_1">
+<span class="md-nav__icon md-icon"></span>
+            Windows
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/OS_Windows/">
+<span class="md-ellipsis">
+    OS Client
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Definir_un_Pilote.md">
+<span class="md-ellipsis">
+    Pilotes
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3_2" id="__nav_2_2_3_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Windows Serveur
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_2_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_3_2">
+<span class="md-nav__icon md-icon"></span>
+            Windows Serveur
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Serveur/administration_windows/">
+<span class="md-ellipsis">
+    Administration Windows
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3_2_2" id="__nav_2_2_3_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Active Directory
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_2_2_label" class="md-nav" data-md-level="5">
+<label class="md-nav__title" for="__nav_2_2_3_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Active Directory
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Serveur/active_directory/notion/">
+<span class="md-ellipsis">
+    Notion
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Serveur/active_directory/gestion_domaine/">
+<span class="md-ellipsis">
+    Gestion d'un domaine
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Serveur/active_directory/acces_ressources/">
+<span class="md-ellipsis">
+    L'accès aux Ressources
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Serveur/active_directory/GPO/">
+<span class="md-ellipsis">
+    Stratégies de Groupe
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Serveur/active_directory/service_impression.md">
+<span class="md-ellipsis">
+    Service d'impression
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Serveur/rds/rds/">
+<span class="md-ellipsis">
+    RDS
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/CLI/">
+<span class="md-ellipsis">
+    CLI
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3_4" id="__nav_2_2_3_4_label" tabindex="0">
+<span class="md-ellipsis">
+    PowerShell
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_4_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_3_4">
+<span class="md-nav__icon md-icon"></span>
+            PowerShell
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Powershell/Presentation_de_Powershell/">
+<span class="md-ellipsis">
+    Présentation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Powershell/Cmdlets_de_base_et_objets/">
+<span class="md-ellipsis">
+    cmdlet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Powershell/aide_de_powershell/">
+<span class="md-ellipsis">
+    L'aide
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Powershell/Le_Filtrage/">
+<span class="md-ellipsis">
+    Le Filtrage
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Powershell/Le_Formatage/">
+<span class="md-ellipsis">
+    Le Formatage
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Powershell/Redirection_de_flux/">
+<span class="md-ellipsis">
+    Redirection de Flux
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Windows/Powershell/Utilisation_du_PipeLine/">
+<span class="md-ellipsis">
+    Utilisation du Pipeline "|"
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../service_web_securite/">
+<span class="md-ellipsis">
+    Serveur Web
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            Serveur Web
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../service_web_securite/serveur_apache/">
+<span class="md-ellipsis">
+    Apache2
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../service_web_securite/serveur_IIS/">
+<span class="md-ellipsis">
+    Serveur IIS
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../service_web_securite/Gestion_PKI/">
+<span class="md-ellipsis">
+    Gestion des PKI
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../service_web_securite/VPN/">
+<span class="md-ellipsis">
+    VPN
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-ellipsis">
+    ITIL
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            ITIL
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ITIL/ITIL1/">
+<span class="md-ellipsis">
+    Présentation et historique
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ITIL/ITIL2/">
+<span class="md-ellipsis">
+    La gestion des services
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ITIL/ITIL3/">
+<span class="md-ellipsis">
+    Livre 1 - stratégie des services
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ITIL/ITIL4/">
+<span class="md-ellipsis">
+    Livre 2 - Conception des services
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ITIL/ITIL5/">
+<span class="md-ellipsis">
+    Livre 3 - La transition des services
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ITIL/ITIL7/">
+<span class="md-ellipsis">
+    Livre 4 - Exploitation des services - publication centrales
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ITIL/ITIL8/">
+<span class="md-ellipsis">
+    Livre 5 - Amélioration continue des services - publication centrales
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ITIL/ITIL9/">
+<span class="md-ellipsis">
+    Savoirs, savoir-faire et savoir-être
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ITIL/ITIL6/">
+<span class="md-ellipsis">
+    GLPI
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ITIL/ITIL10/">
+<span class="md-ellipsis">
+    Assistance avec GLPI
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Scripting
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+            Scripting
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_5_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../Script_bash/">
+<span class="md-ellipsis">
+    Bash
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_5_1" id="__nav_2_5_1_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_1">
+<span class="md-nav__icon md-icon"></span>
+            Bash
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Script_bash/scripting_bash/">
+<span class="md-ellipsis">
+    Construction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Script_bash/exemple_script/">
+<span class="md-ellipsis">
+    Script
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    PowerShell
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Python3/python/">
+<span class="md-ellipsis">
+    Python
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Cisco/ios/">
+<span class="md-ellipsis">
+    Cisco IOS
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Cloud_M365/cloud/">
+<span class="md-ellipsis">
+    Cloud &amp; Microsoft 365
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+<span class="md-ellipsis">
+    Virtualisation
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Virtualisation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Virtualisation/Virtualisation/">
+<span class="md-ellipsis">
+    Virtualisation
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Applications de virtualisation
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+            Applications de virtualisation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Virtualisation/vmware_workstation/">
+<span class="md-ellipsis">
+    VMware WorkStation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    VMware vSphere
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Microsoft Hyper-V
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Gestion du réseau
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Gestion du Stockage
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Gestion de Data-Center
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Virtualisation/virtualisation_srv/">
+<span class="md-ellipsis">
+    Virtualisation de serveurs
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+<span class="md-ellipsis">
+    Supervision Infrastructure avec Centreon
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            Supervision Infrastructure avec Centreon
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../supervision/supervision/">
+<span class="md-ellipsis">
+    Supervision
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../supervision/snmp_nrpe/">
+<span class="md-ellipsis">
+    Protocoles SNMP &amp; NRPE
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Centreon
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+            Centreon
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../supervision/Centreon/installation_centreon/">
+<span class="md-ellipsis">
+    Installation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../supervision/Centreon/commandes_supervision/">
+<span class="md-ellipsis">
+    Commandes
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../supervision/Centreon/Configuration/">
+<span class="md-ellipsis">
+    Configuration
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../GLPI/glpi/">
+<span class="md-ellipsis">
+    GLPI
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+<span class="md-ellipsis">
+    Outils
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            Outils
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Outils/Putty/putty/">
+<span class="md-ellipsis">
+    Putty
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Outils/Nmap/nmap/">
+<span class="md-ellipsis">
+    Nmaps
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Linux/FogProject/fogproject/">
+<span class="md-ellipsis">
+    FogProject
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+<span class="md-ellipsis">
+    Aide
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+            Aide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../page_test/">
+<span class="md-ellipsis">
+    Page Test
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Kaisen/modification_terminal/">
+<span class="md-ellipsis">
+    Kaisen
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../GLPI/mariadb/">
+<span class="md-ellipsis">
+    MariaDB
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../revision/revision/">
+<span class="md-ellipsis">
+    Révision
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#couche-par-couche">
+<span class="md-ellipsis">
+      Couche par Couche
+    </span>
+</a>
+<nav aria-label="Couche par Couche" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-application-couche-applicative">
+<span class="md-ellipsis">
+      7- APPLICATION (couche applicative)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-presentation">
+<span class="md-ellipsis">
+      6- Présentation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-session">
+<span class="md-ellipsis">
+      5- Session
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-transport">
+<span class="md-ellipsis">
+      4- Transport
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-reseau">
+<span class="md-ellipsis">
+      3- Réseau
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-liaison-de-donnees">
+<span class="md-ellipsis">
+      2- Liaison de données
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-physique">
+<span class="md-ellipsis">
+      1- Physique
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#processus-de-transmissionreception">
+<span class="md-ellipsis">
+      Processus de Transmission/Réception
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#osi-vs-tcpip">
+<span class="md-ellipsis">
+      OSI vs TCP/IP
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#les-ports-et-protocoles">
+<span class="md-ellipsis">
+      Les Ports et Protocoles
+    </span>
+</a>
+<nav aria-label="Les Ports et Protocoles" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#la-notion-de-protocole">
+<span class="md-ellipsis">
+      La notion de protocole
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#la-notion-de-port">
+<span class="md-ellipsis">
+      La notion de port
+    </span>
+</a>
+<nav aria-label="La notion de port" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#port-commun">
+<span class="md-ellipsis">
+      Port Commun
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="le-modele-osi"><span style="color: #3498DB;">Le Modèle OSI</span></h1>
+<p>Le modèle <strong><em>OSI</em></strong> (Open System Interconnection) est composé de :</p>
+<ul>
+<li>7 <code>couches</code>indépendantes et communicantes (couches adjacentes)</li>
+<li>Une <code>couche</code>est un ensemble de service précis</li>
+<li>représente la communication entre systèmes d’information en réseau</li>
+</ul>
+<p>Le modèle <strong><em>OSI</em></strong> explique de façon détaillée la communication entre 2 équipements</p>
+<blockquote>
+<p>Moyen mnémotechnique pour ce souvenir des <code>couches</code>
+Pour Le Réseau, Tout Se Passe Automatiquement
+(à lire de la <code>couche</code>1 à 7)</p>
+</blockquote>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="img/couche%20osi.jpg"><img alt="Couche_OSI" src="img/couche%20osi.jpg"/></a></p>
+</figure>
+<h2 id="couche-par-couche"><span style="color: #F39C12;"><u>Couche par Couche</u></span></h2>
+<h3 id="7-application-couche-applicative"><span style="color: #1ABC9C;">7- APPLICATION (couche applicative)</span></h3>
+<p><a href="7_Couche_Applicative/">Couche Application</a>
+Point de contact avec les services réseau.</p>
+<ul>
+<li>Communication entre applications,</li>
+<li>Communication entre l’utilisateur et les applications (interface IHM),</li>
+<li>Entrée et Sortie des données.  </li>
+</ul>
+<h3 id="6-presentation"><span style="color: #1ABC9C;">6- Présentation</span></h3>
+<p><a href="6_Couche_Presentation/">Couche Présentation</a>
+Elle s’occupe de tout aspect lié à la présentation/traduction des données :</p>
+<ul>
+<li>formatage des données,</li>
+<li>(Dé) chiffrement,</li>
+<li>(Dé) compression,</li>
+<li>encodage…</li>
+</ul>
+<h3 id="5-session"><span style="color: #1ABC9C;">5- Session</span></h3>
+<p><a href="5_Couche_Session/">Couche Session</a>
+Responsable de l’initialisation de la session, de sa gestion et de sa fermeture.</p>
+<ul>
+<li>Authentification entre les PC,</li>
+<li>Synchronisation des échanges,</li>
+<li>Création de points de contrôle</li>
+</ul>
+<h3 id="4-transport"><span style="color: #1ABC9C;">4- Transport</span></h3>
+<p><a href="4_Couche_Transport/">Couche Transport</a>
+Choix du protocole de transmission et préparation de l’envoi des données.
+Elle spécifie le port utilisé par l’application émettrice ainsi que celui de l’application réceptrice.
+Elle fragmente les données en plusieurs séquences (ou segments).</p>
+<ul>
+<li>Communication entre mêmes types applications (ports)</li>
+<li>contrôle de flux (segmentation et réduction de l’encombrement)</li>
+</ul>
+<h3 id="3-reseau"><span style="color: #1ABC9C;">3- Réseau</span></h3>
+<p><a href="3_Couche_Reseau/">Couche Réseau</a>
+Connexion logique entre les hôtes.
+Elle traite de tout ce qui concerne l’identification et le routage dans le réseau.</p>
+<ul>
+<li>Communication entre les PC expéditeurs et destinataires</li>
+<li>Choix de la meilleure route (routage)</li>
+<li>Adressage logique (Adresses IPv4 et IPv6)</li>
+</ul>
+<h3 id="2-liaison-de-donnees"><span style="color: #1ABC9C;">2- Liaison de données</span></h3>
+<p><a href="2_Couche_Liaison/">Couche Liaison de données</a>
+Établissement d’une liaison physique entre les hôtes (Point à point).
+Elle fragmente les données en plusieurs trames.</p>
+<ul>
+<li>Communication entre noeuds adjacents</li>
+<li>Contrôle d’erreurs et de flux</li>
+<li>Adressage physique (adresse MAC)</li>
+</ul>
+<h3 id="1-physique"><span style="color: #1ABC9C;">1- Physique</span></h3>
+<p><a href="1_Couche_Physique/">Couche Physique</a>
+Transmission du signal</p>
+<ul>
+<li>Conversion des trames en bits,</li>
+<li>Transmission physique des données sur le média (Modulation).</li>
+</ul>
+<hr/>
+<h2 id="processus-de-transmissionreception"><span style="color: #F39C12;"><u>Processus de Transmission/Réception</u></span></h2>
+<p>Quand un hôte A envoi vers un hôte B, le processus d’envoi va de la couche :</p>
+<p>Modele OSI</p>
+<pre class="mermaid">
+    classDiagram
+    class Couche{
+    Couche : Application
+    Couche : Présentation
+    Couche : Session
+    Couche : Transport
+    Couche : Réseau
+    Couche : Liaison
+    Couche : Physique
+    }
+</pre>
+<hr/>
+<h2 id="osi-vs-tcpip"><span style="color: #F39C12;"><u>OSI vs TCP/IP</u></span></h2>
+<ul>
+<li>
+<p>Le modèle <strong><em>OSI</em></strong> a été développé à vocation <strong>normative</strong>.
+C’est-à-dire qu’il référence le déroulement de la communication entre 2 hôtes.</p>
+</li>
+<li>
+<p>Le modèle <strong><em>TCP/IP</em></strong> à lui été développé dans un but <strong>descriptif</strong>.
+C’est-à-dire qu’il décrit la façon dont se passe la communication en 2 hôtes.</p>
+</li>
+</ul>
+<p>En d’autres termes</p>
+<ul>
+<li><strong>TCP/IP</strong> : si vous voulez comprendre comment se déroule la communication « sur le terrain ».</li>
+<li><strong>OSI</strong> : si vous voulez la suite logique et la procédure selon la norme.</li>
+</ul>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="img/Comparaison_des_mod%C3%A8les_OSI_et_TCP_IP.png"><img alt="structure TCP/IP" src="img/Comparaison_des_mod%C3%A8les_OSI_et_TCP_IP.png"/></a></p>
+</figure>
+<div class="admonition warning">
+<p>Le modèle OSI servira de « plan » pour la création d’un protocole ou d’un matériel réseau</p>
+</div>
+<h2 id="les-ports-et-protocoles"><span style="color: #F39C12;"><u>Les Ports et Protocoles</u></span></h2>
+<h3 id="la-notion-de-protocole"><span style="color: #1ABC9C;">La notion de protocole</span></h3>
+<p>Selon la définition un protocole est "un ensemble de règles définissant le mode de communication entre deux ordinateurs"<br/>
+En reseaux, un protocole est un ensemble de règles permettant de formater et de traiter les données.<br/>
+Il s'agit d'un langage commun pour les ordinateurs. l'utilisation de protocoles leurs permet de communiquer même si ils utilisent des logiciels ou du matériels différents.  </p>
+<p>Ci dessous en tableau reprenant les differents protocole et ports utilisé par le modèle OSI.  </p>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="img/port_protocole.png"><img alt="port_et_protocole" src="img/port_protocole.png"/></a></p>
+</figure>
+<h3 id="la-notion-de-port"><span style="color: #1ABC9C;">La notion de port</span></h3>
+<p>Un port est une adresse d'application sur une machine.  </p>
+<p>La plupart des machines (serveur ou client) ont des ports ouverts.  </p>
+<p>Un serveur web aura, par exemple, le port 80 <em>ouvert</em> cela permettra à des personnes de se connecter dessus via ce même port 80.<br/>
+Le port 80 sera l'adresse de l'application web.  </p>
+<p>quand le nom du site à joindre sera taper dans un navigateur, celui-ci va automatiquement interroger ce port (80).  </p>
+<div class="admonition tips">
+<p class="admonition-title">visualisation des ports ouverts</p>
+<p>La manière la plus simple de visualiser les ports ouverts sur une machien est d'utilisé la commande <code>netstat</code> sur linux</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1"><code>netstat -an</code></label><label for="__tabbed_1_2"><code>netstat -anpe</code></label><label for="__tabbed_1_3"><code>netstat -antp</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+<div class="tabbed-block">
+<p>Permet de visualiser les détails sur le PID, l'utilisateur et le processus</p>
+</div>
+<div class="tabbed-block">
+<p>Permet de visualiser uniquement les ports TCP</p>
+</div>
+</div>
+</input></input></input></div>
+</div>
+<h4 id="port-commun"><span style="color: #1ABC9C;">Port Commun</span></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Port</th>
+<th style="text-align: left;">TCP</th>
+<th style="text-align: left;">UDP</th>
+<th style="text-align: left;">Nom</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">tcpmux</td>
+<td style="text-align: left;">TCP Port Multiplexer (service de multiplexage de TCP port)</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">rje</td>
+<td style="text-align: left;">Remote Job Entry (saisie de tâche à distance)</td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">echo</td>
+<td style="text-align: left;">Service d’écho</td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">discard</td>
+<td style="text-align: left;">Service zéro à des fins de test</td>
+</tr>
+<tr>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">systat</td>
+<td style="text-align: left;">Informations système</td>
+</tr>
+<tr>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">daytime</td>
+<td style="text-align: left;">Saisie de la date et de l’heure</td>
+</tr>
+<tr>
+<td style="text-align: left;">17</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">qotd</td>
+<td style="text-align: left;">Envoie la citation du jour</td>
+</tr>
+<tr>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">msp</td>
+<td style="text-align: left;">Transfère des SMS</td>
+</tr>
+<tr>
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">chargen</td>
+<td style="text-align: left;">Envoie une séquence de caractères infinie</td>
+</tr>
+<tr>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ftp-data</td>
+<td style="text-align: left;">Transmission de données FTP</td>
+</tr>
+<tr>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">ftp</td>
+<td style="text-align: left;">Connexion FTP</td>
+</tr>
+<tr>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">ssh</td>
+<td style="text-align: left;">Service Secure Shell</td>
+</tr>
+<tr>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">telnet</td>
+<td style="text-align: left;">Service Telnet</td>
+</tr>
+<tr>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">smtp</td>
+<td style="text-align: left;">Simple Mail Transfer Protocol (protocole simple de transfert de courrier)</td>
+</tr>
+<tr>
+<td style="text-align: left;">37</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">time</td>
+<td style="text-align: left;">Protocole temporel lisible par un ordinateur</td>
+</tr>
+<tr>
+<td style="text-align: left;">39</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">rlp</td>
+<td style="text-align: left;">Resource Location Protocol (protocole de localisation des ressources)</td>
+</tr>
+<tr>
+<td style="text-align: left;">42</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">nameserver</td>
+<td style="text-align: left;">Service de noms</td>
+</tr>
+<tr>
+<td style="text-align: left;">43</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">nicname</td>
+<td style="text-align: left;">Service d’annuaire WHOIS</td>
+</tr>
+<tr>
+<td style="text-align: left;">49</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">tacacs</td>
+<td style="text-align: left;">Terminal Access Controller Access Control System (protocole d’authentification à distance)</td>
+</tr>
+<tr>
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">re-mail-ck</td>
+<td style="text-align: left;">Remote Mail Checking (consultation de messagerie à distance)</td>
+</tr>
+<tr>
+<td style="text-align: left;">53</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">domain</td>
+<td style="text-align: left;">Résolution de nom par DNS</td>
+</tr>
+<tr>
+<td style="text-align: left;">67</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">bootps</td>
+<td style="text-align: left;">Services Bootstrap Protocol</td>
+</tr>
+<tr>
+<td style="text-align: left;">68</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">bootpc</td>
+<td style="text-align: left;">Bootstrap Client</td>
+</tr>
+<tr>
+<td style="text-align: left;">69</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">tftp</td>
+<td style="text-align: left;">Trivial File Transfer Protocol (protocole simplifié de transfert de fichiers)</td>
+</tr>
+<tr>
+<td style="text-align: left;">70</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">gopher</td>
+<td style="text-align: left;">Recherche de document</td>
+</tr>
+<tr>
+<td style="text-align: left;">71</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">genius</td>
+<td style="text-align: left;">Protocole Genius</td>
+</tr>
+<tr>
+<td style="text-align: left;">79</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">finger</td>
+<td style="text-align: left;">Transmet les coordonnées des utilisateurs</td>
+</tr>
+<tr>
+<td style="text-align: left;">80</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">http</td>
+<td style="text-align: left;">Hypertext Transfer Protocol (protocole de transfert hypertexte)</td>
+</tr>
+<tr>
+<td style="text-align: left;">81</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Torpark : Onion-Routing (non officiel - routage en oignon)</td>
+</tr>
+<tr>
+<td style="text-align: left;">82</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Torpark : Control (non officiel)</td>
+</tr>
+<tr>
+<td style="text-align: left;">88</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">kerberos</td>
+<td style="text-align: left;">Système d’authentification de réseau</td>
+</tr>
+<tr>
+<td style="text-align: left;">101</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">hostname</td>
+<td style="text-align: left;">NIC Host Name (nom d’hôte NIC)</td>
+</tr>
+<tr>
+<td style="text-align: left;">102</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Iso-tsap</td>
+<td style="text-align: left;">ISO-TSAP-Protocol (protocole ISO TSAP)</td>
+</tr>
+<tr>
+<td style="text-align: left;">105</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">csnet-ns</td>
+<td style="text-align: left;">Mailbox-Mailserver (serveur de messagerie électronique)</td>
+</tr>
+<tr>
+<td style="text-align: left;">107</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">rtelnet</td>
+<td style="text-align: left;">Remote Telnet (Telnet à distance)</td>
+</tr>
+<tr>
+<td style="text-align: left;">109</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">pop2</td>
+<td style="text-align: left;">Post Office Protocol v2 (protocole de bureau de poste v2) pour la communication par e-mail</td>
+</tr>
+<tr>
+<td style="text-align: left;">110</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">pop3</td>
+<td style="text-align: left;">Post Office Protocol v3 (protocole de bureau de poste v3) pour la communication par e-mail</td>
+</tr>
+<tr>
+<td style="text-align: left;">111</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">sunrpc</td>
+<td style="text-align: left;">Protocole RPC pour NFS</td>
+</tr>
+<tr>
+<td style="text-align: left;">113</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">auth</td>
+<td style="text-align: left;">Service d’authentification</td>
+</tr>
+<tr>
+<td style="text-align: left;">115</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">sftp</td>
+<td style="text-align: left;">Simple File Transfer Protocol (version simplifiée de FTP)</td>
+</tr>
+<tr>
+<td style="text-align: left;">117</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">uucp-path</td>
+<td style="text-align: left;">Transmission de fichiers entre systèmes Unix</td>
+</tr>
+<tr>
+<td style="text-align: left;">119</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">nntp</td>
+<td style="text-align: left;">Transmission de fichiers au sein de groupes de discussion</td>
+</tr>
+<tr>
+<td style="text-align: left;">123</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">ntp</td>
+<td style="text-align: left;">Service de synchronisation temporelle</td>
+</tr>
+<tr>
+<td style="text-align: left;">137</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">netbios-ns</td>
+<td style="text-align: left;">Service de noms NETBIOS</td>
+</tr>
+<tr>
+<td style="text-align: left;">138</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">netbios-dgm</td>
+<td style="text-align: left;">NETBIOS Datagram Service (service de datagramme NETBIOS)</td>
+</tr>
+<tr>
+<td style="text-align: left;">139</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">netbios-ssn</td>
+<td style="text-align: left;">NETBIOS Session Service (service de session NETBIOS)</td>
+</tr>
+<tr>
+<td style="text-align: left;">143</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">imap</td>
+<td style="text-align: left;">Internet Message Access Protocol (protocole d’accès aux messages électroniques) pour communication par e-mail</td>
+</tr>
+<tr>
+<td style="text-align: left;">161</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">snmp</td>
+<td style="text-align: left;">Simple Network Management Protocol (protocole simple de gestion de réseau)</td>
+</tr>
+<tr>
+<td style="text-align: left;">162</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">snmptrap</td>
+<td style="text-align: left;">Simple Network Management Protocol Trap (Trap de protocole simple de gestion de réseau)</td>
+</tr>
+<tr>
+<td style="text-align: left;">177</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">xdmcp</td>
+<td style="text-align: left;">X Display Manager (gestionnaire d’affichage X)</td>
+</tr>
+<tr>
+<td style="text-align: left;">179</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">bgp</td>
+<td style="text-align: left;">Border Gateway Protocol (protocole d’échange de route)</td>
+</tr>
+<tr>
+<td style="text-align: left;">194</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">irc</td>
+<td style="text-align: left;">Internet Relay Chat (discussion relayée par Internet)</td>
+</tr>
+<tr>
+<td style="text-align: left;">199</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">smux</td>
+<td style="text-align: left;">SNMP UNIX Multiplexer (service de multiplexage UNIX SNMP)</td>
+</tr>
+<tr>
+<td style="text-align: left;">201</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">at-rtmp</td>
+<td style="text-align: left;">AppleTalk Routing (routage d’AppleTalk)</td>
+</tr>
+<tr>
+<td style="text-align: left;">209</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">qmtp</td>
+<td style="text-align: left;">Quick Mail Transfer Protocol (protocole de transfert de courrier rapide)</td>
+</tr>
+<tr>
+<td style="text-align: left;">210</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">z39.50</td>
+<td style="text-align: left;">Système d’informations bibliographiques</td>
+</tr>
+<tr>
+<td style="text-align: left;">213</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">ipx</td>
+<td style="text-align: left;">Internetwork Packet Exchange</td>
+</tr>
+<tr>
+<td style="text-align: left;">220</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">imap3</td>
+<td style="text-align: left;">IMAP v3 pour la communication par e-mail</td>
+</tr>
+<tr>
+<td style="text-align: left;">369</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">rpc2portmap</td>
+<td style="text-align: left;">Coda Filesystem Portmapper (portmapper de systèmes de fichiers Coda)</td>
+</tr>
+<tr>
+<td style="text-align: left;">370</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">codaauth2</td>
+<td style="text-align: left;">Coda Filesystem Authentication Service (service d’authentification de systèmes de fichiers Coda)</td>
+</tr>
+<tr>
+<td style="text-align: left;">389</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">ldap</td>
+<td style="text-align: left;">Lightweight Directory Access Protocol (protocole DAP version allégée)</td>
+</tr>
+<tr>
+<td style="text-align: left;">427</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">svrloc</td>
+<td style="text-align: left;">Service Location Protocol (protocole de découverte de services)</td>
+</tr>
+<tr>
+<td style="text-align: left;">443</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">https</td>
+<td style="text-align: left;">HTTPS (HTTP via SSL/TLS)</td>
+</tr>
+<tr>
+<td style="text-align: left;">444</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">snpp</td>
+<td style="text-align: left;">Simple Network Paging Protocol (protocole simple d’appel de réseau)</td>
+</tr>
+<tr>
+<td style="text-align: left;">445</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">microsoft-ds</td>
+<td style="text-align: left;">SMB via TCP/IP</td>
+</tr>
+<tr>
+<td style="text-align: left;">464</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">kpasswd</td>
+<td style="text-align: left;">Modification de mot de passe pour Kerberos</td>
+</tr>
+<tr>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">isakmp</td>
+<td style="text-align: left;">Protocole de sécurité</td>
+</tr>
+<tr>
+<td style="text-align: left;">512</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">exec</td>
+<td style="text-align: left;">Remote Process Execution (exécution de processus à distance)</td>
+</tr>
+<tr>
+<td style="text-align: left;">512</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">comsat/biff</td>
+<td style="text-align: left;">Client et serveur de messagerie</td>
+</tr>
+<tr>
+<td style="text-align: left;">513</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">login</td>
+<td style="text-align: left;">Connexion à l’ordinateur à distance</td>
+</tr>
+<tr>
+<td style="text-align: left;">513</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">who</td>
+<td style="text-align: left;">Whod User Logging Daemon</td>
+</tr>
+<tr>
+<td style="text-align: left;">514</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">shell</td>
+<td style="text-align: left;">Remote Shell</td>
+</tr>
+<tr>
+<td style="text-align: left;">514</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">syslog</td>
+<td style="text-align: left;">Unix System Logging Service (service de connexion au système Unix)</td>
+</tr>
+<tr>
+<td style="text-align: left;">515</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">printer</td>
+<td style="text-align: left;">Services d’impression : Line Printer Daemon</td>
+</tr>
+<tr>
+<td style="text-align: left;">517</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">talk</td>
+<td style="text-align: left;">Talk Remote Calling (appel à distance)</td>
+</tr>
+<tr>
+<td style="text-align: left;">518</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">ntalk</td>
+<td style="text-align: left;">Network Talk (discussion en réseau)</td>
+</tr>
+<tr>
+<td style="text-align: left;">520</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">efs</td>
+<td style="text-align: left;">Extended Filename Server (serveur de noms de fichiers étendu)</td>
+</tr>
+<tr>
+<td style="text-align: left;">520</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">router</td>
+<td style="text-align: left;">Routing Information Protocol (protocole d’information de routage)</td>
+</tr>
+<tr>
+<td style="text-align: left;">521</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">ripng</td>
+<td style="text-align: left;">Routing Information Protocol (protocole d’information de routage) pour IPv6</td>
+</tr>
+<tr>
+<td style="text-align: left;">525</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">timed</td>
+<td style="text-align: left;">Serveur de temps</td>
+</tr>
+<tr>
+<td style="text-align: left;">530</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">courier</td>
+<td style="text-align: left;">Courier Remote Procedure Call (appel de procédure à distance Courier)</td>
+</tr>
+<tr>
+<td style="text-align: left;">531</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">conference</td>
+<td style="text-align: left;">Discussion via AIM et IRC</td>
+</tr>
+<tr>
+<td style="text-align: left;">532</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">netnews</td>
+<td style="text-align: left;">Netnews Newsgroup Service (service d’actualités Netnews)</td>
+</tr>
+<tr>
+<td style="text-align: left;">533</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">netwall</td>
+<td style="text-align: left;">Diffusions d’urgence</td>
+</tr>
+<tr>
+<td style="text-align: left;">540</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">uucp</td>
+<td style="text-align: left;">Unix-to-Unix Copy Protocol (protocole de copie Unix vers Unix)</td>
+</tr>
+<tr>
+<td style="text-align: left;">543</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">klogin</td>
+<td style="text-align: left;">Kerberos v5 Remote Login (connexion à distance Kerberos v5)</td>
+</tr>
+<tr>
+<td style="text-align: left;">544</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">kshell</td>
+<td style="text-align: left;">Kerberos v5 Remote Shell (Shell à distance Kerberos v5)</td>
+</tr>
+<tr>
+<td style="text-align: left;">546</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">dhcpv6-client</td>
+<td style="text-align: left;">DHCP v6 Client</td>
+</tr>
+<tr>
+<td style="text-align: left;">547</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">dhcpv6-server</td>
+<td style="text-align: left;">DHCP v6 Server</td>
+</tr>
+<tr>
+<td style="text-align: left;">548</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">afpovertcp</td>
+<td style="text-align: left;">Apple Filing Protocol (protocole AppleShare) via TCP</td>
+</tr>
+<tr>
+<td style="text-align: left;">554</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">rtsp</td>
+<td style="text-align: left;">Commande de flux</td>
+</tr>
+<tr>
+<td style="text-align: left;">556</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">remotefs</td>
+<td style="text-align: left;">Remote Filesystem (système de fichiers à distance)</td>
+</tr>
+<tr>
+<td style="text-align: left;">563</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">nntps</td>
+<td style="text-align: left;">NNTP via SSL/TLS</td>
+</tr>
+<tr>
+<td style="text-align: left;">587</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">submission</td>
+<td style="text-align: left;">Message Submission Agent (agent de soumission de message)</td>
+</tr>
+<tr>
+<td style="text-align: left;">631</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">ipp</td>
+<td style="text-align: left;">Internet Printing Protocol (protocole d’impression internet)</td>
+</tr>
+<tr>
+<td style="text-align: left;">631</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Common Unix Printing System (non officiel - système d’impression Unix commun)</td>
+</tr>
+<tr>
+<td style="text-align: left;">636</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">ldaps</td>
+<td style="text-align: left;">LDAP via SSL/TLS</td>
+</tr>
+<tr>
+<td style="text-align: left;">674</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">acap</td>
+<td style="text-align: left;">Application Configuration Access Protocol (protocole d’accès à la configuration d’applications)</td>
+</tr>
+<tr>
+<td style="text-align: left;">694</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">ha-cluster</td>
+<td style="text-align: left;">Service Heartbeat</td>
+</tr>
+<tr>
+<td style="text-align: left;">749</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">kerberos-adm</td>
+<td style="text-align: left;">Administration Kerberos v5</td>
+</tr>
+<tr>
+<td style="text-align: left;">750</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">kerberos-iv</td>
+<td style="text-align: left;">Services Kerberos v4</td>
+</tr>
+<tr>
+<td style="text-align: left;">873</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">rsync</td>
+<td style="text-align: left;">Services de transfert de fichiers rsync</td>
+</tr>
+<tr>
+<td style="text-align: left;">992</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">telnets</td>
+<td style="text-align: left;">Telnet via SSL/TLS</td>
+</tr>
+<tr>
+<td style="text-align: left;">993</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">imaps</td>
+<td style="text-align: left;">IMAP via SSL/TLS</td>
+</tr>
+<tr>
+<td style="text-align: left;">995</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">pop3s</td>
+<td style="text-align: left;">POP3 via SSL/TLS</td>
+</tr>
+<tr>
+<td style="text-align: left;">Registered Ports</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Port</td>
+<td style="text-align: left;">TCP</td>
+<td style="text-align: left;">UDP</td>
+<td style="text-align: left;">Nom</td>
+<td style="text-align: left;">Description</td>
+</tr>
+<tr>
+<td style="text-align: left;">1080</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">socks</td>
+<td style="text-align: left;">Proxy SOCKS</td>
+</tr>
+<tr>
+<td style="text-align: left;">1433</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ms-sql-s</td>
+<td style="text-align: left;">Serveur Microsoft SQL</td>
+</tr>
+<tr>
+<td style="text-align: left;">1434</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">ms-sql-m</td>
+<td style="text-align: left;">Moniteur Microsoft SQL</td>
+</tr>
+<tr>
+<td style="text-align: left;">1494</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ica</td>
+<td style="text-align: left;">Client Citrix ICA</td>
+</tr>
+<tr>
+<td style="text-align: left;">1512</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">wins</td>
+<td style="text-align: left;">Windows Internet Name Service</td>
+</tr>
+<tr>
+<td style="text-align: left;">1524</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">ingreslock</td>
+<td style="text-align: left;">Ingres DBMS</td>
+</tr>
+<tr>
+<td style="text-align: left;">1701</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">l2tp</td>
+<td style="text-align: left;">Protocole de tunnelisation de niveau 2/transfert de couche 2</td>
+</tr>
+<tr>
+<td style="text-align: left;">1719</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">h323gatestat</td>
+<td style="text-align: left;">H.323</td>
+</tr>
+<tr>
+<td style="text-align: left;">1720</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">h323hostcall</td>
+<td style="text-align: left;">H.323</td>
+</tr>
+<tr>
+<td style="text-align: left;">1812</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">radius</td>
+<td style="text-align: left;">Authentification RADIUS</td>
+</tr>
+<tr>
+<td style="text-align: left;">1813</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">radius-acct</td>
+<td style="text-align: left;">Accès RADIUS</td>
+</tr>
+<tr>
+<td style="text-align: left;">1985</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">hsrp</td>
+<td style="text-align: left;">Cisco HSRP</td>
+</tr>
+<tr>
+<td style="text-align: left;">2008</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Teamspeak 3 Accounting (non officiel)</td>
+</tr>
+<tr>
+<td style="text-align: left;">2010</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Teamspeak 3 Weblist (non officiel)</td>
+</tr>
+<tr>
+<td style="text-align: left;">2049</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">nfs</td>
+<td style="text-align: left;">Système de fichiers en réseau</td>
+</tr>
+<tr>
+<td style="text-align: left;">2102</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">zephyr-srv</td>
+<td style="text-align: left;">Serveur Zephyr</td>
+</tr>
+<tr>
+<td style="text-align: left;">2103</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">zephyr-clt</td>
+<td style="text-align: left;">Client Zephyr</td>
+</tr>
+<tr>
+<td style="text-align: left;">2104</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">zephyr-hm</td>
+<td style="text-align: left;">Gestionnaire d’hôte Zephyr</td>
+</tr>
+<tr>
+<td style="text-align: left;">2401</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">cvspserver</td>
+<td style="text-align: left;">Concurrent Versions System (système de gestion de versions)</td>
+</tr>
+<tr>
+<td style="text-align: left;">2809</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">corbaloc</td>
+<td style="text-align: left;">Common Object Request Broker Architecture (architecture logicielle pour le développement de composants et d’object requests)</td>
+</tr>
+<tr>
+<td style="text-align: left;">3306</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">mysql</td>
+<td style="text-align: left;">Service de base de données MySQL (pour MariaDB également)</td>
+</tr>
+<tr>
+<td style="text-align: left;">4321</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">rwhois</td>
+<td style="text-align: left;">Remote Whois Service (service Whois à distance)</td>
+</tr>
+<tr>
+<td style="text-align: left;">5999</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">cvsup</td>
+<td style="text-align: left;">CVSup</td>
+</tr>
+<tr>
+<td style="text-align: left;">6000</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">X11</td>
+<td style="text-align: left;">X Windows System Services (services système pour Windows X)</td>
+</tr>
+<tr>
+<td style="text-align: left;">11371</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">pgpkeyserver</td>
+<td style="text-align: left;">Serveur de clés publiques pour PGP</td>
+</tr>
+<tr>
+<td style="text-align: left;">13720</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">bprd</td>
+<td style="text-align: left;">Symantec/Veritas NetBackup</td>
+</tr>
+<tr>
+<td style="text-align: left;">13721</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">bpdbm</td>
+<td style="text-align: left;">Symantec/Veritas Database Manager</td>
+</tr>
+<tr>
+<td style="text-align: left;">13724</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">vnetd</td>
+<td style="text-align: left;">Symantec/Veritas Network Utility</td>
+</tr>
+<tr>
+<td style="text-align: left;">13782</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">bpcd</td>
+<td style="text-align: left;">Symantec/Veritas NetBackup</td>
+</tr>
+<tr>
+<td style="text-align: left;">13783</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">vopied</td>
+<td style="text-align: left;">Symantec/Veritas VOPIE</td>
+</tr>
+<tr>
+<td style="text-align: left;">22273</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">wnn6</td>
+<td style="text-align: left;">Conversion Kana/Kanji</td>
+</tr>
+<tr>
+<td style="text-align: left;">23399</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Skype (non officiel)</td>
+</tr>
+<tr>
+<td style="text-align: left;">25565</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Minecraft</td>
+</tr>
+<tr>
+<td style="text-align: left;">26000</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">quake</td>
+<td style="text-align: left;">Quake et autres jeux multijoueurs</td>
+</tr>
+<tr>
+<td style="text-align: left;">27017</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">MongoDB</td>
+</tr>
+<tr>
+<td style="text-align: left;">33434</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">traceroute</td>
+<td style="text-align: left;">Suivi de réseau</td>
+</tr>
+</tbody>
+</table>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+  Retour en haut de la page
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2023 - Mathieu Lecat
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/in/mathieu-lecat" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.tabs", "navigation.top", "navigation.indexes", "navigation.tracking", "navigation.instant", "navigation.path", "navigation.indexes", "search.suggest", "content.code.annotation", "content.code.copy", "content.tooltips"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+<script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

@@ -1,0 +1,42 @@
+.md-grid {
+  max-width: 1400px; 
+}
+
+/* Exemple de styles */
+h1 {
+  color: #3498DB!important; /* Couleur bleu */
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+h2 {
+  color: #F39C12; /* Couleur orange */
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+h3 {
+  color: #1ABC9C; /* Couleur vert */
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+h4 {
+  color: #0C76F5; /* Couleur bleu */
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+h5 {
+  color: #790CF5; /* Couleur violette */
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+pin-icon {
+  width: 200px;
+  filter: drop-shadow(4px 3px 
+  5px rgba(33, 33, 33, 0.
+  736));
+}
